@@ -16,7 +16,7 @@ export type Item = {
   id: string
   title: string
   description: string
-  images: Array<string>
+  images: Array<any>
   security: string
   damaged: string
   color: string
@@ -32,7 +32,6 @@ export type Item = {
   belonging: string
   firstAndLast: string
   will: string
-  words: Array<WordDescription>
 }
 
 export type Items = Array<Item>
@@ -48,7 +47,7 @@ export const getItem = async (itemId: string) =>
   get<Item>(`${REACT_APP_API_URL}item/${itemId}`)
 
 // ADD NEW Item
-export const createItem = async (body: Item) =>
+export const newItem = async (body: Item) =>
   post(`${REACT_APP_API_URL}item/add-item`, body)
 
 // UPDATE Item

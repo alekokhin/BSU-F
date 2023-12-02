@@ -1,3 +1,4 @@
+/* eslint-disable no-console */
 import { Add, ArrowBackIos } from '@mui/icons-material'
 import { AppBar, Box, Button, Toolbar } from '@mui/material'
 import EN from 'assets/images/en.png'
@@ -15,18 +16,20 @@ const Header = () => {
   const { unauthorize, isAuthenticated } = useAuthContext()
   const navigate = useNavigate()
   const location = useLocation()
-  const [locales, setLocales] = useState('GE')
 
   // Functions
   const changeLanguage = (lng: any) => {
     i18n.changeLanguage(lng)
   }
-
+  const selectedLanguage = i18n.language
+  console.log(selectedLanguage)
   // Check if the current page is the home page
   const isHomePage = location.pathname === '/home'
 
   return (
-    <AppBar sx={{ bgcolor: '#03a9f3', position: 'sticky' }}>
+    <AppBar
+      sx={{ bgcolor: '#03a9f3', position: 'sticky', marginBottom: '20px' }}
+    >
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         {/* Left side of the header */}
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -66,11 +69,10 @@ const Header = () => {
           )}
           <Box
             onClick={() => {
-              changeLanguage(locales === 'GE' ? 'EN' : 'GE')
-              setLocales(locales === 'GE' ? 'EN' : 'GE')
+              changeLanguage(selectedLanguage === 'GE' ? 'EN' : 'GE')
             }}
             component="img"
-            src={locales === 'GE' ? EN : GE}
+            src={selectedLanguage === 'GE' ? EN : GE}
             sx={{ cursor: 'pointer', width: '25px' }}
           />
         </Box>

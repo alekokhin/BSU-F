@@ -2,7 +2,6 @@ import { Button, Container, Stack } from '@mui/material'
 import { useMutation } from '@tanstack/react-query'
 import { auth, AuthInput } from 'api/auth/api'
 import { ControlledTextField } from 'components/form/controlled/controlled-text-field'
-import { email } from 'components/form/validations'
 import { useSnackbar } from 'notistack'
 import { useAuthContext } from 'providers/auth'
 import { useForm } from 'react-hook-form'
@@ -16,7 +15,7 @@ const LogIn = () => {
 
   const navigate = useNavigate()
 
-  const { user, authorize } = useAuthContext()
+  const { authorize } = useAuthContext()
 
   const {
     handleSubmit,
