@@ -1,0 +1,103 @@
+[
+  {
+    "_id": "654fc8df92152670da689dcc",
+    "name": "aGisga",
+    "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+    "email": "giga3@gmail.com",
+    "role": "user",
+    "password": "$2b$10$wSb/a6QyS4m5OnB2eJ9r4e2XzIegQbkLjFqmV0HmtwmBPBhsPiF5i",
+    "physicalPoints": 3,
+    "ratingPoints": 2,
+    "fcmToken": "",
+    "interest": "",
+    "givingRating": 1,
+    "receivingRating": 0,
+    "isPrivate": false,
+    "linkedAccounts": [
+      {
+        "type": "phone",
+        "value": "+995593672618",
+        "_id": "6551fab730ec9079bef190d0"
+      }
+    ],
+    "createdAt": {
+      "$date": "2023-11-11T18:33:03.711Z"
+    },
+    "__v": 0,
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NGZjOGRmOTIxNTI2NzBkYTY4OWRjYyIsImlhdCI6MTcwMDA2MTYzNywiZXhwIjoxNzAwNjY2NDM3fQ.u4xTkMz0tMxfwZl8dIhnidD_HLAEoSpIA_zL3mq4ME0"
+  },
+{
+  "_id": "6554a51935bd778a23294204",
+  "receiver": "65549f242e09d160d25ba07d",
+  "sender": "65549f612e09d160d25ba093",
+  "currency": "USD",
+  "itu": 1,
+  "amount": "0",
+  "comment": "testP",
+  "hashtag": "testP",
+  "shade": "Learning",
+  "status": "new",
+  "createdAt": "2023-11-15T11:01:45.462Z"
+}
+  ,
+  {
+    "_id": "6551fae466b6581a10c190b1",
+    "name": "Giga Anzzz",
+    "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+    "email": "giga@gmail.com",
+    "role": "user",
+    "password": "$2b$10$wSb/a6QyS4m5OnB2eJ9r4e2XzIegQbkLjFqmV0HmtwmBPBhsPiF5i",
+    "physicalPoints": 6,
+    "ratingPoints": 6,
+    "fcmToken": "",
+    "interest": "",
+    "givingRating": 0,
+    "receivingRating": 1,
+    "isPrivate": false,
+    "createdAt": {
+      "$date": "2023-11-11T18:33:03.711Z"
+    },
+    "__v": 0,
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTFmYWU0NjZiNjU4MWExMGMxOTBiMSIsImlhdCI6MTcwMDA2MDY5MCwiZXhwIjoxNzAwNjY1NDkwfQ.MdeqROqqSGKpKbCJq2LINktLI7_TMgMkO8Ic5BI8DZ4",
+    "linkedAccounts": []
+  },
+  {
+    "_id": "6551fb4830ec9079bef19119",
+    "name": "Giga Test",
+    "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+    "email": "test@gmail.com",
+    "role": "user",
+    "password": "$2b$10$ntNwrVoRnnZQVLGH3NfkE.0wEXBJyKKvlJNCMrqbPM76TgfDdDBvC",
+    "physicalPoints": 5,
+    "ratingPoints": 7,
+    "fcmToken": "",
+    "givingRating": 0,
+    "receivingRating": 0,
+    "isPrivate": false,
+    "linkedAccounts": [],
+    "createdAt": {
+      "$date": "2023-11-13T10:32:40.687Z"
+    },
+    "__v": 0,
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTFmYjQ4MzBlYzkwNzliZWYxOTExOSIsImlhdCI6MTY5OTg3MTU2MCwiZXhwIjoxNzAwNDc2MzYwfQ.GtukWDsmF4QeC6tYGeRmzovjBy7BfPQXvqL_uDW-hzw"
+  },
+  {
+    "_id": "6553934ce3a32f4516a63170",
+    "name": "sdasdasdsaadadadasdGiga Ananidze",
+    "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+    "email": "ananidzegiga@gmail.com",
+    "role": "user",
+    "physicalPoints": 5,
+    "ratingPoints": 5,
+    "fcmToken": "c006ulyURvO2goSL1Df4gU:APA91bFXgfriZBCACDvsAUHwCnDSITw_bMDY10a150B0ZFM2CRjensnYcNFVIyIBuYaYVF4glYjNzomOHIzrmkf7bo1Qvj7Xy-TlUJ3QhYT7aWaykdPQVaZPI12fKJY-XNARXQwIinDQ",
+    "givingRating": 0,
+    "receivingRating": 0,
+    "isPrivate": false,
+    "linkedAccounts": [],
+    "createdAt": {
+      "$date": "2023-11-14T15:33:32.918Z"
+    },
+    "__v": 0,
+    "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTM5MzRjZTNhMzJmNDUxNmE2MzE3MCIsImlhdCI6MTY5OTk3NjAxMywiZXhwIjoxNzAwNTgwODEzfQ.ZvPEuKpuJaNtAgxIvTPbrGVeYrbvNXr0HJH1XX4XLok"
+  }
+]

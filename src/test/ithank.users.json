@@ -1,0 +1,1135 @@
+[{
+  "_id": {
+    "$oid": "6553ff1fbfe32fee1ce9101c"
+  },
+  "name": "Returnredo",
+  "picture": "https://storage.googleapis.com/ithanku/1699251722043.png",
+  "email": "gurielidzeilia@gmail.com",
+  "role": "super-user",
+  "physicalPoints": 0,
+  "ratingPoints": 5,
+  "fcmToken": "dtwx_ng5YkZ_h1v48OnH3X:APA91bFwkP4fSbC2aoat9GUJ30VzRKQA3gm44gVoI_tjmQ49hKmbJ1okTyLGZpGIKX2Kuwt6pPcnmtKkeBrSFaOhb1mJyS06FBxvLyqacMIUkyFTc1zrqX-vI00b9DofCIXdWqFD4xAL",
+  "givingRating": 2.5,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-05T07:03:32.103Z"
+  },
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTNmZjFmYmZlMzJmZWUxY2U5MTAxYyIsInJvbGUiOiJzdXBlci11c2VyIiwiaWF0IjoxNzAwMjMwNzIyLCJleHAiOjE3MDA4MzU1MjJ9.JC8iREgQwv2fim0kZTz7VjmZUqBXXc8sNW1p-T7COZc"
+},
+{
+  "_id": {
+    "$oid": "6553ff1fbfe32fee1ce9101e"
+  },
+  "name": "Test2",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "usel3sstrash@gmail.com",
+  "role": "user",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "dEN28iBqSGK3K9fEEn1zdS:APA91bFJu0sogjuw-_Si8DohukSRiykcnkXFGUSv2rrQGupKLdok2nMZI97aMt6Vlgh6byj1DLYEkEp9rd4sA5VzPYZEQ_T7BSt77Gq1a73DGFJ-5l2IS_ARpYEZhCZJo1AYVyg8ckmM",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-05T07:15:47.598Z"
+  },
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc2NGE5OTQyLTc3NTYtNGIyNi1iOTA5LTllNzljZWUzNTc1NSIsImlhdCI6MTY5OTM2NjA1OSwiZXhwIjoxNzA0NTUwMDU5fQ.JbjPFRoxygLYmKYC_al8p3-YoWRmKZ6TKbRJ6ZStAcg"
+},
+{
+  "_id": {
+    "$oid": "6553ff1fbfe32fee1ce9101f"
+  },
+  "name": "Giga An",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "gigadev3@gmail.com",
+  "role": "user",
+  "physicalPoints": 4,
+  "ratingPoints": 8,
+  "fcmToken": "c006ulyURvO2goSL1Df4gU:APA91bFXgfriZBCACDvsAUHwCnDSITw_bMDY10a150B0ZFM2CRjensnYcNFVIyIBuYaYVF4glYjNzomOHIzrmkf7bo1Qvj7Xy-TlUJ3QhYT7aWaykdPQVaZPI12fKJY-XNARXQwIinDQ",
+  "givingRating": 2.083333333333333,
+  "receivingRating": 1.8333333333333333,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-05T17:05:00.141Z"
+  },
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTNmZjFmYmZlMzJmZWUxY2U5MTAxZiIsImlhdCI6MTcwMDAzODEwOCwiZXhwIjoxNzAwNjQyOTA4fQ.TJOvPg8x4VEApXNAuMvog3skQba2dLELTHH0ZFU4YGo"
+},
+{
+  "_id": {
+    "$oid": "6553ff1fbfe32fee1ce91020"
+  },
+  "name": "Giga 7",
+  "picture": "https://storage.googleapis.com/ithanku/1700117916543.png",
+  "email": "giga@gmail.com",
+  "role": "super-user",
+  "password": "$2b$10$WawqjMuQ1g1EIQK.y4QEX.4OVRAP0w2fegOZp346pWqSoM/Itqm3m",
+  "physicalPoints": 33,
+  "ratingPoints": 44,
+  "fcmToken": "c006ulyURvO2goSL1Df4gU:APA91bFXgfriZBCACDvsAUHwCnDSITw_bMDY10a150B0ZFM2CRjensnYcNFVIyIBuYaYVF4glYjNzomOHIzrmkf7bo1Qvj7Xy-TlUJ3QhYT7aWaykdPQVaZPI12fKJY-XNARXQwIinDQ",
+  "givingRating": 1.8333333333333333,
+  "receivingRating": 8.013467088467088,
+  "isPrivate": false,
+  "linkedAccounts": [
+    {
+      "type": "phone",
+      "value": "+995593672618",
+      "_id": {
+        "$oid": "655717649562a2400d8f637b"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-11-05T22:04:23.072Z"
+  },
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTNmZjFmYmZlMzJmZWUxY2U5MTAyMCIsInJvbGUiOiJzdXBlci11c2VyIiwiaWF0IjoxNzAwMzI3NTQ1LCJleHAiOjE3MDI5MTk1NDV9.uF4Cn0sMVkkd8IU7AFFgEP62rR0ZoxUsFGImSwi-A9c"
+},
+{
+  "_id": {
+    "$oid": "6553ff1fbfe32fee1ce91021"
+  },
+  "name": "Mickey Kazarian",
+  "picture": "https://storage.googleapis.com/ithanku/1699773429325.png",
+  "email": "kazmick@gmail.com",
+  "role": "user",
+  "physicalPoints": 8,
+  "ratingPoints": 8,
+  "fcmToken": "esJaB3p9n0sYvMN7uAMfcR:APA91bFTBUgY8BOd6fAqQKlZoLPXS33baallwNPsWACgcfBgf7VaKNRePdr2a_erjBmCKerfbj3gXOaYnLD-G1F2DTmcqEJpk0BzmHfbF4RJhmW09JA3liCb7KUmXSm8nDE9t3f1lgQO",
+  "givingRating": 0,
+  "receivingRating": 3,
+  "isPrivate": false,
+  "linkedAccounts": [
+    {
+      "type": "phone",
+      "value": "+995555301876",
+      "_id": {
+        "$oid": "654a1f3cb1314a9621fa91f4"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-11-06T07:37:17.087Z"
+  },
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTNmZjFmYmZlMzJmZWUxY2U5MTAyMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMjMwMzUyLCJleHAiOjE3MDA4MzUxNTJ9.UOdW-I02gIhFF_uo-qnAfILDH6zOJ0hNaKjI8zS-c-8"
+},
+{
+  "_id": {
+    "$oid": "6553ff1fbfe32fee1ce91022"
+  },
+  "name": "test6",
+  "picture": "https://storage.googleapis.com/ithanku/1699356181967.png",
+  "email": "test6@test.com",
+  "role": "user",
+  "password": "$2b$10$ZLI4sCwJVMsEdQvP.T.Ib.uXSvF5UmcSn6SruvHJWlNoJt8Fk5k72",
+  "physicalPoints": 0,
+  "ratingPoints": 5,
+  "fcmToken": "fsO0huQM8EaGiC1OSJeIIK:APA91bH35lEQ0uzliuH5_gCvVv2L-T3Q2PG24dGuW1NO6engGde7gaJsBx3kgti2Be1At42LjA8zFfM4HaVdoWs0dXf5lC6xRqllKNF6_31junQo4nSMcksk3-IpEnPSO45xi1Fqi0QC",
+  "givingRating": 4,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-07T11:22:27.388Z"
+  },
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTNmZjFmYmZlMzJmZWUxY2U5MTAyMiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMTI4Nzg3LCJleHAiOjE3MDA3MzM1ODd9.8l0BkOcKcUxJxGw5rNTGm-qIz9J9GTVsZfC0MfjKZRo"
+},
+{
+  "_id": {
+    "$oid": "6553ff1fbfe32fee1ce91023"
+  },
+  "name": "test7",
+  "picture": "https://storage.googleapis.com/ithanku/1699357802061.png",
+  "email": "test7@test.com",
+  "role": "user",
+  "password": "$2b$10$rk95CGKvUET0zArGXshRxeOnn2ztCJh6QKWwq2r.L3FXOrBwo0Xb6",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "fsO0huQM8EaGiC1OSJeIIK:APA91bH35lEQ0uzliuH5_gCvVv2L-T3Q2PG24dGuW1NO6engGde7gaJsBx3kgti2Be1At42LjA8zFfM4HaVdoWs0dXf5lC6xRqllKNF6_31junQo4nSMcksk3-IpEnPSO45xi1Fqi0QC",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-07T11:49:48.686Z"
+  },
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijk0MTZiMWNkLTQ5YTgtNDk1OS04NTAxLWIwYjVkYzNiOWVlOCIsImlhdCI6MTY5OTU0MDgxNSwiZXhwIjoxNzA0NzI0ODE1fQ.NeNmSWeAqhiY98tI4nrXBH3Q4UnoqceQKPpd1PMBpA8"
+},
+{
+  "_id": {
+    "$oid": "6553ff1fbfe32fee1ce91024"
+  },
+  "name": "test8",
+  "picture": "https://storage.googleapis.com/ithanku/1699357840156.png",
+  "email": "test8@test.com",
+  "role": "user",
+  "password": "$2b$10$2oKCyKhhtSHADpwU7LKmz.Y.IH98L3AFxhj91I.3hIOczklWBBaWm",
+  "physicalPoints": 5,
+  "ratingPoints": 9,
+  "fcmToken": "fsO0huQM8EaGiC1OSJeIIK:APA91bH35lEQ0uzliuH5_gCvVv2L-T3Q2PG24dGuW1NO6engGde7gaJsBx3kgti2Be1At42LjA8zFfM4HaVdoWs0dXf5lC6xRqllKNF6_31junQo4nSMcksk3-IpEnPSO45xi1Fqi0QC",
+  "givingRating": 1.8333333333333333,
+  "receivingRating": 3.5,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-07T11:50:29.130Z"
+  },
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTNmZjFmYmZlMzJmZWUxY2U5MTAyNCIsImlhdCI6MTcwMDA1NDkyNiwiZXhwIjoxNzAwNjU5NzI2fQ.eEVFCtHcdT7wq3NyMBpFNd3XH34K3UqVhWk6Bmn4Fos"
+},
+{
+  "_id": {
+    "$oid": "6553ff1fbfe32fee1ce91025"
+  },
+  "name": "test9",
+  "picture": "https://storage.googleapis.com/ithanku/1699357881318.png",
+  "email": "test9@test.com",
+  "role": "user",
+  "password": "$2b$10$dDObANYNOWlGymX1tejuje8ADHopv0DHI7K/ZAPKRvI4oSjCcDeyG",
+  "physicalPoints": 12,
+  "ratingPoints": 19,
+  "fcmToken": "dtwx_ng5YkZ_h1v48OnH3X:APA91bFwkP4fSbC2aoat9GUJ30VzRKQA3gm44gVoI_tjmQ49hKmbJ1okTyLGZpGIKX2Kuwt6pPcnmtKkeBrSFaOhb1mJyS06FBxvLyqacMIUkyFTc1zrqX-vI00b9DofCIXdWqFD4xAL",
+  "givingRating": 4.5,
+  "receivingRating": 11.666666666666666,
+  "isPrivate": false,
+  "linkedAccounts": [
+    {
+      "type": "phone",
+      "value": "+995555253545",
+      "_id": {
+        "$oid": "6555e75e28b233a6cbb090e2"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-11-07T11:51:10.083Z"
+  },
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTNmZjFmYmZlMzJmZWUxY2U5MTAyNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMjA3OTA1LCJleHAiOjE3MDA4MTI3MDV9.cVgQj_htl8IHlgmS9QlAHjdWtzP6p-t-GMQ7YBkCB2U"
+},
+{
+  "_id": {
+    "$oid": "6553ff1fbfe32fee1ce91026"
+  },
+  "name": "test2",
+  "picture": "https://storage.googleapis.com/ithanku/1699357951460.png",
+  "email": "test2@test.com",
+  "role": "user",
+  "password": "$2b$10$iXhUcg3NA7n6a7m5HHTFzuCl4fM8iT/Fi3zb/wignXHxWRonI9Bdq",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "fsO0huQM8EaGiC1OSJeIIK:APA91bH35lEQ0uzliuH5_gCvVv2L-T3Q2PG24dGuW1NO6engGde7gaJsBx3kgti2Be1At42LjA8zFfM4HaVdoWs0dXf5lC6xRqllKNF6_31junQo4nSMcksk3-IpEnPSO45xi1Fqi0QC",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [
+    {
+      "type": "phone",
+      "value": "+995555123456",
+      "_id": {
+        "$oid": "654ceb4c4fd0b6956a95868d"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-11-07T11:52:23.106Z"
+  },
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjRlOTQ2NjkzLTFjY2YtNDcyMy1hNjcwLTMyMDE1NzNhYjhhNiIsImlhdCI6MTY5OTg4MzU4NywiZXhwIjoxNzA1MDY3NTg3fQ.AIw-yjbViMkK1at87ciLzz-6z7p7U0YTBjair9GncH0"
+},
+{
+  "_id": {
+    "$oid": "6553ff1fbfe32fee1ce91027"
+  },
+  "name": "test3",
+  "picture": "https://storage.googleapis.com/ithanku/1699357989043.png",
+  "email": "test3@test.com",
+  "role": "user",
+  "password": "$2b$10$6Qn.rtAQ.yOFodCZzHO.nuCtSeyWKug7.97tSFc7lIH5dhGPVwpES",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "fsO0huQM8EaGiC1OSJeIIK:APA91bH35lEQ0uzliuH5_gCvVv2L-T3Q2PG24dGuW1NO6engGde7gaJsBx3kgti2Be1At42LjA8zFfM4HaVdoWs0dXf5lC6xRqllKNF6_31junQo4nSMcksk3-IpEnPSO45xi1Fqi0QC",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-07T11:53:00.169Z"
+  },
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6ImQyMjU1MGJiLTZjNTYtNGYzNS04YzhlLTQ0YjI5OGMyMjFhNiIsImlhdCI6MTY5OTYyMzY5OSwiZXhwIjoxNzA0ODA3Njk5fQ.rE6Tkws4dSQYq_ME6m9V5fihTegfx_3WV1NFGJv-7lA"
+},
+{
+  "_id": {
+    "$oid": "6553ff1fbfe32fee1ce91028"
+  },
+  "name": "test4",
+  "picture": "https://storage.googleapis.com/ithanku/1699358037584.png",
+  "email": "test4@test.com",
+  "role": "user",
+  "password": "$2b$10$8cyvfxq54HoeSJrQ03uZYO991/cEaEanhkxTH0w3tKO8H3MQ1cAIe",
+  "physicalPoints": 3,
+  "ratingPoints": 6,
+  "fcmToken": "fsO0huQM8EaGiC1OSJeIIK:APA91bH35lEQ0uzliuH5_gCvVv2L-T3Q2PG24dGuW1NO6engGde7gaJsBx3kgti2Be1At42LjA8zFfM4HaVdoWs0dXf5lC6xRqllKNF6_31junQo4nSMcksk3-IpEnPSO45xi1Fqi0QC",
+  "givingRating": 3,
+  "receivingRating": 1,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-07T11:53:41.243Z"
+  },
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTNmZjFmYmZlMzJmZWUxY2U5MTAyOCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMTI5Mzk2LCJleHAiOjE3MDA3MzQxOTZ9.CJaC8tjiLJ_cphHuIsJgMnU1O7irLIuwYYF3AqfrbJ0"
+},
+{
+  "_id": {
+    "$oid": "6553ff1fbfe32fee1ce91029"
+  },
+  "name": "nino kartvelishvili",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "6rfthqq7b7@privaterelay.appleid.com",
+  "role": "user",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "fvBANNj3a0eMo4Q3rI3HsK:APA91bGfec9vmVNZvhVTORrSjY67wK27fRhXQ2sSvnXnTjdwLskFY5K_8YWFKn9WISr06klEFQBjide1UMrj6lWpnQgu9LNI_-E09hUY2XCGY2JvD8BB0UXvcTz2fiadMFvD1JMDkjlB",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [
+    {
+      "type": "phone",
+      "value": "+995568903596",
+      "_id": {
+        "$oid": "654a42adb1314a9621fadb2c"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-11-07T13:49:50.111Z"
+  },
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjgxZTQxYzMyLTBhZTQtNGM5ZC04OTU2LTgwNTJmYTczOGM4MiIsImlhdCI6MTY5OTM2NDk5MCwiZXhwIjoxNzA0NTQ4OTkwfQ.LDmi2vEoAxGhilusNRCj_1PBUm3rVTvZTifyWv_9XOE"
+},
+{
+  "_id": {
+    "$oid": "6553ff1fbfe32fee1ce9102a"
+  },
+  "name": "Mickey Kazarian",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "mickey@kkc-group.com",
+  "role": "user",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "dUmUYVmi_UcTh4H_IIo6rp:APA91bEmxDmdHMSgDScE3uGNpMpnLWv7APoudoLrzlvhT5O6Cbs9B3-m7pWHX5ObQ5sqoCCi3Wqc5Er1z6CgxFbQASKNtQzwKaNwxkD5chlxbcmY68fM5h9-Iba-yogcPbFifCLNWLcQ",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-09T10:13:12.564Z"
+  },
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTNmZjFmYmZlMzJmZWUxY2U5MTAyYSIsImlhdCI6MTcwMDA1NDQ0NSwiZXhwIjoxNzAwNjU5MjQ1fQ.nh2Ur9RScLyFDmLlwQzvX_sNqhqa8PBe69W4e1LQ0cI"
+},
+{
+  "_id": {
+    "$oid": "6553ff1fbfe32fee1ce9102b"
+  },
+  "name": "Giga Ananidze",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "giga3@gmail.com",
+  "role": "user",
+  "password": "$2b$10$iIs7H4z5VmGIK35HXcnZaOAg2bcZ2coU6uzEUK7x1rrJ99X9oEmcy",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-09T12:02:01.258Z"
+  },
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTNmZjFmYmZlMzJmZWUxY2U5MTAyYiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMTYyNjE4LCJleHAiOjE3MDA3Njc0MTh9.oFeZD5bHRWUkk2LJkAU0X0S6dvCtgO-l-5oVonuOThI"
+},
+{
+  "_id": {
+    "$oid": "6553ff1fbfe32fee1ce9102c"
+  },
+  "name": "testP",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "testp@test.com",
+  "role": "user",
+  "password": "$2b$10$poe5B5iLhSQ.bJEOHyoiLeLg6GhM3DMzK5HSlaLisJwp2.v8ENRu2",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "dtwx_ng5YkZ_h1v48OnH3X:APA91bFwkP4fSbC2aoat9GUJ30VzRKQA3gm44gVoI_tjmQ49hKmbJ1okTyLGZpGIKX2Kuwt6pPcnmtKkeBrSFaOhb1mJyS06FBxvLyqacMIUkyFTc1zrqX-vI00b9DofCIXdWqFD4xAL",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-09T12:04:37.502Z"
+  },
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6Ijc1ZTg3YTQ2LTM5N2UtNDE1MC1hYzIyLTgwNGM4NjYwOTFlZCIsImlhdCI6MTY5OTUzMjI4MSwiZXhwIjoxNzA0NzE2MjgxfQ.7w6QLdL2ISKbfiO9RVo9lH070ZHhGCJGBHD2T6rdQ-U"
+},
+{
+  "_id": {
+    "$oid": "6553ff1fbfe32fee1ce9102d"
+  },
+  "name": "string",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "string@string.com",
+  "role": "user",
+  "password": "$2b$10$RqetV3WENEy7as1TWu1PLupfBNDOWjh8zidTJ1OMTkjd.4RiJbO/G",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-09T12:08:15.402Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6553ff1fbfe32fee1ce9102e"
+  },
+  "name": "testPshit",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "testpshit@test.com",
+  "role": "user",
+  "password": "$2b$10$6L2LJDw.w9.KCUSdoIXaouthUppFoMUDsrimsjKkLM.u3XKURc5nK",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-10T13:45:29.887Z"
+  }
+},
+{
+  "_id": {
+    "$oid": "6553ff1fbfe32fee1ce9102f"
+  },
+  "name": "Lesik Kazarian",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "lesik.kazarian@gmail.com",
+  "role": "user",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "cOTUpGJHTt-giPGDBDRa_8:APA91bHUW6Dv61GY-iaAjgah3guxLWAU5dIW8RNCLGU5v0dc32qwJQAJulTp00OVj2TiBM41XEagSwtHDYab59pGuCEvPQFXFEpbuCnL1zJiWR4Z98TbS30E-3TXEqudVX17ijIcQ0jL",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-13T06:54:53.369Z"
+  },
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjAyNGVlMmZjLWJkMjQtNDFlZC1hN2M5LTU5MzMzMzg3Nzg2NyIsImlhdCI6MTY5OTg1ODQ5MywiZXhwIjoxNzA1MDQyNDkzfQ.s4lDBKrF7Qn6fZjAJRHj17K7luIdA-nSG4JkKoaHk5s"
+},
+{
+  "_id": {
+    "$oid": "655482faeeccfb157c794c36"
+  },
+  "name": "giga",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "asdf@gmail.com",
+  "role": "user",
+  "password": "$2b$10$YZYqFMsAlyMBZiV2qPHRHuMjDdDsksyzakysmRdDelPj2qomCZ/VG",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "c006ulyURvO2goSL1Df4gU:APA91bFXgfriZBCACDvsAUHwCnDSITw_bMDY10a150B0ZFM2CRjensnYcNFVIyIBuYaYVF4glYjNzomOHIzrmkf7bo1Qvj7Xy-TlUJ3QhYT7aWaykdPQVaZPI12fKJY-XNARXQwIinDQ",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-15T08:36:10.560Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTQ4MmZhZWVjY2ZiMTU3Yzc5NGMzNiIsImlhdCI6MTcwMDAzNzM3MCwiZXhwIjoxNzAwNjQyMTcwfQ.i46GdnQrBCfcdwvXtVs0z360MJhhkBtkNGkQ6mzfF34"
+},
+{
+  "_id": {
+    "$oid": "65549d0f46cb4fc00e277539"
+  },
+  "name": "test12",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "test12@test.com",
+  "role": "user",
+  "password": "$2b$10$LATQ1AOElcrvMfKAG.5yBun855nnXRWXC92UteayoUgKibqOy/rsC",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-15T10:27:27.435Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTQ5ZDBmNDZjYjRmYzAwZTI3NzUzOSIsImlhdCI6MTcwMDA0NDA0NywiZXhwIjoxNzAwNjQ4ODQ3fQ.lNOpJ-t8D3WBPa7gq7B-CeMQLvt81ElKNS7DfAH8RJ0"
+},
+{
+  "_id": {
+    "$oid": "65549de746cb4fc00e277565"
+  },
+  "name": "test13",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "test13@test.com",
+  "role": "user",
+  "password": "$2b$10$RFBz.DDQuA0R//d8hY7Lo.79Ro.XToJU41G683VeNgVUsjM1vfSaC",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-15T10:31:03.073Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTQ5ZGU3NDZjYjRmYzAwZTI3NzU2NSIsImlhdCI6MTcwMDA0NDI2MywiZXhwIjoxNzAwNjQ5MDYzfQ.HyDskk0DpOk1kSvesy-hUBLNknTaT6I2o3AM4ARXwK8"
+},
+{
+  "_id": {
+    "$oid": "65549f242e09d160d25ba07d"
+  },
+  "name": "test15",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "test15@test.com",
+  "role": "user",
+  "password": "$2b$10$KcXs8VyslDOaByqhBqzGT.vD/ZBLuNLfNj4wA9SqpYayNhF8OPffO",
+  "physicalPoints": 0,
+  "ratingPoints": 11,
+  "fcmToken": "dtwx_ng5YkZ_h1v48OnH3X:APA91bFwkP4fSbC2aoat9GUJ30VzRKQA3gm44gVoI_tjmQ49hKmbJ1okTyLGZpGIKX2Kuwt6pPcnmtKkeBrSFaOhb1mJyS06FBxvLyqacMIUkyFTc1zrqX-vI00b9DofCIXdWqFD4xAL",
+  "givingRating": 6.186544011544011,
+  "receivingRating": 3.5833333333333335,
+  "isPrivate": true,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-15T10:36:20.723Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTQ5ZjI0MmUwOWQxNjBkMjViYTA3ZCIsImlhdCI6MTcwMDA0NzY0MCwiZXhwIjoxNzAwNjUyNDQwfQ.haj2UFzz3kyiV88zWwYdSrURESxMuz_Qhq7bKwcZnGI"
+},
+{
+  "_id": {
+    "$oid": "65549f612e09d160d25ba093"
+  },
+  "name": "test16",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "test16@test.com",
+  "role": "user",
+  "password": "$2b$10$MIU10uoTjRClt6ukpDgP5eA55763l65ocIjIa6Egh19VipBskC97.",
+  "physicalPoints": 10,
+  "ratingPoints": 22,
+  "fcmToken": "dtwx_ng5YkZ_h1v48OnH3X:APA91bFwkP4fSbC2aoat9GUJ30VzRKQA3gm44gVoI_tjmQ49hKmbJ1okTyLGZpGIKX2Kuwt6pPcnmtKkeBrSFaOhb1mJyS06FBxvLyqacMIUkyFTc1zrqX-vI00b9DofCIXdWqFD4xAL",
+  "givingRating": 3.5833333333333335,
+  "receivingRating": 6.186544011544011,
+  "isPrivate": true,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-15T10:37:21.330Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTQ5ZjYxMmUwOWQxNjBkMjViYTA5MyIsImlhdCI6MTcwMDA0NzY2MywiZXhwIjoxNzAwNjUyNDYzfQ.uQvmi5yDb_LqwOZ0fihICEqVCghAmZz87ec_NSCLifw"
+},
+{
+  "_id": {
+    "$oid": "6554ab9335bd778a232947a0"
+  },
+  "name": "reciver1",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "reciver1@test.com",
+  "role": "user",
+  "password": "$2b$10$O/ffWHEysAj/RTY6FZTiFOjujwXr0XhG/V1TImnEoZWjKS2EpqRxu",
+  "physicalPoints": 10,
+  "ratingPoints": 13,
+  "fcmToken": "dtwx_ng5YkZ_h1v48OnH3X:APA91bFwkP4fSbC2aoat9GUJ30VzRKQA3gm44gVoI_tjmQ49hKmbJ1okTyLGZpGIKX2Kuwt6pPcnmtKkeBrSFaOhb1mJyS06FBxvLyqacMIUkyFTc1zrqX-vI00b9DofCIXdWqFD4xAL",
+  "givingRating": 0,
+  "receivingRating": 4.783333333333333,
+  "isPrivate": true,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-15T11:29:23.542Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTRhYjkzMzViZDc3OGEyMzI5NDdhMCIsImlhdCI6MTcwMDA0ODgyMywiZXhwIjoxNzAwNjUzNjIzfQ.A6qyAfENlAR29HZYF0elN8ECi3lq7xlcqCvsN_7A5v0"
+},
+{
+  "_id": {
+    "$oid": "6554ac0235bd778a232947be"
+  },
+  "name": "sender1",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "sender1@test.com",
+  "role": "user",
+  "password": "$2b$10$.dok7Sfj/Ben0KHy1lqyk.SsQZfMrA4hR3o9oRduK3ezo8y40sCpu",
+  "physicalPoints": 0,
+  "ratingPoints": 5,
+  "fcmToken": "dtwx_ng5YkZ_h1v48OnH3X:APA91bFwkP4fSbC2aoat9GUJ30VzRKQA3gm44gVoI_tjmQ49hKmbJ1okTyLGZpGIKX2Kuwt6pPcnmtKkeBrSFaOhb1mJyS06FBxvLyqacMIUkyFTc1zrqX-vI00b9DofCIXdWqFD4xAL",
+  "givingRating": 7.616666666666666,
+  "receivingRating": 0,
+  "isPrivate": true,
+  "linkedAccounts": [
+    {
+      "type": "phone",
+      "value": "+995555632345",
+      "_id": {
+        "$oid": "6554b39835bd778a23294d17"
+      }
+    }
+  ],
+  "createdAt": {
+    "$date": "2023-11-15T11:31:14.875Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTRhYzAyMzViZDc3OGEyMzI5NDdiZSIsImlhdCI6MTcwMDA0OTc5OCwiZXhwIjoxNzAwNjU0NTk4fQ.bRrRiaW13RsaJWQaEIvRDjKGgx9tz00selOFXUgMuD0"
+},
+{
+  "_id": {
+    "$oid": "6554ac5c35bd778a232947dc"
+  },
+  "name": "sender2",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "sender2@test.com",
+  "role": "user",
+  "password": "$2b$10$H0SEeP.8D1apRhVl.1F/quMSXPBkwjCdk2ZSQVXhc371kmYd/1MMe",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-15T11:32:44.147Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTRhYzVjMzViZDc3OGEyMzI5NDdkYyIsImlhdCI6MTcwMDA0Nzk2NCwiZXhwIjoxNzAwNjUyNzY0fQ.VYlsk5omdCSwEFDYIHAbH0m5XpMxOU6CxFhUrrqoEYo"
+},
+{
+  "_id": {
+    "$oid": "6554ac8835bd778a232947fa"
+  },
+  "name": "receiver2",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "receiver2@test.com",
+  "role": "user",
+  "password": "$2b$10$8h9pNnhnCs87ALpNUxAslepeZFg5EjHxN3VkMY2g9kJqdZGEIa3Yy",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-15T11:33:28.922Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTRhYzg4MzViZDc3OGEyMzI5NDdmYSIsImlhdCI6MTcwMDA0ODAwOCwiZXhwIjoxNzAwNjUyODA4fQ.x-vm_8dyE2TLT06OD34JZN_59Geiul-F7Ar0FmhvIL8"
+},
+{
+  "_id": {
+    "$oid": "6555cdad04d584cf891cf0c2"
+  },
+  "name": "test20",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "test20@test.com",
+  "role": "user",
+  "password": "$2b$10$j2US5AvTJIJeevgvCUunsuvQYXdO4Ou6.a9h6HPlACSMPQGHnhJz6",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-16T08:07:09.975Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTVjZGFkMDRkNTg0Y2Y4OTFjZjBjMiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMTIyMDMwLCJleHAiOjE3MDA3MjY4MzB9.mFNiVpO67SjNyS-3c2lzlB9xSqPvx9yPTNHoKLynHYs"
+},
+{
+  "_id": {
+    "$oid": "6555cdfb04d584cf891cf0c8"
+  },
+  "name": "test21",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "test21@test.com",
+  "role": "user",
+  "password": "$2b$10$kJk.MQOHfjef9CCmgznwB.avOXetxjYY9hzgE/BOq3IgRoA3zjjh6",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-16T08:08:27.910Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTVjZGZiMDRkNTg0Y2Y4OTFjZjBjOCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMTIyMTA3LCJleHAiOjE3MDA3MjY5MDd9.zPygGyCJrziORHTxWJIWJRGdTt797X-RQZjf8Sf4hh0"
+},
+{
+  "_id": {
+    "$oid": "6555ce7104d584cf891cf0cc"
+  },
+  "name": "test22",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "test22@test.com",
+  "role": "user",
+  "password": "$2b$10$nRX8JZExbCZobQRntoE5A.T1hR.FUD/Y1Ur10CvUSpS0m8Q46aMZi",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-16T08:10:25.389Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTVjZTcxMDRkNTg0Y2Y4OTFjZjBjYyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMTIyMjI1LCJleHAiOjE3MDA3MjcwMjV9.4DNn4z5YCfl48cOYgz_EA6IK42_NbkyG3mW4gOWyJ3U"
+},
+{
+  "_id": {
+    "$oid": "6555ce9c04d584cf891cf0d1"
+  },
+  "name": "test23",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "test23@test.com",
+  "role": "user",
+  "password": "$2b$10$5DyuILVF8mlGAg//6GGMBOyfVzLQ5iQ59/s8mlLArZYXmZLl55RUG",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-16T08:11:08.497Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTVjZTljMDRkNTg0Y2Y4OTFjZjBkMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMTIyMjY4LCJleHAiOjE3MDA3MjcwNjh9.RG-Fbs0X_DEkJzrRrs1_PyiVoGImZdunZ4v003zlUVI"
+},
+{
+  "_id": {
+    "$oid": "6555cf8e04d584cf891cf0d5"
+  },
+  "name": "test31",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "test31@test.com",
+  "role": "user",
+  "password": "$2b$10$Fushb0TjBpocROm0pmHA8Ordun0zxFDryUFqsp4z44g1WzAj49mbe",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-16T08:15:10.316Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTVjZjhlMDRkNTg0Y2Y4OTFjZjBkNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMTIyNTEwLCJleHAiOjE3MDA3MjczMTB9.d2_SwApA7v-RC0Qe3T_055rQbH3zZPpmGYGgoJRx6DU"
+},
+{
+  "_id": {
+    "$oid": "6555cf9004d584cf891cf0d9"
+  },
+  "name": "test33",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "test33@test.com",
+  "role": "user",
+  "password": "$2b$10$IVrECVfFg6ttzKDozjMbWugj7toVoVllVsvXbvK54YtMkp1V9.leO",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-16T08:15:12.601Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTVjZjkwMDRkNTg0Y2Y4OTFjZjBkOSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMTIyNTEyLCJleHAiOjE3MDA3MjczMTJ9.KwjJNX5qBvQYRyY-Juf1Lz1LFkqW1-ms_CQ9qedmehc"
+},
+{
+  "_id": {
+    "$oid": "6555cf9304d584cf891cf0dd"
+  },
+  "name": "test32",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "test32@test.com",
+  "role": "user",
+  "password": "$2b$10$p3Q6gm9c49AC4EjDu50rB.CFLMDnay9bgsL7CDMhZellHQjZZXrO2",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-16T08:15:15.434Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTVjZjkzMDRkNTg0Y2Y4OTFjZjBkZCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMTIyNTE1LCJleHAiOjE3MDA3MjczMTV9.Z8G4O5R9OgMwUmLbNzBK3cOsrls7097E-NmU7wHe9QE"
+},
+{
+  "_id": {
+    "$oid": "6555de7328b233a6cbb09000"
+  },
+  "name": "Lena Kravitz",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "lena.kravitz@gmail.com",
+  "role": "user",
+  "physicalPoints": 4,
+  "ratingPoints": 5,
+  "fcmToken": "f28AIQECRtKP9sqodpl6qY:APA91bGk0L_LzLfLxPOh1RBhucY7zGzaeg-DG0RKJQuPyZjoqhj8uSwNtggeZ1rTX60onDlyJxibD6aQRSr85Zw-Dw55pdz2NQHp78c4lwPW12gcQLYRbojF50Icnq73IxMJC8gHyd52",
+  "givingRating": 1,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-16T09:18:43.825Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTVkZTczMjhiMjMzYTZjYmIwOTAwMCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMTMzODE1LCJleHAiOjE3MDA3Mzg2MTV9.ksndNzoNSGtU6jNQMn4gW8sK2kJnD60n9fSG-j8QWtw"
+},
+{
+  "_id": {
+    "$oid": "65566b7dbe00da2602cecf03"
+  },
+  "name": "Giga Ananidze",
+  "picture": "https://lh3.googleusercontent.com/a/ACg8ocJwyAufR1Zkb9Nvea9B_PJsRQjBw4zq0h22Ds6cKGBPHoE=s96-c",
+  "email": "ananidzegiga@gmail.com",
+  "role": "user",
+  "physicalPoints": 2,
+  "ratingPoints": 5,
+  "fcmToken": "c006ulyURvO2goSL1Df4gU:APA91bFXgfriZBCACDvsAUHwCnDSITw_bMDY10a150B0ZFM2CRjensnYcNFVIyIBuYaYVF4glYjNzomOHIzrmkf7bo1Qvj7Xy-TlUJ3QhYT7aWaykdPQVaZPI12fKJY-XNARXQwIinDQ",
+  "givingRating": 2,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-16T19:20:29.636Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTY2YjdkYmUwMGRhMjYwMmNlY2YwMyIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMzI5Mjk2LCJleHAiOjE3MDI5MjEyOTZ9.XNSWrZVsX2jqLUeloCSa7V0AW-X1HXGIrOoUkBpNa5A"
+},
+{
+  "_id": {
+    "$oid": "65571799394ea1a23f8dad86"
+  },
+  "name": "giga",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "giga2@gmail.com",
+  "role": "user",
+  "password": "$2b$10$I5CTILYeNzxIimP/n0nkCOVKPqdoaAm8wpJ71NBTVntVlysSUr/nu",
+  "physicalPoints": 0,
+  "ratingPoints": 5,
+  "fcmToken": "c006ulyURvO2goSL1Df4gU:APA91bFXgfriZBCACDvsAUHwCnDSITw_bMDY10a150B0ZFM2CRjensnYcNFVIyIBuYaYVF4glYjNzomOHIzrmkf7bo1Qvj7Xy-TlUJ3QhYT7aWaykdPQVaZPI12fKJY-XNARXQwIinDQ",
+  "givingRating": 11.675768675768674,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-17T07:34:49.110Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTcxNzk5Mzk0ZWExYTIzZjhkYWQ4NiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMzI3NjcyLCJleHAiOjE3MDI5MTk2NzJ9.sfE8Jd8Uuq5UtJAVnIV3mjo8lj64ac-XTGNUikLvgIE"
+},
+{
+  "_id": {
+    "$oid": "6557422541ea92b9c4117f2d"
+  },
+  "name": "admin",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "admin@admin.com",
+  "role": "admin",
+  "password": "$2b$10$ZPK/gxJ1prl7vfSmKUX84.hQf9cv5MT1OdMgiKuP5g4/6TCUbIrrC",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-17T10:36:21.758Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTc0MjI1NDFlYTkyYjljNDExN2YyZCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMjE3MzgxLCJleHAiOjE3MDA4MjIxODF9.8RR6vzXYtB8zEtBLSWqOx2_CQRqsY9aKs2O0dc8eG6E"
+},
+{
+  "_id": {
+    "$oid": "65577470149d92878d7a4200"
+  },
+  "name": "test34",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "test34@test.com",
+  "role": "user",
+  "password": "$2b$10$JHF.NI50p8wpPx0cMaK.hepuRGPIVU14Kjbf6oGFE7vLryT17l/mK",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-17T14:10:56.740Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTc3NDcwMTQ5ZDkyODc4ZDdhNDIwMCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMjMwMjU2LCJleHAiOjE3MDA4MzUwNTZ9.TeqSJS5Lfo9oYftdd1H3YxANYW6k2C-cYaUJJidoaeU"
+},
+{
+  "_id": {
+    "$oid": "655775d826fb205b74da5411"
+  },
+  "name": "test34",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "test35@test.com",
+  "role": "user",
+  "password": "$2b$10$VFd78A7/vWFcAocpCrQjguV9r9kOEOhGu3YTCkzMQeSkJS1.FYhr6",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-17T14:16:56.058Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTc3NWQ4MjZmYjIwNWI3NGRhNTQxMSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMjMwNjE2LCJleHAiOjE3MDA4MzU0MTZ9.g3b14koR2VVxKlUdieRr265ya-qJf2_bEt9OL0p3q8E"
+},
+{
+  "_id": {
+    "$oid": "655775fa26fb205b74da5415"
+  },
+  "name": "test37",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "test37@test.com",
+  "role": "user",
+  "password": "$2b$10$cY1/HFRjMoEBse98xP4hMOq7q7kytK4VHdMrAEEsMjSSxJxoy9pQW",
+  "physicalPoints": 4,
+  "ratingPoints": 5,
+  "fcmToken": "dtwx_ng5YkZ_h1v48OnH3X:APA91bFwkP4fSbC2aoat9GUJ30VzRKQA3gm44gVoI_tjmQ49hKmbJ1okTyLGZpGIKX2Kuwt6pPcnmtKkeBrSFaOhb1mJyS06FBxvLyqacMIUkyFTc1zrqX-vI00b9DofCIXdWqFD4xAL",
+  "givingRating": 1,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-17T14:17:30.758Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTc3NWZhMjZmYjIwNWI3NGRhNTQxNSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMjMwNzYwLCJleHAiOjE3MDA4MzU1NjB9.J8w2rdfTkuzxlXx2NnBkkLHfbQKmfBSsu8D06aeWmtU"
+},
+{
+  "_id": {
+    "$oid": "6557761f26fb205b74da5419"
+  },
+  "name": "test38",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "test38@test.com",
+  "role": "user",
+  "password": "$2b$10$TomATvPDRLfMsEam7ggP2OKr8/79uWWemvSrjv4Ak/CQvL7NVUemK",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-17T14:18:07.712Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTc3NjFmMjZmYjIwNWI3NGRhNTQxOSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMjMwNjg3LCJleHAiOjE3MDA4MzU0ODd9.tCphHDCoSx46yzR5guUQCyvritRQZOZrhx651YrvbgM"
+},
+{
+  "_id": {
+    "$oid": "6557763026fb205b74da541d"
+  },
+  "name": "test39",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "test39@test.com",
+  "role": "user",
+  "password": "$2b$10$vVOPsdG4CyDgesGJ5b/obOwT9BDHOa5mrLRXGpxAN.2SW.SX7qNQi",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-17T14:18:24.575Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTc3NjMwMjZmYjIwNWI3NGRhNTQxZCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMjMwNzA0LCJleHAiOjE3MDA4MzU1MDR9.IQrnyZY4Rn7Dadoqbqjx9jMhPcs0QkZj_2kciguyfSE"
+},
+{
+  "_id": {
+    "$oid": "6557767d26fb205b74da549b"
+  },
+  "name": "test40",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "test40@test.com",
+  "role": "user",
+  "password": "$2b$10$TISU9c9KMXpTBrWaouR2sOrDNahUQShWQUlatUvjEFtSY4/l.tpoi",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-17T14:19:41.385Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTc3NjdkMjZmYjIwNWI3NGRhNTQ5YiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMjMwNzgxLCJleHAiOjE3MDA4MzU1ODF9.azPy5KUOeCVuHZsu-MQ_mkkZ3olmRefBJNrO21oyBoU"
+},
+{
+  "_id": {
+    "$oid": "655776d426fb205b74da549f"
+  },
+  "name": "test41",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "test41@test.com",
+  "role": "user",
+  "password": "$2b$10$6..AUED7xPjmlptvjEk8s.kbF8vz/lqmIW8LNtj4ciYg75oV8jYIK",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-17T14:21:08.592Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTc3NmQ0MjZmYjIwNWI3NGRhNTQ5ZiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMjMwODY4LCJleHAiOjE3MDA4MzU2Njh9.fGKbSZjsIYgEmD91bsH4exTIfHVGX0DmOp3v8kZ0RLA"
+},
+{
+  "_id": {
+    "$oid": "655887cea8e7abe589c41cb6"
+  },
+  "name": "ალეკო ხინიკაძე",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "alekokhinikadze@gmail.com",
+  "role": "user",
+  "physicalPoints": 60,
+  "ratingPoints": 6,
+  "fcmToken": "dVe6lQRkSCCSDsfs1dKgt4:APA91bH__b_U1Y1Hj7rDB1vZtwAWW5Spnc-mt-_6fmmnBGSQ0Hik1cOuqk8P02JJvN5hVvQF7tHQXQxedLWz931SxQHphyaI_0KrgLLzPe9sA2WezdvbBZ0yH5gxgX3NnplYsI2zhxMz",
+  "givingRating": 1,
+  "receivingRating": 1,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-18T09:45:50.679Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTg4N2NlYThlN2FiZTU4OWM0MWNiNiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMzAwNzUwLCJleHAiOjE3MDA5MDU1NTB9.aH_70QuTDJqYegG5inPUQEGHPF3pQb8CMUJf9BBKs2Q"
+},
+{
+  "_id": {
+    "$oid": "65589570a8e7abe589c41cfb"
+  },
+  "name": "Nino Kartv",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "nnnk.2126@gmail.com",
+  "role": "user",
+  "physicalPoints": 5,
+  "ratingPoints": 6,
+  "fcmToken": "fvBANNj3a0eMo4Q3rI3HsK:APA91bGfec9vmVNZvhVTORrSjY67wK27fRhXQ2sSvnXnTjdwLskFY5K_8YWFKn9WISr06klEFQBjide1UMrj6lWpnQgu9LNI_-E09hUY2XCGY2JvD8BB0UXvcTz2fiadMFvD1JMDkjlB",
+  "givingRating": 1,
+  "receivingRating": 1,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-18T10:44:00.504Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NTg5NTcwYThlN2FiZTU4OWM0MWNmYiIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMzA0MjQwLCJleHAiOjE3MDA5MDkwNDB9.PK6lMYSGAZH9u2OueNJmYImIIuCwGRCbwfyOrxooOZU"
+},
+{
+  "_id": {
+    "$oid": "6558d752a8e7abe589c41e5a"
+  },
+  "name": "Archangel",
+  "picture": "https://storage.googleapis.com/ithanku/ithanku.png",
+  "email": "sosotae1615@gmail.com",
+  "role": "user",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "ckj02sk6RM-MSLaX-3BfpT:APA91bFRUrVTt8uXc4IieGVYTkfyiaOk1RxwrbIqyekVcno4SYJpyiD4Kt9DlkumAYHVYlKmuoXo25hSXrFvhVvcLXKqZIbDLOj29PISv3RLz8tAIA7LIVX4b6Uan8UntjfLQ3dAhRGR",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-18T15:25:06.896Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NThkNzUyYThlN2FiZTU4OWM0MWU1YSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMzI5MzE1LCJleHAiOjE3MDI5MjEzMTV9.J8fHFlgfrdk5aLMVemQjtu41ZXYMpF-du9RIp_rZP84"
+},
+{
+  "_id": {
+    "$oid": "6558e79b46ff469bc15eefed"
+  },
+  "name": "vivet med",
+  "picture": "https://lh3.googleusercontent.com/a/ACg8ocImEzKFFKk5TiP7TidBa-bR3a81k7U3ig_132GEyMK4BA=s96-c",
+  "email": "vivetmed@gmail.com",
+  "role": "user",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-18T16:34:35.259Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NThlNzliNDZmZjQ2OWJjMTVlZWZlZCIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMzI1Mjc1LCJleHAiOjE3MDI5MTcyNzV9.Iwe9KGprjvOmHyWnTurr1s4MGykjOR9CvHtMUjcqAGg"
+},
+{
+  "_id": {
+    "$oid": "6558e9c848c076e73a8b115a"
+  },
+  "name": "Giga Ananidze",
+  "picture": "https://lh3.googleusercontent.com/a/ACg8ocI8BCclCeDDBzus3syQaiLVV5ypuDpV9YzgPv5dPSav=s96-c",
+  "email": "gigabyteofcode@gmail.com",
+  "role": "user",
+  "physicalPoints": 5,
+  "ratingPoints": 5,
+  "fcmToken": "",
+  "givingRating": 0,
+  "receivingRating": 0,
+  "isPrivate": false,
+  "linkedAccounts": [],
+  "createdAt": {
+    "$date": "2023-11-18T16:43:52.671Z"
+  },
+  "__v": 0,
+  "refreshToken": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpZCI6IjY1NThlOWM4NDhjMDc2ZTczYThiMTE1YSIsInJvbGUiOiJ1c2VyIiwiaWF0IjoxNzAwMzI3NzkxLCJleHAiOjE3MDI5MTk3OTF9.2PuqXDUr4KD6QjjPqpSW6FBeOVN7gBaKamIEZam5l7I"
+}]

@@ -1,0 +1,70 @@
+[
+  {
+    "row": [
+      "65127d8fe41556414815a220",
+      "ACTIVE",
+      "Nino",
+      "Testatdze",
+      "nino.testatdze0898@fafa.ge",
+      "558533853",
+      "SYSTEM",
+      "2021-01-08T10:34:32.000+00:00"
+    ],
+    "collapsedRow": {
+      "headers": [
+        "ID",
+        "Status",
+        "First Name",
+        "Last Name",
+        "Email",
+        "Phone Number",
+        "Source",
+        "Timestamp"
+      ],
+      "row": [
+        "65127d8fe41556414815a220",
+        "ACTIVE",
+        "Nino",
+        "Testatdze",
+        "nino.testatdze0898@fafa.ge",
+        "558533853",
+        "SYSTEM",
+        "2021-01-08T10:34:32.000+00:00"
+      ]
+    }
+  },
+  {
+    "row": [
+      "Another ID",
+      "ANOTHER_STATUS",
+      "Another",
+      "Name",
+      "another.email@example.com",
+      "987654321",
+      "ANOTHER_SOURCE",
+      "2022-02-20T12:34:56.000+00:00"
+    ],
+    "collapsedRow": {
+      "headers": [
+        "ID",
+        "Status",
+        "First Name",
+        "Last Name",
+        "Email",
+        "Phone Number",
+        "Source",
+        "Timestamp"
+      ],
+      "row": [
+        "Another ID",
+        "ANOTHER_STATUS",
+        "Another",
+        "Name",
+        "another.email@example.com",
+        "987654321",
+        "ANOTHER_SOURCE",
+        "2022-02-20T12:34:56.000+00:00"
+      ]
+    }
+  }
+]
