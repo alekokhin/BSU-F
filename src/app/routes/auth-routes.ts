@@ -4,10 +4,9 @@ export const authRoutes = [
   buildRoute({
     path: 'home',
     factory: () => import('pages/home'),
-    children: [],
   }),
   buildRoute({
-    path: 'items',
+    path: '/items',
     factory: () => import('pages/items'),
     children: [],
   }),
@@ -18,5 +17,17 @@ export const authRoutes = [
   buildRoute({
     path: 'new-item',
     factory: () => import('pages/items/new-item'),
+  }),
+  buildRoute({
+    path: '/symbols',
+    factory: () => import('pages/symbols'),
+  }),
+  buildRoute({
+    path: 'edit-symbol',
+    factory: () => import('pages/symbols/edit-symbol'),
+  }),
+  buildRoute({
+    path: 'new-symbol',
+    factory: () => import('pages/symbols/new-symbol'),
   }),
 ]

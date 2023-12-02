@@ -1,17 +1,5 @@
-import { del, get, post, put } from '../../lib/request'
+import { del, get, post, put } from 'lib/request'
 
-type WordDescription = {
-  word: string
-  description: {
-    field1: string
-    field2: string
-    field3: string
-    field4: string
-    field5: string
-    field6: string
-    field7: string
-  }
-}
 export type Item = {
   id: string
   title: string

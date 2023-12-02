@@ -46,7 +46,7 @@ const LogIn = () => {
             $auth.mutate(form, {
               onSuccess: user => {
                 authorize(user)
-                navigate('/items')
+                navigate('/home')
               },
               onError: (error: any) => {
                 enqueueSnackbar('Invalid credentials', { variant: 'error' })

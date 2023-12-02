@@ -31,6 +31,7 @@ export const ControlledTextField = <
   InputProps,
   type,
   disableAutofill,
+  ...otherProps
 }: ControlledTextFieldProps<TFieldValues, TName>) => {
   const { field, fieldState } = useController({
     name,
@@ -43,6 +44,7 @@ export const ControlledTextField = <
 
   return (
     <TextField
+      {...otherProps}
       fullWidth={fullWidth}
       ref={field.ref}
       value={field.value}
