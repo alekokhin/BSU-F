@@ -1,30 +1,53 @@
-/* eslint-disable no-console */
-import { Add, ArrowBackIos } from '@mui/icons-material'
-import { AppBar, Box, Button, Toolbar } from '@mui/material'
+import {
+  AppBar,
+  BottomNavigation,
+  BottomNavigationAction,
+  Box,
+  Button,
+  Toolbar,
+} from '@mui/material'
 import EN from 'assets/images/en.png'
 import GE from 'assets/images/ge.png'
 import BSU from 'assets/images/logo.png'
-import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useLocation, useNavigate } from 'react-router-dom'
 
 import { useAuthContext } from '../../providers/auth'
 
+const useActiveIndex = () => {
+  const location = useLocation()
+
+  const paths = [
+    '/home',
+    '/items',
+    '/words',
+    '/analyzed-texts',
+    '/symbols',
+    '/strings',
+  ]
+
+  const activeIndex = paths.indexOf(location.pathname)
+
+  return activeIndex !== -1 ? activeIndex : 0
+}
+export let locales: string
+const setLocales = (l: string) => {
+  locales = l.toLocaleLowerCase()
+}
 const Header = () => {
   // Hooks
   const { t, i18n } = useTranslation()
   const { unauthorize, isAuthenticated } = useAuthContext()
   const navigate = useNavigate()
-  const location = useLocation()
 
   // Functions
   const changeLanguage = (lng: any) => {
     i18n.changeLanguage(lng)
   }
   const selectedLanguage = i18n.language
-  console.log(selectedLanguage)
+  setLocales(selectedLanguage)
   // Check if the current page is the home page
-  const isHomePage = location.pathname === '/home'
+  const activeIndex = useActiveIndex()
 
   return (
     <AppBar
@@ -43,30 +66,59 @@ const Header = () => {
             <Button
               onClick={() => {
                 unauthorize()
-                navigate('/sign-in')
+                navigate('/log-in')
               }}
             >
               Logout
             </Button>
           )}
-          {!isHomePage && (
+          {/* {!isHomePage && (
             <ArrowBackIos
               sx={{ cursor: 'pointer', marginRight: '5px' }}
               onClick={() => {
                 navigate(-1)
               }}
             />
-          )}
+          )} */}
+        </Box>
+        <Box sx={{ width: '50%' }}>
+          <BottomNavigation
+            sx={{
+              backgroundColor: 'transparent',
+              '& .Mui-selected': { color: '#f0f0f0' },
+            }}
+            showLabels
+            value={activeIndex}
+          >
+            <BottomNavigationAction
+              label={t('Home')}
+              onClick={() => navigate('/home')}
+            />
+            <BottomNavigationAction
+              label={t('Handwriting')}
+              onClick={() => navigate('/items')}
+            />
+            <BottomNavigationAction
+              label={t('word')}
+              onClick={() => navigate('/words')}
+            />
+            <BottomNavigationAction
+              label={t('Text analysis')}
+              onClick={() => navigate('/analyzed-texts')}
+            />
+            <BottomNavigationAction
+              label={t('Symbols')}
+              onClick={() => navigate('/symbols')}
+            />
+            <BottomNavigationAction
+              label={t('Strings')}
+              onClick={() => navigate('/strings')}
+            />
+          </BottomNavigation>
         </Box>
 
         {/* Right side of the header */}
         <Box>
-          {isAuthenticated && (
-            <Add
-              sx={{ cursor: 'pointer' }}
-              onClick={() => navigate('/new-item')}
-            />
-          )}
           <Box
             onClick={() => {
               changeLanguage(selectedLanguage === 'GE' ? 'EN' : 'GE')

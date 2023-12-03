@@ -6,32 +6,39 @@ import {
   Stack,
   TextField,
 } from '@mui/material'
-import { useMutation } from '@tanstack/react-query'
-import { newSymbol, Symbol } from 'api/symbols'
+import { useMutation, useQuery } from '@tanstack/react-query'
+import { editString, getString, String } from 'api/strings'
 import { ControlledTextField } from 'components/form/controlled/controlled-text-field'
 import Header from 'components/header'
-import { useSnackbar } from 'notistack'
+import { enqueueSnackbar } from 'notistack'
+import { useEffect } from 'react'
 import { useFieldArray, useForm } from 'react-hook-form'
+import { useNavigate, useParams } from 'react-router-dom'
 
-const symbolDefaultValue: Symbol = {
-  id: '',
-  title: '',
-  description: '',
-  images: [],
-  connection: '',
+type Params = {
+  id: string
 }
-const NewSymbol = () => {
-  const { handleSubmit, control } = useForm<Symbol>({
-    defaultValues: symbolDefaultValue,
+const EditString = () => {
+  const { id } = useParams<Params>()
+  const navigate = useNavigate()
+  const { data } = useQuery({
+    queryKey: ['getString', id],
+    queryFn: () => getString(id!),
+  })
+
+  const { control, handleSubmit, reset } = useForm<String>({
+    defaultValues: data,
   })
   const { fields, append, remove } = useFieldArray({
     control,
     name: 'images',
   })
-  const { enqueueSnackbar } = useSnackbar()
-  const $newSymbol = useMutation(newSymbol)
-
-  //functions
+  useEffect(() => {
+    if (data) {
+      reset(data)
+    }
+  }, [data, reset])
+  const $editString = useMutation(editString)
   const handleChange = (e: any) => {
     const files = e.target.files
 
@@ -41,20 +48,25 @@ const NewSymbol = () => {
 
       reader.addEventListener('load', () => {
         const base64Image = reader.result as string
-        append({ images: base64Image })
+        append({ image: base64Image })
       })
 
       reader.readAsDataURL(file)
     }
   }
+
   return (
     <>
       <Header />
-      <Container>
+      <Container
+        sx={{
+          height: '90vh',
+        }}
+      >
         <Stack
           component="form"
           onSubmit={handleSubmit(form => {
-            $newSymbol.mutate(form, {
+            $editString.mutate(form, {
               onSuccess: () => {
                 enqueueSnackbar('item add successfully', {
                   variant: 'success',
@@ -80,19 +92,12 @@ const NewSymbol = () => {
             placeholder="Enter Title"
             control={control}
           />
-          <ControlledTextField
-            type="text"
-            name="connection"
-            placeholder="Enter Title"
-            control={control}
-          />
           <TextField
             name="images"
             type="file"
             fullWidth
             InputLabelProps={{
               shrink: true,
-              // accept: 'image/*'
             }}
             variant="outlined"
             inputProps={{ multiple: true }}
@@ -103,7 +108,7 @@ const NewSymbol = () => {
               {fields.map((image, index) => {
                 return (
                   <ImageListItem key={index}>
-                    <img src={image.images} alt={`Item ${index}`} />
+                    <img src={image.image} alt={`Item ${index}`} />
                     <Button onClick={() => remove(index)} variant="outlined">
                       Remove
                     </Button>
@@ -112,13 +117,15 @@ const NewSymbol = () => {
               })}
             </ImageList>
           )}
-
-          <Button type="submit" fullWidth variant="outlined">
-            add item
-          </Button>
+          <ControlledTextField
+            type="text"
+            name="connection"
+            placeholder="Enter Title"
+            control={control}
+          />
         </Stack>
       </Container>
     </>
   )
 }
-export default NewSymbol
+export default EditString

@@ -1,4 +1,3 @@
-/* eslint-disable no-console */
 import {
   Button,
   Container,
@@ -58,14 +57,12 @@ const NewItem = () => {
 
       reader.addEventListener('load', () => {
         const base64Image = reader.result as string
-        console.log(base64Image)
-        append({ images: base64Image })
+        append({ image: base64Image })
       })
 
       reader.readAsDataURL(file)
     }
   }
-  console.log(fields)
   return (
     <>
       <Header />
@@ -77,7 +74,6 @@ const NewItem = () => {
         <Stack
           component="form"
           onSubmit={handleSubmit(form => {
-            console.log(form)
             $newItem.mutate(form, {
               onSuccess: () => {
                 enqueueSnackbar('item add successfully', {
@@ -110,7 +106,6 @@ const NewItem = () => {
             fullWidth
             InputLabelProps={{
               shrink: true,
-              // accept: 'image/*'
             }}
             variant="outlined"
             inputProps={{ multiple: true }}
@@ -121,7 +116,7 @@ const NewItem = () => {
               {fields.map((image, index) => {
                 return (
                   <ImageListItem key={index}>
-                    <img src={image.images} alt={`Item ${index}`} />
+                    <img src={image.image} alt={`Item ${index}`} />
                     <Button onClick={() => remove(index)} variant="outlined">
                       Remove
                     </Button>

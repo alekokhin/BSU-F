@@ -8,7 +8,7 @@ import { Suspense } from 'react'
 const App = () => {
   const { isAuthenticated } = useAuthContext()
 
-  if (!isAuthenticated) {
+  if (isAuthenticated) {
     return (
       <Suspense fallback={<Loader />}>
         <RoutesAuth />

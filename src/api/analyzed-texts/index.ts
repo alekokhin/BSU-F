@@ -1,0 +1,36 @@
+import { locales } from 'components/header'
+import { del, get, post, put } from 'lib/request'
+
+export type AnalyzedText = {
+  id: string
+  description: string
+  connection: string
+}
+
+export type AnalyzedTexts = Array<AnalyzedText>
+const REACT_APP_API_URL = process.env.REACT_APP_API_URL
+
+// GET AnalyzedText LIST
+export const getAnalyzedTexts = async () =>
+  get<AnalyzedTexts>(`${REACT_APP_API_URL}${locales}/analyzedText/all`)
+
+// GET SINGLE AnalyzedText
+export const getAnalyzedText = async (AnalyzedTextId: string) =>
+  get<AnalyzedText>(
+    `${REACT_APP_API_URL}${locales}/analyzedText/${AnalyzedTextId}`,
+  )
+
+// ADD NEW AnalyzedText
+export const newAnalyzedText = async (body: AnalyzedText) =>
+  post(`${REACT_APP_API_URL}${locales}/analyzedText/add-analyzedText`, body)
+
+// UPDATE AnalyzedText
+export const editAnalyzedText = async (body: AnalyzedText) =>
+  put(
+    `${REACT_APP_API_URL}${locales}/analyzedText/edit-analyzedText/${body.id}`,
+    body,
+  )
+
+// DELETE AnalyzedText
+export const deleteAnalyzedText = async (AnalyzedTextId: string) =>
+  del(`${REACT_APP_API_URL}${locales}/analyzedText/${AnalyzedTextId}`)

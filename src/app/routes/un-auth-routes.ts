@@ -21,4 +21,28 @@ export const unAuthRoutes = [
     path: 'symbol/:id',
     factory: () => import('pages/symbols/symbol'),
   }),
+  buildRoute({
+    path: '/words',
+    factory: () => import('pages/words'),
+  }),
+  buildRoute({
+    path: 'word/:id',
+    factory: () => import('pages/words/word'),
+  }),
+  buildRoute({
+    path: '/strings',
+    factory: () => import('pages/strings'),
+  }),
+  buildRoute({
+    path: 'string/:id',
+    factory: () => import('pages/strings/string'),
+  }),
+  buildRoute({
+    path: '/analyzed-texts',
+    factory: () => import('pages/analyzed-texts'),
+  }),
+  buildRoute({
+    path: 'analyzed-text/:id',
+    factory: () => import('pages/analyzed-texts/analyzed-text'),
+  }),
 ]

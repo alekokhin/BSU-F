@@ -7,29 +7,30 @@ import {
   TextField,
 } from '@mui/material'
 import { useMutation } from '@tanstack/react-query'
-import { newSymbol, Symbol } from 'api/symbols'
+import { newString, String } from 'api/strings'
 import { ControlledTextField } from 'components/form/controlled/controlled-text-field'
 import Header from 'components/header'
 import { useSnackbar } from 'notistack'
 import { useFieldArray, useForm } from 'react-hook-form'
 
-const symbolDefaultValue: Symbol = {
+const newStringDefaultValues: String = {
   id: '',
-  title: '',
+  connection: '',
   description: '',
   images: [],
-  connection: '',
+  title: '',
 }
-const NewSymbol = () => {
-  const { handleSubmit, control } = useForm<Symbol>({
-    defaultValues: symbolDefaultValue,
+const NewString = () => {
+  // hooks
+  const { handleSubmit, control } = useForm<String>({
+    defaultValues: newStringDefaultValues,
   })
   const { fields, append, remove } = useFieldArray({
     control,
     name: 'images',
   })
   const { enqueueSnackbar } = useSnackbar()
-  const $newSymbol = useMutation(newSymbol)
+  const $newString = useMutation(newString)
 
   //functions
   const handleChange = (e: any) => {
@@ -41,7 +42,7 @@ const NewSymbol = () => {
 
       reader.addEventListener('load', () => {
         const base64Image = reader.result as string
-        append({ images: base64Image })
+        append({ image: base64Image })
       })
 
       reader.readAsDataURL(file)
@@ -50,11 +51,15 @@ const NewSymbol = () => {
   return (
     <>
       <Header />
-      <Container>
+      <Container
+        sx={{
+          height: '90vh',
+        }}
+      >
         <Stack
           component="form"
           onSubmit={handleSubmit(form => {
-            $newSymbol.mutate(form, {
+            $newString.mutate(form, {
               onSuccess: () => {
                 enqueueSnackbar('item add successfully', {
                   variant: 'success',
@@ -80,19 +85,12 @@ const NewSymbol = () => {
             placeholder="Enter Title"
             control={control}
           />
-          <ControlledTextField
-            type="text"
-            name="connection"
-            placeholder="Enter Title"
-            control={control}
-          />
           <TextField
             name="images"
             type="file"
             fullWidth
             InputLabelProps={{
               shrink: true,
-              // accept: 'image/*'
             }}
             variant="outlined"
             inputProps={{ multiple: true }}
@@ -103,7 +101,7 @@ const NewSymbol = () => {
               {fields.map((image, index) => {
                 return (
                   <ImageListItem key={index}>
-                    <img src={image.images} alt={`Item ${index}`} />
+                    <img src={image.image} alt={`Item ${index}`} />
                     <Button onClick={() => remove(index)} variant="outlined">
                       Remove
                     </Button>
@@ -112,6 +110,12 @@ const NewSymbol = () => {
               })}
             </ImageList>
           )}
+          <ControlledTextField
+            type="text"
+            name="connection"
+            placeholder="Enter Title"
+            control={control}
+          />
 
           <Button type="submit" fullWidth variant="outlined">
             add item
@@ -121,4 +125,4 @@ const NewSymbol = () => {
     </>
   )
 }
-export default NewSymbol
+export default NewString
