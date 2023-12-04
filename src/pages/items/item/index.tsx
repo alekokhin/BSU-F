@@ -16,8 +16,6 @@ const Item = () => {
     queryKey: ['item', id],
     queryFn: () => getItem(id!),
     onSuccess: data => {
-      // eslint-disable-next-line no-console
-      console.log(data)
       setItem(data)
     },
   })

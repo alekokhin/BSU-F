@@ -18,11 +18,11 @@ const REACT_APP_API_URL = process.env.REACT_APP_API_URL
 // export type wordResponse = { words: words }
 
 // GET word LIST
-export const getwords = async () =>
+export const getWords = async () =>
   get<words>(`${REACT_APP_API_URL}${locales}/word/all`)
 
 // GET SINGLE word
-export const getword = async (wordId: string) =>
+export const getWord = async (wordId: string) =>
   get<word>(`${REACT_APP_API_URL}${locales}/word/${wordId}`)
 
 // ADD NEw word

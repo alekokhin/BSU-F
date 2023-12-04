@@ -13,8 +13,7 @@ const Items = () => {
   const { isAuthenticated } = useAuthContext()
   const navigate = useNavigate()
   const { data } = useQuery(['items'], getItems)
-  // eslint-disable-next-line no-console
-  console.log(data)
+
   const $items = data
 
   return (

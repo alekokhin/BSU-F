@@ -23,7 +23,7 @@ const Home = () => {
       <Stack spacing={15} sx={{ height: '100vh' }}>
         <Box textAlign="center">
           <Typography variant="h6" fontWeight="900" color="#660303">
-            {t('title')}
+            {t('homeTitle')}
           </Typography>
         </Box>
         <Box>

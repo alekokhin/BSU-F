@@ -31,8 +31,6 @@ interface LocalesProviderProps {
 export const LocalesProvider = ({ children }: LocalesProviderProps) => {
   const { i18n } = useTranslation()
   const selectedLanguage = i18n.language
-  // eslint-disable-next-line no-console
-  console.log(selectedLanguage)
   setLoc(selectedLanguage)
 
   const toggleLocales = () => {
