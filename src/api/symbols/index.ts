@@ -1,5 +1,5 @@
-import { locales } from 'components/header'
 import { get, post, put } from 'lib/request'
+import { locales } from 'providers/locales'
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL
 export type Symbol = {
   id: string

@@ -1,5 +1,5 @@
-import { locales } from 'components/header'
 import { del, get, post, put } from 'lib/request'
+import { locales } from 'providers/locales'
 
 export type String = {
   id: string

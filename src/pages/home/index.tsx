@@ -1,23 +1,43 @@
-import { Container, Grid } from '@mui/material'
+import { Box, Container, Stack, Typography } from '@mui/material'
+import home from 'assets/images/home.jpg'
 import Header from 'components/header'
+import { useTranslation } from 'react-i18next'
 const Home = () => {
+  const { t } = useTranslation()
   return (
     <>
       <Header />
-      <Container
+      <Box
         sx={{
-          display: 'flex',
-          alignItems: 'center',
-          justifyContent: 'center',
+          width: '100%',
           height: '90vh',
+          backgroundImage: `url(${home})`,
+          backgroundSize: 'cover',
+          backgroundPosition: 'center',
+          // background: 'inherit',
+          filter: 'blur(3px)',
+          zIndex: -1,
+          position: 'absolute',
         }}
-      >
-        <Grid
-          container
-          // spacing={{ xs: 1, sm: 2, md: 5 }}
-          columns={{ xs: 1, sm: 8, md: 12 }}
-        ></Grid>
-      </Container>
+      />
+      <Stack spacing={15} sx={{ height: '100vh' }}>
+        <Box textAlign="center">
+          <Typography variant="h6" fontWeight="900" color="#660303">
+            {t('title')}
+          </Typography>
+        </Box>
+        <Box>
+          <Typography
+            width="55%"
+            sx={{ margin: '0px 0px 20px 25px' }}
+            variant="h6"
+            fontWeight="900"
+            color="#660303"
+          >
+            {t('mainHomeText')}
+          </Typography>
+        </Box>
+      </Stack>
     </>
   )
 }

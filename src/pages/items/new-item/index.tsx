@@ -7,13 +7,13 @@ import {
   TextField,
 } from '@mui/material'
 import { useMutation } from '@tanstack/react-query'
-import { Item, newItem } from 'api/items'
+import { ItemType, newItem } from 'api/items'
 import { ControlledTextField } from 'components/form/controlled/controlled-text-field'
 import Header from 'components/header'
 import { useSnackbar } from 'notistack'
 import { useFieldArray, useForm } from 'react-hook-form'
 
-const newItemDefaultValues: Item = {
+const newItemDefaultValues: ItemType = {
   id: '',
   title: '',
   description: '',
@@ -37,7 +37,7 @@ const newItemDefaultValues: Item = {
 
 const NewItem = () => {
   // hooks
-  const { handleSubmit, control } = useForm<Item>({
+  const { handleSubmit, control } = useForm<ItemType>({
     defaultValues: newItemDefaultValues,
   })
   const { fields, append, remove } = useFieldArray({

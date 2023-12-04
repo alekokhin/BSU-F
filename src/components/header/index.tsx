@@ -9,6 +9,8 @@ import {
 import EN from 'assets/images/en.png'
 import GE from 'assets/images/ge.png'
 import BSU from 'assets/images/logo.png'
+import { LocalesContext } from 'providers/locales'
+import { useContext } from 'react'
 import { useTranslation } from 'react-i18next'
 import { useLocation, useNavigate } from 'react-router-dom'
 
@@ -30,29 +32,25 @@ const useActiveIndex = () => {
 
   return activeIndex !== -1 ? activeIndex : 0
 }
-export let locales: string
-const setLocales = (l: string) => {
-  locales = l.toLocaleLowerCase()
-}
+
 const Header = () => {
   // Hooks
   const { t, i18n } = useTranslation()
   const { unauthorize, isAuthenticated } = useAuthContext()
+  const { selectedLanguage, toggleLocales } = useContext(LocalesContext)
   const navigate = useNavigate()
 
   // Functions
-  const changeLanguage = (lng: any) => {
-    i18n.changeLanguage(lng)
-  }
-  const selectedLanguage = i18n.language
-  setLocales(selectedLanguage)
+  // const changeLanguage = (lng: any) => {
+  //   i18n.changeLanguage(lng)
+  // }
+  // const selectedLanguage = i18n.language
+  // setLocales(selectedLanguage)
   // Check if the current page is the home page
   const activeIndex = useActiveIndex()
 
   return (
-    <AppBar
-      sx={{ bgcolor: '#03a9f3', position: 'sticky', marginBottom: '20px' }}
-    >
+    <AppBar sx={{ bgcolor: '#03a9f3', position: 'sticky' }}>
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         {/* Left side of the header */}
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -120,9 +118,7 @@ const Header = () => {
         {/* Right side of the header */}
         <Box>
           <Box
-            onClick={() => {
-              changeLanguage(selectedLanguage === 'GE' ? 'EN' : 'GE')
-            }}
+            onClick={toggleLocales}
             component="img"
             src={selectedLanguage === 'GE' ? EN : GE}
             sx={{ cursor: 'pointer', width: '25px' }}

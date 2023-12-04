@@ -1,4 +1,8 @@
 import { Add } from '@mui/icons-material'
+import { Container, Grid, Stack, Typography } from '@mui/material'
+import { useQuery } from '@tanstack/react-query'
+import { getItems } from 'api/items'
+import ItemCard from 'components/card'
 import Header from 'components/header'
 import { useAuthContext } from 'providers/auth'
 import { useTranslation } from 'react-i18next'
@@ -8,12 +12,44 @@ const Items = () => {
   const { t } = useTranslation()
   const { isAuthenticated } = useAuthContext()
   const navigate = useNavigate()
+  const { data } = useQuery(['items'], getItems)
+  // eslint-disable-next-line no-console
+  console.log(data)
+  const $items = data
+
   return (
     <>
       <Header />
       {isAuthenticated && (
         <Add sx={{ cursor: 'pointer' }} onClick={() => navigate('/new-item')} />
       )}
+      <Container sx={{ height: '90vh', width: '100%' }}>
+        <Stack spacing={{ xs: 2, sm: 6 }} marginTop={5}>
+          <Grid
+            container
+            justifyContent="center"
+            columns={{ xs: 1, sm: 8, md: 12 }}
+          >
+            {$items?.map(item => (
+              <Grid
+                key={item.id}
+                item
+                xs={1}
+                sm={4}
+                md={4}
+                sx={{ display: 'grid', placeItems: 'center' }}
+              >
+                <ItemCard
+                  description={item.description}
+                  title={item.title}
+                  image={item.images?.[0].image || ''} // Use optional chaining and provide a default value (an empty string)
+                  id={item.id}
+                />
+              </Grid>
+            ))}
+          </Grid>
+        </Stack>
+      </Container>
     </>
   )
 }

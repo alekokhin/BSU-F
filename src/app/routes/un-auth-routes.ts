@@ -6,6 +6,10 @@ export const unAuthRoutes = [
     factory: () => import('pages/log-in'),
   }),
   buildRoute({
+    path: 'home',
+    factory: () => import('pages/home'),
+  }),
+  buildRoute({
     path: 'items',
     factory: () => import('pages/items'),
   }),

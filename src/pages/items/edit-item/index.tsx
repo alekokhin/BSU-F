@@ -7,7 +7,7 @@ import {
   TextField,
 } from '@mui/material'
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { editItem, getItem, Item } from 'api/items'
+import { editItem, getItem, ItemType } from 'api/items'
 import { ControlledTextField } from 'components/form/controlled/controlled-text-field'
 import Header from 'components/header'
 import { enqueueSnackbar } from 'notistack'
@@ -27,7 +27,7 @@ const EditItem = () => {
     queryFn: () => getItem(id!),
   })
 
-  const { control, handleSubmit, reset } = useForm<Item>({
+  const { control, handleSubmit, reset } = useForm<ItemType>({
     defaultValues: data,
   })
   const { fields, append, remove } = useFieldArray({

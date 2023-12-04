@@ -1,7 +1,7 @@
-import { locales } from 'components/header'
 import { del, get, post, put } from 'lib/request'
+import { locales } from 'providers/locales'
 
-export type Item = {
+export type ItemType = {
   id: string
   title: string
   description: string
@@ -26,7 +26,7 @@ export type Image = {
   image: string
 }
 
-export type Items = Array<Item>
+export type Items = Array<ItemType>
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL
 
 // GET Item LIST
@@ -35,14 +35,14 @@ export const getItems = async () =>
 
 // GET SINGLE Item
 export const getItem = async (itemId: string) =>
-  get<Item>(`${REACT_APP_API_URL}${locales}/item/${itemId}`)
+  get<ItemType>(`${REACT_APP_API_URL}${locales}/item/${itemId}`)
 
 // ADD NEW Item
-export const newItem = async (body: Item) =>
+export const newItem = async (body: ItemType) =>
   post(`${REACT_APP_API_URL}${locales}/item/add-item`, body)
 
 // UPDATE Item
-export const editItem = async (body: Item) =>
+export const editItem = async (body: ItemType) =>
   put(`${REACT_APP_API_URL}${locales}/item/edit-item/${body.id}`, body)
 
 // DELETE Item
