@@ -50,7 +50,7 @@ const useAuth = () => {
     },
     onError: () => {
       unauthorize()
-      navigate('/log-in')
+      navigate('/home')
     },
   })
 

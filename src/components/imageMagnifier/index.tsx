@@ -4,6 +4,8 @@ import { useState } from 'react'
 type ImageMagnifierType = {
   src: string
   width?: string
+  maxHeight?: number
+  maxWidth?: number
   height?: string
   magnifierHeight?: number
   magnifieWidth?: number
@@ -13,6 +15,8 @@ const ImageMagnifier = ({
   src,
   width,
   height,
+  maxWidth = 500,
+  maxHeight = 600,
   magnifierHeight = 300,
   magnifieWidth = 300,
   zoomLevel = 3,
@@ -31,7 +35,12 @@ const ImageMagnifier = ({
       <Box
         component="img"
         src={src}
-        sx={{ height: height, width: width }}
+        sx={{
+          height: height,
+          width: width,
+          maxWidth: `${maxWidth}px`,
+          maxHeight: `${maxHeight}px`,
+        }}
         onMouseEnter={e => {
           // update image size and turn-on magnifier
           const elem = e.currentTarget

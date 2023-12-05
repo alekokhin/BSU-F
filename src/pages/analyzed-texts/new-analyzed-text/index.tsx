@@ -1,4 +1,4 @@
-import { Container, Stack } from '@mui/material'
+import { Button, Container, Stack } from '@mui/material'
 import { useMutation } from '@tanstack/react-query'
 import { AnalyzedText, newAnalyzedText } from 'api/analyzed-texts'
 import { ControlledTextField } from 'components/form/controlled/controlled-text-field'
@@ -8,6 +8,7 @@ import { useForm } from 'react-hook-form'
 
 const newAnalyzedTextDefaultValues: AnalyzedText = {
   id: '',
+  title: '',
   connection: '',
   description: '',
 }
@@ -43,6 +44,12 @@ const NewAnalyzedText = () => {
         >
           <ControlledTextField
             type="text"
+            name="title"
+            placeholder="Enter Title"
+            control={control}
+          />
+          <ControlledTextField
+            type="text"
             name="description"
             placeholder="Enter Title"
             multiline
@@ -55,6 +62,9 @@ const NewAnalyzedText = () => {
             placeholder="Enter Title"
             control={control}
           />
+          <Button type="submit" fullWidth variant="outlined">
+            add item
+          </Button>
         </Stack>
       </Container>
     </>

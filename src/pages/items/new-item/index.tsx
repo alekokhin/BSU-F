@@ -12,6 +12,7 @@ import { ControlledTextField } from 'components/form/controlled/controlled-text-
 import Header from 'components/header'
 import { useSnackbar } from 'notistack'
 import { useFieldArray, useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 
 const newItemDefaultValues: ItemType = {
   id: '',
@@ -46,6 +47,7 @@ const NewItem = () => {
   })
   const { enqueueSnackbar } = useSnackbar()
   const $newItem = useMutation(newItem)
+  const { t } = useTranslation()
 
   //functions
   const handleChange = (e: any) => {
@@ -89,15 +91,16 @@ const NewItem = () => {
           <ControlledTextField
             type="text"
             name="title"
-            placeholder="Enter Title"
+            placeholder={t('itemTitle')}
             control={control}
           />
           <ControlledTextField
             type="text"
             name="description"
             multiline
-            rows={5}
-            placeholder="Enter Title"
+            minRows={5}
+            inputProps={{ maxLength: 600 }}
+            placeholder={t('itemDescription')}
             control={control}
           />
           <TextField
@@ -128,91 +131,91 @@ const NewItem = () => {
           <ControlledTextField
             type="text"
             name="security"
-            placeholder="Enter Title"
+            placeholder={t('itemSecurity')}
             control={control}
           />
           <ControlledTextField
             type="text"
             name="damaged"
-            placeholder="Enter Title"
+            placeholder={t('itemDamaged')}
             control={control}
           />
           <ControlledTextField
             type="text"
             name="color"
-            placeholder="Enter Title"
+            placeholder={t('itemColor')}
             control={control}
           />
           <ControlledTextField
             type="text"
             name="structure"
-            placeholder="Enter Title"
+            placeholder={t('itemStructure')}
             control={control}
           />
           <ControlledTextField
             type="text"
             name="reWriteDate"
-            placeholder="Enter Title"
+            placeholder={t('itemReWriteDate')}
             control={control}
           />
           <ControlledTextField
             type="text"
             name="reWritePlace"
-            placeholder="Enter Title"
+            placeholder={t('itemReWritePlace')}
             control={control}
           />
           <ControlledTextField
             type="number"
             name="paperCount"
-            placeholder="Enter Title"
+            placeholder={t('itemPaperCount')}
             control={control}
           />
           <ControlledTextField
             type="text"
             name="size"
-            placeholder="Enter Title"
+            placeholder={t('itemSize')}
             control={control}
           />
           <ControlledTextField
             type="number"
             name="countOfColumns"
-            placeholder="Enter Title"
+            placeholder={t('itemCountOfColumns')}
             control={control}
           />
           <ControlledTextField
             type="number"
             name="countOfRow"
-            placeholder="Enter Title"
+            placeholder={t('itemCountOfRow')}
             control={control}
           />
           <ControlledTextField
             type="text"
             name="typeOfPagination"
-            placeholder="Enter Title"
+            placeholder={t('itemTypeOfPagination')}
             control={control}
           />
           <ControlledTextField
             type="text"
             name="transcriber"
-            placeholder="Enter Title"
+            placeholder={t('itemTranscriber')}
             control={control}
           />
           <ControlledTextField
             type="text"
             name="belonging"
-            placeholder="Enter Title"
+            placeholder={t('itemBelonging')}
             control={control}
           />
           <ControlledTextField
             type="text"
             name="firstAndLast"
-            placeholder="Enter Title"
+            placeholder={t('itemFirstAndLast')}
             control={control}
           />
           <ControlledTextField
             type="text"
             name="will"
-            placeholder="Enter Title"
+            placeholder={t('itemWill')}
             control={control}
           />
 

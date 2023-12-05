@@ -11,6 +11,14 @@ export const authRoutes = [
     children: [],
   }),
   buildRoute({
+    path: 'item/:id',
+    factory: () => import('pages/items/item'),
+  }),
+  buildRoute({
+    path: 'symbol/:id',
+    factory: () => import('pages/symbols/symbol'),
+  }),
+  buildRoute({
     path: 'edit-item/:id',
     factory: () => import('pages/items/edit-item'),
   }),
@@ -35,7 +43,11 @@ export const authRoutes = [
     factory: () => import('pages/words'),
   }),
   buildRoute({
-    path: 'edit-word',
+    path: 'word/:id',
+    factory: () => import('pages/words/word'),
+  }),
+  buildRoute({
+    path: 'edit-word/:id',
     factory: () => import('pages/words/edit-word'),
   }),
   buildRoute({
@@ -47,7 +59,11 @@ export const authRoutes = [
     factory: () => import('pages/strings'),
   }),
   buildRoute({
-    path: 'edit-string',
+    path: 'string/:id',
+    factory: () => import('pages/strings/string'),
+  }),
+  buildRoute({
+    path: 'edit-string/:id',
     factory: () => import('pages/strings/edit-string'),
   }),
   buildRoute({
@@ -59,7 +75,11 @@ export const authRoutes = [
     factory: () => import('pages/analyzed-texts'),
   }),
   buildRoute({
-    path: 'edit-analyzed-text',
+    path: 'analyzed-text/:id',
+    factory: () => import('pages/analyzed-texts/analyzed-text'),
+  }),
+  buildRoute({
+    path: 'edit-analyzed-text/:id',
     factory: () => import('pages/analyzed-texts/edit-analyzed-text'),
   }),
   buildRoute({

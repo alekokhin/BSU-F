@@ -23,11 +23,6 @@ const ItemCard = (item: Props) => {
         height: { lg: '300px', xs: '250px' },
         marginBottom: '10px',
       }}
-      onClick={() => {
-        isAuthenticated
-          ? navigate(`/edit-item/${item.id}`)
-          : navigate(`/item/${item.id}`)
-      }}
     >
       <CardActionArea>
         <CardMedia

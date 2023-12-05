@@ -3,6 +3,7 @@ import { locales } from 'providers/locales'
 
 export type AnalyzedText = {
   id: string
+  title: string
   description: string
   connection: string
 }

@@ -1,3 +1,4 @@
+import { ArrowBackIos } from '@mui/icons-material'
 import {
   AppBar,
   BottomNavigation,
@@ -22,35 +23,37 @@ const useActiveIndex = () => {
   const paths = [
     '/home',
     '/items',
-    '/words',
-    '/analyzed-texts',
     '/symbols',
+    '/analyzed-texts',
     '/strings',
+    '/words',
   ]
 
   const activeIndex = paths.indexOf(location.pathname)
 
-  return activeIndex !== -1 ? activeIndex : 0
+  return activeIndex !== -1 ? activeIndex : false
 }
 
 const Header = () => {
   // Hooks
-  const { t, i18n } = useTranslation()
+  const { t } = useTranslation()
   const { unauthorize, isAuthenticated } = useAuthContext()
   const { selectedLanguage, toggleLocales } = useContext(LocalesContext)
   const navigate = useNavigate()
 
-  // Functions
-  // const changeLanguage = (lng: any) => {
-  //   i18n.changeLanguage(lng)
-  // }
-  // const selectedLanguage = i18n.language
-  // setLocales(selectedLanguage)
   // Check if the current page is the home page
   const activeIndex = useActiveIndex()
+  const page = activeIndex === false
+  const isHomePage = location.pathname === '/home'
 
   return (
-    <AppBar sx={{ bgcolor: '#03a9f3', position: 'sticky' }}>
+    <AppBar
+      sx={{
+        bgcolor: '#03a9f3',
+        position: 'sticky',
+        marginBottom: isHomePage ? '0' : '25px',
+      }}
+    >
       <Toolbar sx={{ justifyContent: 'space-between' }}>
         {/* Left side of the header */}
         <Box sx={{ display: 'flex', alignItems: 'center' }}>
@@ -64,65 +67,73 @@ const Header = () => {
             <Button
               onClick={() => {
                 unauthorize()
-                navigate('/log-in')
+                navigate('/home')
               }}
             >
               Logout
             </Button>
           )}
-          {/* {!isHomePage && (
+          {page && (
             <ArrowBackIos
               sx={{ cursor: 'pointer', marginRight: '5px' }}
               onClick={() => {
                 navigate(-1)
               }}
             />
-          )} */}
+          )}
         </Box>
-        <Box sx={{ width: '50%' }}>
-          <BottomNavigation
-            sx={{
-              backgroundColor: 'transparent',
-              '& .Mui-selected': { color: '#f0f0f0' },
-            }}
-            showLabels
-            value={activeIndex}
-          >
-            <BottomNavigationAction
-              label={t('Home')}
-              onClick={() => navigate('/home')}
-            />
-            <BottomNavigationAction
-              label={t('Handwriting')}
-              onClick={() => navigate('/items')}
-            />
-            <BottomNavigationAction
-              label={t('word')}
-              onClick={() => navigate('/words')}
-            />
-            <BottomNavigationAction
-              label={t('Text analysis')}
-              onClick={() => navigate('/analyzed-texts')}
-            />
-            <BottomNavigationAction
-              label={t('Symbols')}
-              onClick={() => navigate('/symbols')}
-            />
-            <BottomNavigationAction
-              label={t('Strings')}
-              onClick={() => navigate('/strings')}
-            />
-          </BottomNavigation>
-        </Box>
+        {!page && (
+          <Box sx={{ width: '50%' }}>
+            <BottomNavigation
+              sx={{
+                fontSize: '15px',
+
+                backgroundColor: 'transparent',
+                '& .Mui-selected': { color: '#f0f0f0' },
+              }}
+              showLabels
+              value={activeIndex}
+            >
+              <BottomNavigationAction
+                label={t('Home')}
+                onClick={() => navigate('/home')}
+              />
+              <BottomNavigationAction
+                label={t('Handwriting')}
+                onClick={() => navigate('/items')}
+              />
+              <BottomNavigationAction
+                label={t('Symbols')}
+                onClick={() => navigate('/symbols')}
+              />
+
+              <BottomNavigationAction
+                label={t('Text analysis')}
+                onClick={() => navigate('/analyzed-texts')}
+              />
+
+              <BottomNavigationAction
+                label={t('Strings')}
+                onClick={() => navigate('/strings')}
+              />
+              <BottomNavigationAction
+                label={t('word')}
+                onClick={() => navigate('/words')}
+              />
+            </BottomNavigation>
+          </Box>
+        )}
 
         {/* Right side of the header */}
         <Box>
-          <Box
-            onClick={toggleLocales}
-            component="img"
-            src={selectedLanguage === 'GE' ? EN : GE}
-            sx={{ cursor: 'pointer', width: '25px' }}
-          />
+          {!page && (
+            <Box
+              onClick={toggleLocales}
+              component="img"
+              src={selectedLanguage === 'GE' ? EN : GE}
+              sx={{ cursor: 'pointer', width: '25px' }}
+            />
+          )}
         </Box>
       </Toolbar>
     </AppBar>

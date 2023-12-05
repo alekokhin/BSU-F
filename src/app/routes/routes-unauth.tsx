@@ -10,7 +10,7 @@ export const RoutesUnAuth = () => {
       children: [
         {
           index: true,
-          element: <Navigate to="log-in" replace />,
+          element: <Navigate to="home" replace />,
         },
         ...unAuthRoutes,
         {

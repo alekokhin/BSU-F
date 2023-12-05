@@ -1,5 +1,5 @@
 import { Box, Container, Stack, Typography } from '@mui/material'
-import home from 'assets/images/home.jpg'
+import home from 'assets/images/home.png'
 import Header from 'components/header'
 import { useTranslation } from 'react-i18next'
 const Home = () => {
@@ -20,7 +20,7 @@ const Home = () => {
           position: 'absolute',
         }}
       />
-      <Stack spacing={15} sx={{ height: '100vh' }}>
+      <Stack spacing={15}>
         <Box textAlign="center">
           <Typography variant="h6" fontWeight="900" color="#660303">
             {t('homeTitle')}

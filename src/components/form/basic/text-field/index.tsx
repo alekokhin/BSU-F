@@ -38,7 +38,7 @@ export const TextField = forwardRef<HTMLDivElement, TextFieldProps>(
           {...textFieldProps}
           error={error}
           type={textFieldProps.type}
-          inputProps={{ maxLength: 150 }}
+          // inputProps={{ maxLength: 150 }}
           {...(disableAutofill
             ? {
                 inputProps: textFieldProps.inputProps,

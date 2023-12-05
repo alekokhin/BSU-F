@@ -1,4 +1,4 @@
-import { Container, Stack } from '@mui/material'
+import { Button, Container, Stack } from '@mui/material'
 import { useMutation, useQuery } from '@tanstack/react-query'
 import {
   AnalyzedText,
@@ -59,6 +59,12 @@ const EditAnalyzedText = () => {
         >
           <ControlledTextField
             type="text"
+            name="title"
+            placeholder="Enter Title"
+            control={control}
+          />
+          <ControlledTextField
+            type="text"
             name="description"
             placeholder="Enter Title"
             multiline
@@ -71,6 +77,9 @@ const EditAnalyzedText = () => {
             placeholder="Enter Title"
             control={control}
           />
+          <Button type="submit" fullWidth variant="outlined">
+            add item
+          </Button>
         </Stack>
       </Container>
     </>
