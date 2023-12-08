@@ -1,14 +1,4 @@
-/* eslint-disable no-console */
-import {
-  Box,
-  ImageList,
-  ImageListItem,
-  List,
-  ListItem,
-  ListItemText,
-  Stack,
-  Typography,
-} from '@mui/material'
+import { Box, ImageList, ImageListItem, Stack, Typography } from '@mui/material'
 import { useQuery } from '@tanstack/react-query'
 import { getItem, ItemType } from 'api/items'
 import Header from 'components/header'
@@ -16,7 +6,7 @@ import ImageMagnifier from 'components/imageMagnifier'
 import Loader from 'components/loader'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 type Params = {
   id: string
@@ -33,7 +23,6 @@ const Item = () => {
       setItem(data)
     },
   })
-  const navigate = useNavigate()
   const list = item
     ? Object.entries(item)
         .filter(
@@ -47,7 +36,6 @@ const Item = () => {
         )
         .map(([key, value]) => ({ key, value }))
     : []
-  list.map(i => console.log(i))
   return (
     <>
       <Header />
@@ -74,7 +62,7 @@ const Item = () => {
                     variant="masonry"
                     gap={8}
                   >
-                    {item.images.map((image, index) => {
+                    {item?.images.map((image, index) => {
                       return (
                         <ImageListItem
                           key={index}

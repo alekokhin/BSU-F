@@ -1,16 +1,14 @@
 import { Add, EditTwoTone } from '@mui/icons-material'
-import { Box, Container, Grid, Stack, Typography } from '@mui/material'
+import { Box, Container, Grid, Stack } from '@mui/material'
 import { useQuery } from '@tanstack/react-query'
 import { getItems } from 'api/items'
 import ItemCard from 'components/card'
 import Header from 'components/header'
 import Loader from 'components/loader'
 import { useAuthContext } from 'providers/auth'
-import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 
 const Items = () => {
-  const { t } = useTranslation()
   const { isAuthenticated } = useAuthContext()
   const navigate = useNavigate()
   const { data } = useQuery(['items'], getItems)

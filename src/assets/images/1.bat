@@ -1,0 +1,1 @@
+for %%i in (*.png) do magick convert "%%i" -resize "1000x1000" -density 72 -units PixelsPerInch "trumb_%%i"
