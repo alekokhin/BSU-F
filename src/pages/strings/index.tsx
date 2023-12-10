@@ -1,7 +1,10 @@
-import { Add } from '@mui/icons-material'
+import { Add, EditTwoTone } from '@mui/icons-material'
+import { Box, Container, Grid, Stack } from '@mui/material'
 import { useQuery } from '@tanstack/react-query'
 import { getStrings } from 'api/strings'
+import ItemCard from 'components/card'
 import Header from 'components/header'
+import Loader from 'components/loader'
 import { useAuthContext } from 'providers/auth'
 import { useNavigate } from 'react-router-dom'
 const Strings = () => {
@@ -10,6 +13,8 @@ const Strings = () => {
   const { data } = useQuery(['strings'], getStrings)
   // eslint-disable-next-line no-console
   console.log(data)
+  const $strings = data
+
   return (
     <>
       <Header />
@@ -18,6 +23,50 @@ const Strings = () => {
           sx={{ cursor: 'pointer' }}
           onClick={() => navigate('/new-string')}
         />
+      )}
+      {$strings ? (
+        <Container sx={{ height: '90vh', width: '100%' }}>
+          <Stack spacing={{ xs: 2, sm: 6 }} marginTop={5}>
+            <Grid
+              container
+              justifyContent="center"
+              columns={{ xs: 1, sm: 8, md: 12 }}
+            >
+              {$strings.map(symbol => (
+                <Grid
+                  key={symbol.id}
+                  item
+                  xs={1}
+                  sm={4}
+                  md={4}
+                  sx={{ display: 'grid', placeItems: 'center' }}
+                >
+                  <Box>
+                    <ItemCard
+                      onClick={() => {
+                        navigate(`/string/${symbol.id}`)
+                      }}
+                      description={symbol.description}
+                      title={symbol.title}
+                      image={symbol.images?.[0].image || ''} // Use optional chaining and provide a default value (an empty string)
+                      id={symbol.id}
+                    />
+                    {isAuthenticated && (
+                      <EditTwoTone
+                        sx={{ cursor: 'pointer' }}
+                        onClick={() => {
+                          navigate(`/edit-string/${symbol.id}`)
+                        }}
+                      />
+                    )}
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          </Stack>
+        </Container>
+      ) : (
+        <Loader />
       )}
     </>
   )

@@ -1,5 +1,5 @@
-import { Add } from '@mui/icons-material'
-import { Container, Grid, Stack } from '@mui/material'
+import { Add, EditTwoTone } from '@mui/icons-material'
+import { Box, Container, Grid, Stack } from '@mui/material'
 import { useQuery } from '@tanstack/react-query'
 import { getSymbols } from 'api/symbols'
 import ItemCard from 'components/card'
@@ -37,21 +37,29 @@ const Symbols = () => {
                   key={symbol.id}
                   item
                   xs={1}
-                  onClick={() => {
-                    isAuthenticated
-                      ? navigate(`/edit-symbol/${symbol.id}`)
-                      : navigate(`/symbol/${symbol.id}`)
-                  }}
                   sm={4}
                   md={4}
                   sx={{ display: 'grid', placeItems: 'center' }}
                 >
-                  <ItemCard
-                    description={symbol.description}
-                    title={symbol.title}
-                    image={symbol.images?.[0].images || ''} // Use optional chaining and provide a default value (an empty string)
-                    id={symbol.id}
-                  />
+                  <Box>
+                    <ItemCard
+                      onClick={() => {
+                        navigate(`/symbol/${symbol.id}`)
+                      }}
+                      description={symbol.description}
+                      title={symbol.title}
+                      image={symbol.images?.[0].image || ''} // Use optional chaining and provide a default value (an empty string)
+                      id={symbol.id}
+                    />
+                    {isAuthenticated && (
+                      <EditTwoTone
+                        sx={{ cursor: 'pointer' }}
+                        onClick={() => {
+                          navigate(`/edit-symbol/${symbol.id}`)
+                        }}
+                      />
+                    )}
+                  </Box>
                 </Grid>
               ))}
             </Grid>

@@ -23,5 +23,6 @@
   "itemTranscriber": "Transcriber",
   "itemBelonging": "Belonging",
   "itemFirstAndLast": "First and last sentence",
-  "itemWill": "Will"
+  "itemWill": "Will",
+  "connection": "Connection"
 }

@@ -31,7 +31,7 @@ export const authRoutes = [
     factory: () => import('pages/symbols'),
   }),
   buildRoute({
-    path: 'edit-symbol',
+    path: 'edit-symbol/:id',
     factory: () => import('pages/symbols/edit-symbol'),
   }),
   buildRoute({

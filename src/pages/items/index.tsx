@@ -33,31 +33,31 @@ const Items = () => {
                 <Grid
                   key={item.id}
                   item
+                  gap={1}
                   xs={1}
                   sm={4}
                   md={4}
                   sx={{ display: 'grid', placeItems: 'center' }}
                 >
-                  <Box
-                    onClick={() => {
-                      navigate(`/item/${item.id}`)
-                    }}
-                  >
+                  <Box>
                     <ItemCard
+                      onClick={() => {
+                        navigate(`/item/${item.id}`)
+                      }}
                       description={item.description}
                       title={item.title}
-                      image={item.images?.[0].image || ''} // Use optional chaining and provide a default value (an empty string)
+                      image={item.images?.[0]?.image || ''} // Use optional chaining and provide a default value (an empty string)
                       id={item.id}
                     />
+                    {isAuthenticated && (
+                      <EditTwoTone
+                        sx={{ cursor: 'pointer' }}
+                        onClick={() => {
+                          navigate(`/edit-item/${item.id}`)
+                        }}
+                      />
+                    )}
                   </Box>
-                  {isAuthenticated && (
-                    <EditTwoTone
-                      sx={{ cursor: 'pointer' }}
-                      onClick={() => {
-                        navigate(`/edit-item/${item.id}`)
-                      }}
-                    />
-                  )}
                 </Grid>
               ))}
             </Grid>

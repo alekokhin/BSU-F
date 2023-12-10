@@ -43,10 +43,11 @@ const Item = () => {
         <>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <Stack sx={{ width: '90%' }} spacing={5}>
+              <Typography variant="h4">{item.title}</Typography>
               <Box
                 sx={{
                   display: 'flex',
-                  alignItems: 'center',
+                  alignItems: 'flex-start',
                   justifyContent: 'space-evenly',
                 }}
               >
