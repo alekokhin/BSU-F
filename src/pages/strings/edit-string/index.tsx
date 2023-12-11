@@ -9,7 +9,7 @@ import {
   useMediaQuery,
 } from '@mui/material'
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { deleteString, editString, getString, String } from 'api/strings'
+import { deleteString, editString, getString, StringType } from 'api/strings'
 import { ControlledTextField } from 'components/form/controlled/controlled-text-field'
 import Header from 'components/header'
 import { enqueueSnackbar } from 'notistack'
@@ -32,7 +32,7 @@ const EditString = () => {
     queryFn: () => getString(id!),
   })
 
-  const { control, handleSubmit, reset } = useForm<String>({
+  const { control, handleSubmit, reset } = useForm<StringType>({
     defaultValues: data,
   })
   const { fields, append, remove } = useFieldArray({

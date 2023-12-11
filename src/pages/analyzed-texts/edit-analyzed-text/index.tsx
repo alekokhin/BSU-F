@@ -1,7 +1,7 @@
 import { Button, Container, Stack } from '@mui/material'
 import { useMutation, useQuery } from '@tanstack/react-query'
 import {
-  AnalyzedText,
+  AnalyzedTextType,
   editAnalyzedText,
   getAnalyzedText,
 } from 'api/analyzed-texts'
@@ -10,7 +10,7 @@ import Header from 'components/header'
 import { enqueueSnackbar } from 'notistack'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
-import { useNavigate, useParams } from 'react-router-dom'
+import { useParams } from 'react-router-dom'
 
 type Params = {
   id: string
@@ -18,13 +18,12 @@ type Params = {
 
 const EditAnalyzedText = () => {
   const { id } = useParams<Params>()
-  const navigate = useNavigate()
   const { data } = useQuery({
     queryKey: ['analyzedText', id],
     queryFn: () => getAnalyzedText(id!),
   })
 
-  const { control, handleSubmit, reset } = useForm<AnalyzedText>({
+  const { control, handleSubmit, reset } = useForm<AnalyzedTextType>({
     defaultValues: data,
   })
   useEffect(() => {

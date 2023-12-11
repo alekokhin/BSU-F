@@ -11,8 +11,7 @@ const Symbols = () => {
   const { isAuthenticated } = useAuthContext()
   const navigate = useNavigate()
   const { data } = useQuery(['symbols'], getSymbols)
-  // eslint-disable-next-line no-console
-  console.log(data)
+
   const $symbols = data
 
   return (

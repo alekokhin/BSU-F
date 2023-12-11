@@ -22,7 +22,7 @@ const Items = () => {
         <Add sx={{ cursor: 'pointer' }} onClick={() => navigate('/new-item')} />
       )}
       {$items ? (
-        <Container sx={{ height: '90vh', width: '100%' }}>
+        <Container sx={{ height: '90vh', width: '100%', overflow: 'auto' }}>
           <Stack spacing={{ xs: 2, sm: 6 }} marginTop={5}>
             <Grid
               container

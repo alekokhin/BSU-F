@@ -11,8 +11,7 @@ const Strings = () => {
   const { isAuthenticated } = useAuthContext()
   const navigate = useNavigate()
   const { data } = useQuery(['strings'], getStrings)
-  // eslint-disable-next-line no-console
-  console.log(data)
+
   const $strings = data
 
   return (

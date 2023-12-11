@@ -1,12 +1,12 @@
 import { Button, Container, Stack } from '@mui/material'
 import { useMutation } from '@tanstack/react-query'
-import { AnalyzedText, newAnalyzedText } from 'api/analyzed-texts'
+import { AnalyzedTextType, newAnalyzedText } from 'api/analyzed-texts'
 import { ControlledTextField } from 'components/form/controlled/controlled-text-field'
 import Header from 'components/header'
 import { useSnackbar } from 'notistack'
 import { useForm } from 'react-hook-form'
 
-const newAnalyzedTextDefaultValues: AnalyzedText = {
+const newAnalyzedTextDefaultValues: AnalyzedTextType = {
   id: '',
   title: '',
   connection: '',
@@ -14,7 +14,7 @@ const newAnalyzedTextDefaultValues: AnalyzedText = {
 }
 const NewAnalyzedText = () => {
   // hooks
-  const { handleSubmit, control } = useForm<AnalyzedText>({
+  const { handleSubmit, control } = useForm<AnalyzedTextType>({
     defaultValues: newAnalyzedTextDefaultValues,
   })
   const { enqueueSnackbar } = useSnackbar()

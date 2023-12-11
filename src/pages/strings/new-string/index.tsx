@@ -9,7 +9,7 @@ import {
   useMediaQuery,
 } from '@mui/material'
 import { useMutation } from '@tanstack/react-query'
-import { newString, String } from 'api/strings'
+import { newString, StringType } from 'api/strings'
 import { ControlledTextField } from 'components/form/controlled/controlled-text-field'
 import Header from 'components/header'
 import { useSnackbar } from 'notistack'
@@ -17,7 +17,7 @@ import { useFieldArray, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
 import { useNavigate } from 'react-router-dom'
 
-const newStringDefaultValues: String = {
+const newStringDefaultValues: StringType = {
   id: '',
   connection: '',
   description: '',
@@ -30,7 +30,7 @@ const NewString = () => {
   const matches = useMediaQuery('(min-width:600px)')
   const navigate = useNavigate()
 
-  const { handleSubmit, control } = useForm<String>({
+  const { handleSubmit, control } = useForm<StringType>({
     defaultValues: newStringDefaultValues,
   })
   const { fields, append, remove } = useFieldArray({

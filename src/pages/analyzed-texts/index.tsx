@@ -11,8 +11,6 @@ const AnalyzedTexts = () => {
   const navigate = useNavigate()
   const { data } = useQuery(['analyzedTexts'], getAnalyzedTexts)
 
-  // eslint-disable-next-line no-console
-  console.log(data)
   return (
     <>
       <Header />
@@ -44,7 +42,7 @@ const AnalyzedTexts = () => {
                 <Box>
                   {isAuthenticated && (
                     <EditTwoTone
-                      sx={{ cursot: 'pointer' }}
+                      sx={{ cursor: 'pointer' }}
                       onClick={() => {
                         navigate(`/edit-analyzed-text/${detail.id}`)
                       }}
