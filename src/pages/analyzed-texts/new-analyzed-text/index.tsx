@@ -5,6 +5,7 @@ import { ControlledTextField } from 'components/form/controlled/controlled-text-
 import Header from 'components/header'
 import { useSnackbar } from 'notistack'
 import { useForm } from 'react-hook-form'
+import { useTranslation } from 'react-i18next'
 
 const newAnalyzedTextDefaultValues: AnalyzedTextType = {
   id: '',
@@ -14,6 +15,8 @@ const newAnalyzedTextDefaultValues: AnalyzedTextType = {
 }
 const NewAnalyzedText = () => {
   // hooks
+  const { t } = useTranslation()
+
   const { handleSubmit, control } = useForm<AnalyzedTextType>({
     defaultValues: newAnalyzedTextDefaultValues,
   })
@@ -45,13 +48,13 @@ const NewAnalyzedText = () => {
           <ControlledTextField
             type="text"
             name="title"
-            placeholder="Enter Title"
+            placeholder={t('itemTitle')}
             control={control}
           />
           <ControlledTextField
             type="text"
             name="description"
-            placeholder="Enter Title"
+            placeholder={t('itemDescription')}
             multiline
             rows={5}
             control={control}
@@ -59,7 +62,7 @@ const NewAnalyzedText = () => {
           <ControlledTextField
             type="text"
             name="connection"
-            placeholder="Enter Title"
+            placeholder={t('connection')}
             control={control}
           />
           <Button type="submit" fullWidth variant="outlined">
