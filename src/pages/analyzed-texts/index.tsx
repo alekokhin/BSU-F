@@ -27,27 +27,35 @@ const AnalyzedTexts = () => {
               <Box
                 key={index}
                 fontSize="50px"
-                sx={{ display: 'flex', justifyContent: 'space-around' }}
+                sx={{
+                  display: 'flex',
+                  justifyContent: isAuthenticated ? 'space-between' : 'center',
+                  height: '70px',
+                }}
               >
-                <Typography
-                  variant="h5"
-                  fontWeight="bold"
-                  sx={{ cursor: 'pointer' }}
-                  onClick={() => {
-                    navigate(`/analyzed-text/${detail.id}`)
-                  }}
-                >
-                  {detail.title}
-                </Typography>
                 <Box>
-                  {isAuthenticated && (
-                    <EditTwoTone
-                      sx={{ cursor: 'pointer' }}
-                      onClick={() => {
-                        navigate(`/edit-analyzed-text/${detail.id}`)
-                      }}
-                    />
-                  )}
+                  <Typography
+                    variant="h5"
+                    fontWeight="bold"
+                    sx={{ cursor: 'pointer' }}
+                    onClick={() => {
+                      navigate(`/analyzed-text/${detail.id}`)
+                    }}
+                  >
+                    {detail.title}
+                  </Typography>
+                </Box>
+                <Box>
+                  <Box sx={{ width: '10%' }}>
+                    {isAuthenticated && (
+                      <EditTwoTone
+                        sx={{ cursor: 'pointer' }}
+                        onClick={() => {
+                          navigate(`/edit-analyzed-text/${detail.id}`)
+                        }}
+                      />
+                    )}
+                  </Box>
                 </Box>
               </Box>
             ))}

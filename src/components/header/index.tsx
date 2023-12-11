@@ -117,7 +117,7 @@ const Header = () => {
                 onClick={() => navigate('/strings')}
               />
               <BottomNavigationAction
-                label={t('word')}
+                label={t('words')}
                 onClick={() => navigate('/words')}
               />
             </BottomNavigation>

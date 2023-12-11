@@ -1,10 +1,9 @@
 import { LinkSharp } from '@mui/icons-material'
-import { Box, ImageList, ImageListItem, Stack, Typography } from '@mui/material'
+import { Box, Stack, Typography } from '@mui/material'
 import { useQuery } from '@tanstack/react-query'
-import { getString } from 'api/strings'
-import { StringType } from 'api/strings'
+import { getString, StringType } from 'api/strings'
 import Header from 'components/header'
-import ImageMagnifier from 'components/imageMagnifier'
+import ImageList from 'components/imageList'
 import Loader from 'components/loader'
 import { useState } from 'react'
 import { useParams } from 'react-router-dom'
@@ -16,7 +15,6 @@ const String = () => {
   const { id } = useParams<Params>()
   const [string, setString] = useState<StringType>()
 
-  const [selectedImage, setSelectedImage] = useState('')
   useQuery({
     queryKey: ['symbol', id],
     queryFn: () => getString(id!),
@@ -49,39 +47,7 @@ const String = () => {
                     justifyContent: 'space-evenly',
                   }}
                 >
-                  <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                    <ImageList
-                      cols={0}
-                      sx={{
-                        width: '150px',
-                        maxHeight: '600px',
-                        justifyItems: 'center',
-                        marginRight: '15px',
-                      }}
-                      variant="masonry"
-                      gap={8}
-                    >
-                      {string?.images.map((image, index) => {
-                        return (
-                          <ImageListItem
-                            key={index}
-                            sx={{ justifyContent: 'center' }}
-                          >
-                            <Box
-                              component="img"
-                              src={image.image}
-                              sx={{ width: '100px', justifyContent: 'center' }}
-                              onClick={() => setSelectedImage(image.image)}
-                              alt={`Item ${index}`}
-                            />
-                          </ImageListItem>
-                        )
-                      })}
-                    </ImageList>
-                    <ImageMagnifier
-                      src={selectedImage || string.images[0].image}
-                    />
-                  </Box>
+                  <ImageList images={string?.images || []} />
                 </Box>
               </Stack>
               <Box>

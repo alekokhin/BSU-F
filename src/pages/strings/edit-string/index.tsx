@@ -69,8 +69,6 @@ const EditString = () => {
         navigate('/items')
       },
       onError: (error: any) => {
-        // eslint-disable-next-line no-console
-        console.log(error)
         enqueueSnackbar('something went wrong', { variant: 'error' })
       },
     })

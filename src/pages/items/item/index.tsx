@@ -1,8 +1,8 @@
-import { Box, ImageList, ImageListItem, Stack, Typography } from '@mui/material'
+import { Box, Stack, TextField, Typography } from '@mui/material'
 import { useQuery } from '@tanstack/react-query'
 import { getItem, ItemType } from 'api/items'
 import Header from 'components/header'
-import ImageMagnifier from 'components/imageMagnifier'
+import ImageList from 'components/imageList'
 import Loader from 'components/loader'
 import { useState } from 'react'
 import { useTranslation } from 'react-i18next'
@@ -11,11 +11,13 @@ import { useParams } from 'react-router-dom'
 type Params = {
   id: string
 }
+
 const Item = () => {
   const { id } = useParams<Params>()
   const [item, setItem] = useState<ItemType>()
-  const [selectedImage, setSelectedImage] = useState('')
+  const [searchTerm, setSearchTerm] = useState('')
   const { t } = useTranslation()
+
   useQuery({
     queryKey: ['item', id],
     queryFn: () => getItem(id!),
@@ -23,6 +25,7 @@ const Item = () => {
       setItem(data)
     },
   })
+
   const list = item
     ? Object.entries(item)
         .filter(
@@ -36,6 +39,22 @@ const Item = () => {
         )
         .map(([key, value]) => ({ key, value }))
     : []
+
+  const highlightSearchTerm = (text: string) => {
+    if (!searchTerm) {
+      return text
+    }
+
+    // eslint-disable-next-line security/detect-non-literal-regexp
+    const regex = new RegExp(`(${searchTerm})`, 'gi')
+    // return text.replace(regex, (match, p1) => `<mark>${p1}</mark>`)
+    return text
+      .split(regex)
+      .map((part, index) =>
+        regex.test(part) ? <mark key={index}>{part}</mark> : part,
+      )
+  }
+
   return (
     <>
       <Header />
@@ -43,7 +62,21 @@ const Item = () => {
         <>
           <Box sx={{ display: 'flex', justifyContent: 'center' }}>
             <Stack sx={{ width: '90%' }} spacing={5}>
-              <Typography variant="h4">{item.title}</Typography>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  position: 'sticky',
+                }}
+              >
+                <Typography variant="h4">{item.title}</Typography>
+                <TextField
+                  sx={{ borderRadius: '30px', height: '30px' }}
+                  value={searchTerm}
+                  onChange={e => setSearchTerm(e.target.value)}
+                />
+              </Box>
+
               <Box
                 sx={{
                   display: 'flex',
@@ -51,37 +84,7 @@ const Item = () => {
                   justifyContent: 'space-evenly',
                 }}
               >
-                <Box sx={{ display: 'flex', alignItems: 'center' }}>
-                  <ImageList
-                    cols={0}
-                    sx={{
-                      width: '150px',
-                      maxHeight: '600px',
-                      justifyItems: 'center',
-                      marginRight: '15px',
-                    }}
-                    variant="masonry"
-                    gap={8}
-                  >
-                    {item?.images.map((image, index) => {
-                      return (
-                        <ImageListItem
-                          key={index}
-                          sx={{ justifyContent: 'center' }}
-                        >
-                          <Box
-                            component="img"
-                            src={image.image}
-                            sx={{ width: '100px', justifyContent: 'center' }}
-                            onClick={() => setSelectedImage(image.image)}
-                            alt={`Item ${index}`}
-                          />
-                        </ImageListItem>
-                      )
-                    })}
-                  </ImageList>
-                  <ImageMagnifier src={selectedImage || item.images[0].image} />
-                </Box>
+                <ImageList images={item?.images || []} />
                 <Box>
                   <Box
                     sx={{
@@ -102,14 +105,20 @@ const Item = () => {
                             }`,
                           ) + ':'}
                         </Box>
-                        <Box>{String(detail.value)}</Box>
+                        <Box
+                          dangerouslySetInnerHTML={{
+                            __html: highlightSearchTerm(String(detail.value)),
+                          }}
+                        />
                       </Box>
                     ))}
                   </Box>
                 </Box>
               </Box>
               <Box>
-                <Typography variant="body2">{item.description}</Typography>
+                <Typography variant="body2">
+                  {highlightSearchTerm(item.description)}
+                </Typography>
               </Box>
             </Stack>
           </Box>
@@ -120,4 +129,5 @@ const Item = () => {
     </>
   )
 }
+
 export default Item

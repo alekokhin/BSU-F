@@ -1,18 +1,17 @@
 import { del, get, post, put } from 'lib/request/request'
 import { locales } from 'providers/locales'
 
-export type word = {
+export type Word = {
   id: string
-  rame1: string
-  rame2: string
-  rame3: string
-  rame4: string
-  rame5: string
-  rame6: string
-  connection: string
+  word: string
+  correctForm: string
+  intonation: string
+  thematicGroup: string
+  partOfSpeech: string
+  dictionary: string
 }
 
-export type words = Array<word>
+export type words = Array<Word>
 const REACT_APP_API_URL = process.env.REACT_APP_API_URL
 
 // export type wordResponse = { words: words }
@@ -23,14 +22,14 @@ export const getWords = async () =>
 
 // GET SINGLE word
 export const getWord = async (wordId: string) =>
-  get<word>(`${REACT_APP_API_URL}${locales}/word/${wordId}`)
+  get<Word>(`${REACT_APP_API_URL}${locales}/word/${wordId}`)
 
 // ADD NEw word
-export const newWord = async (body: word) =>
+export const newWord = async (body: Word) =>
   post(`${REACT_APP_API_URL}${locales}/word/add-word`, body)
 
 // UPDATE word
-export const editWord = async (body: word) =>
+export const editWord = async (body: Word) =>
   put(`${REACT_APP_API_URL}${locales}/word/edit-word/${body.id}`, body)
 
 // DELETE word
