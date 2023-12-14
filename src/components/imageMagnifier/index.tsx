@@ -15,11 +15,11 @@ const ImageMagnifier = ({
   src,
   width,
   height,
-  maxWidth = 500,
-  maxHeight = 600,
+  maxWidth = 300,
+  maxHeight = 400,
   magnifierHeight = 300,
   magnifieWidth = 300,
-  zoomLevel = 2,
+  zoomLevel = 3,
 }: ImageMagnifierType) => {
   const [[x, y], setXY] = useState([0, 0])
   const [[imgWidth, imgHeight], setSize] = useState([0, 0])

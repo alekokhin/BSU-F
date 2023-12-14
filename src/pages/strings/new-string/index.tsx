@@ -46,14 +46,7 @@ const NewString = () => {
 
     // Process each file individually
     for (const file of files) {
-      const reader = new FileReader()
-
-      reader.addEventListener('load', () => {
-        const base64Image = reader.result as string
-        append({ image: base64Image })
-      })
-
-      reader.readAsDataURL(file)
+      append(file)
     }
   }
 
@@ -112,7 +105,7 @@ const NewString = () => {
                     {fields.map((image, index) => {
                       return (
                         <ImageListItem key={index}>
-                          <img src={image?.image} alt={`Item ${index}`} />
+                          <img src={image} alt={`Item ${index}`} />
                           <Button
                             onClick={() => remove(index)}
                             variant="outlined"

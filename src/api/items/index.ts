@@ -5,7 +5,7 @@ export type ItemType = {
   id: string
   title: string
   description: string
-  images: Array<Image>
+  images: Array<any>
   security: string
   damaged: string
   color: string
@@ -39,11 +39,11 @@ export const getItem = async (itemId: string) =>
 
 // ADD NEW Item
 export const newItem = async (body: ItemType) =>
-  post(`${REACT_APP_API_URL}${locales}/item/add-item`, body)
+  post(`${REACT_APP_API_URL}${locales}/item/add-item`, body, true)
 
 // UPDATE Item
 export const editItem = async (body: ItemType) =>
-  put(`${REACT_APP_API_URL}${locales}/item/edit-item/${body.id}`, body)
+  put(`${REACT_APP_API_URL}${locales}/item/edit-item/${body.id}`, body, true)
 
 // DELETE Item
 export const deleteItem = async (ItemId: string) =>

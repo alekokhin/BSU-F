@@ -47,7 +47,7 @@ const String = () => {
                     justifyContent: 'space-evenly',
                   }}
                 >
-                  <ImageList images={string?.images || []} />
+                  <ImageList images={string?.images || []} page="string" />
                 </Box>
               </Stack>
               <Box>

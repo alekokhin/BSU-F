@@ -84,7 +84,7 @@ const Item = () => {
                   justifyContent: 'space-evenly',
                 }}
               >
-                <ImageList images={item?.images || []} />
+                <ImageList images={item?.images || []} page="item" />
                 <Box>
                   <Box
                     sx={{

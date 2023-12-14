@@ -6,7 +6,10 @@ import ItemCard from 'components/card'
 import Header from 'components/header'
 import Loader from 'components/loader'
 import { useAuthContext } from 'providers/auth'
+import { locales } from 'providers/locales'
 import { useNavigate } from 'react-router-dom'
+
+const REACT_APP_API_URL = process.env.REACT_APP_API_URL
 const Symbols = () => {
   const { isAuthenticated } = useAuthContext()
   const navigate = useNavigate()
@@ -47,7 +50,10 @@ const Symbols = () => {
                       }}
                       description={symbol.description}
                       title={symbol.title}
-                      image={symbol.images?.[0].image || ''} // Use optional chaining and provide a default value (an empty string)
+                      image={
+                        `${REACT_APP_API_URL}${locales}/symbol/images/${symbol.images?.[0]}` ||
+                        ''
+                      } // Use optional chaining and provide a default value (an empty string)
                       id={symbol.id}
                     />
                     {isAuthenticated && (

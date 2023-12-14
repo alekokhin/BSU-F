@@ -42,10 +42,10 @@ const EditAnalyzedText = () => {
   const deleteElement = () => {
     $delete.mutate(id!, {
       onSuccess: () => {
-        enqueueSnackbar('item delete successfully', {
+        enqueueSnackbar('', {
           variant: 'success',
         })
-        navigate('/items')
+        navigate('/analyzed-texts')
       },
       onError: (error: any) => {
         enqueueSnackbar('something went wrong', { variant: 'error' })

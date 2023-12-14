@@ -6,7 +6,10 @@ import ItemCard from 'components/card'
 import Header from 'components/header'
 import Loader from 'components/loader'
 import { useAuthContext } from 'providers/auth'
+import { locales } from 'providers/locales'
 import { useNavigate } from 'react-router-dom'
+
+const REACT_APP_API_URL = process.env.REACT_APP_API_URL
 const Strings = () => {
   const { isAuthenticated } = useAuthContext()
   const navigate = useNavigate()
@@ -31,9 +34,9 @@ const Strings = () => {
               justifyContent="center"
               columns={{ xs: 1, sm: 8, md: 12 }}
             >
-              {$strings.map(symbol => (
+              {$strings.map(string => (
                 <Grid
-                  key={symbol.id}
+                  key={string.id}
                   item
                   xs={1}
                   sm={4}
@@ -43,18 +46,21 @@ const Strings = () => {
                   <Box>
                     <ItemCard
                       onClick={() => {
-                        navigate(`/string/${symbol.id}`)
+                        navigate(`/string/${string.id}`)
                       }}
-                      description={symbol.description}
-                      title={symbol.title}
-                      image={symbol.images?.[0].image || ''} // Use optional chaining and provide a default value (an empty string)
-                      id={symbol.id}
+                      description={string.description}
+                      title={string.title}
+                      image={
+                        `${REACT_APP_API_URL}${locales}/string/images/${string.images?.[0]}` ||
+                        ''
+                      } // Use optional chaining and provide a default value (an empty string)
+                      id={string.id}
                     />
                     {isAuthenticated && (
                       <EditTwoTone
                         sx={{ cursor: 'pointer' }}
                         onClick={() => {
-                          navigate(`/edit-string/${symbol.id}`)
+                          navigate(`/edit-string/${string.id}`)
                         }}
                       />
                     )}

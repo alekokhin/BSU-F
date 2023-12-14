@@ -48,7 +48,7 @@ const Symbol = () => {
                     justifyContent: 'space-evenly',
                   }}
                 >
-                  <ImageList images={symbol?.images || []} />
+                  <ImageList images={symbol?.images || []} page="symbol" />
                 </Box>
               </Stack>
               <Box>

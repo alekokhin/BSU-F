@@ -9,7 +9,7 @@ import {
   useMediaQuery,
 } from '@mui/material'
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { deleteSymbol, editSymbol, getSymbol, SymbolType } from 'api/symbols'
+import { deleteSymbol, getSymbol, SymbolType } from 'api/symbols'
 import { ControlledTextField } from 'components/form/controlled/controlled-text-field'
 import Header from 'components/header'
 import { useSnackbar } from 'notistack'
@@ -27,7 +27,7 @@ const EditSymbol = () => {
     queryKey: ['item', id],
     queryFn: () => getSymbol(id!),
   })
-  const { handleSubmit, control, reset } = useForm<SymbolType>({
+  const { control, reset } = useForm<SymbolType>({
     defaultValues: data,
   })
   const { fields, append, remove } = useFieldArray({
@@ -41,7 +41,7 @@ const EditSymbol = () => {
   }, [data, reset])
 
   const { enqueueSnackbar } = useSnackbar()
-  const $editSymbol = useMutation(editSymbol)
+  // const $editSymbol = useMutation(editSymbol)
   const $delete = useMutation(deleteSymbol)
   const { t } = useTranslation()
 
@@ -51,14 +51,7 @@ const EditSymbol = () => {
 
     // Process each file individually
     for (const file of files) {
-      const reader = new FileReader()
-
-      reader.addEventListener('load', () => {
-        const base64Image = reader.result as string
-        append({ images: base64Image })
-      })
-
-      reader.readAsDataURL(file)
+      append(file)
     }
   }
   const deleteElement = () => {
@@ -82,19 +75,19 @@ const EditSymbol = () => {
       <Container>
         <Stack
           component="form"
-          onSubmit={handleSubmit(form => {
-            $editSymbol.mutate(form, {
-              onSuccess: () => {
-                enqueueSnackbar('item add successfully', {
-                  variant: 'success',
-                })
-                navigate('/symbols')
-              },
-              onError: (error: any) => {
-                enqueueSnackbar('something went wrong', { variant: 'error' })
-              },
-            })
-          })}
+          // onSubmit={handleSubmit(form => {
+          //   $editSymbol.mutate(form, {
+          //     onSuccess: () => {
+          //       enqueueSnackbar('item add successfully', {
+          //         variant: 'success',
+          //       })
+          //       navigate('/symbols')
+          //     },
+          //     onError: (error: any) => {
+          //       enqueueSnackbar('something went wrong', { variant: 'error' })
+          //     },
+          //   })
+          // })}
         >
           <Stack>
             <Box
@@ -175,7 +168,7 @@ const EditSymbol = () => {
             </Box>
           </Stack>
           <Box display="flex" justifyContent="space-between">
-            <Button type="submit" variant="outlined" sx={{ width: '49%' }}>
+            <Button variant="outlined" sx={{ width: '49%' }}>
               განახლება
             </Button>
             <Button

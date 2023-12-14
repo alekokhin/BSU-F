@@ -24,7 +24,7 @@ export const getString = async (StringId: string) =>
 
 // ADD NEW String
 export const newString = async (body: StringType) =>
-  post(`${REACT_APP_API_URL}${locales}/string/add-string`, body)
+  post(`${REACT_APP_API_URL}${locales}/string/add-string`, body, true)
 
 // UPDATE String
 export const editString = async (body: StringType) =>

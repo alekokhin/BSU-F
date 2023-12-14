@@ -6,6 +6,7 @@ import Header from 'components/header'
 import { useSnackbar } from 'notistack'
 import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
 
 const newAnalyzedTextDefaultValues: AnalyzedTextType = {
   id: '',
@@ -16,6 +17,7 @@ const newAnalyzedTextDefaultValues: AnalyzedTextType = {
 const NewAnalyzedText = () => {
   // hooks
   const { t } = useTranslation()
+  const navigate = useNavigate()
 
   const { handleSubmit, control } = useForm<AnalyzedTextType>({
     defaultValues: newAnalyzedTextDefaultValues,
@@ -35,9 +37,10 @@ const NewAnalyzedText = () => {
           onSubmit={handleSubmit(form => {
             $newAnalyzedText.mutate(form, {
               onSuccess: () => {
-                enqueueSnackbar('item add successfully', {
+                enqueueSnackbar('', {
                   variant: 'success',
                 })
+                navigate('/analyzed-texts')
               },
               onError: (error: any) => {
                 enqueueSnackbar('something went wrong', { variant: 'error' })
@@ -66,7 +69,7 @@ const NewAnalyzedText = () => {
             control={control}
           />
           <Button type="submit" fullWidth variant="outlined">
-            add item
+            დამატება
           </Button>
         </Stack>
       </Container>

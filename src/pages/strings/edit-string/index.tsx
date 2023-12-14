@@ -9,7 +9,7 @@ import {
   useMediaQuery,
 } from '@mui/material'
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { deleteString, editString, getString, StringType } from 'api/strings'
+import { deleteString, getString, StringType } from 'api/strings'
 import { ControlledTextField } from 'components/form/controlled/controlled-text-field'
 import Header from 'components/header'
 import { enqueueSnackbar } from 'notistack'
@@ -32,7 +32,7 @@ const EditString = () => {
     queryFn: () => getString(id!),
   })
 
-  const { control, handleSubmit, reset } = useForm<StringType>({
+  const { control, reset } = useForm<StringType>({
     defaultValues: data,
   })
   const { fields, append, remove } = useFieldArray({
@@ -44,20 +44,13 @@ const EditString = () => {
       reset(data)
     }
   }, [data, reset])
-  const $editString = useMutation(editString)
+  // const $editString = useMutation(editString)
   const handleChange = (e: any) => {
     const files = e.target.files
 
     // Process each file individually
     for (const file of files) {
-      const reader = new FileReader()
-
-      reader.addEventListener('load', () => {
-        const base64Image = reader.result as string
-        append({ image: base64Image })
-      })
-
-      reader.readAsDataURL(file)
+      append(file)
     }
   }
   const deleteElement = () => {
@@ -85,18 +78,18 @@ const EditString = () => {
       >
         <Stack
           component="form"
-          onSubmit={handleSubmit(form => {
-            $editString.mutate(form, {
-              onSuccess: () => {
-                enqueueSnackbar('item add successfully', {
-                  variant: 'success',
-                })
-              },
-              onError: (error: any) => {
-                enqueueSnackbar('something went wrong', { variant: 'error' })
-              },
-            })
-          })}
+          // onSubmit={handleSubmit(form => {
+          //   $editString.mutate(form, {
+          //     onSuccess: () => {
+          //       enqueueSnackbar('item add successfully', {
+          //         variant: 'success',
+          //       })
+          //     },
+          //     onError: (error: any) => {
+          //       enqueueSnackbar('something went wrong', { variant: 'error' })
+          //     },
+          //   })
+          // })}
         >
           <Stack>
             <Box
@@ -177,7 +170,7 @@ const EditString = () => {
             </Box>
           </Stack>
           <Box display="flex" justifyContent="space-between">
-            <Button type="submit" variant="outlined" sx={{ width: '49%' }}>
+            <Button variant="outlined" sx={{ width: '49%' }}>
               განახლება
             </Button>
             <Button

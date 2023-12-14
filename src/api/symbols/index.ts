@@ -19,7 +19,7 @@ export const getSymbol = async (itemId: string) =>
 
 //POST
 export const newSymbol = async (body: SymbolType) =>
-  post(`${REACT_APP_API_URL}${locales}/symbol/add-symbol`, body)
+  post(`${REACT_APP_API_URL}${locales}/symbol/add-symbol`, body, true)
 
 //PUT
 export const editSymbol = async (body: SymbolType) =>

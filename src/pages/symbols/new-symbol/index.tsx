@@ -15,6 +15,7 @@ import Header from 'components/header'
 import { useSnackbar } from 'notistack'
 import { useFieldArray, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
+import { useNavigate } from 'react-router-dom'
 
 const symbolDefaultValue: SymbolType = {
   id: '',
@@ -25,6 +26,7 @@ const symbolDefaultValue: SymbolType = {
 }
 const NewSymbol = () => {
   const { t } = useTranslation()
+  const navigate = useNavigate()
 
   const { handleSubmit, control } = useForm<SymbolType>({
     defaultValues: symbolDefaultValue,
@@ -42,14 +44,7 @@ const NewSymbol = () => {
 
     // Process each file individually
     for (const file of files) {
-      const reader = new FileReader()
-
-      reader.addEventListener('load', () => {
-        const base64Image = reader.result as string
-        append({ image: base64Image })
-      })
-
-      reader.readAsDataURL(file)
+      append(file)
     }
   }
   const matches = useMediaQuery('(min-width:600px)')
@@ -66,6 +61,7 @@ const NewSymbol = () => {
                 enqueueSnackbar('item add successfully', {
                   variant: 'success',
                 })
+                navigate('/symbols')
               },
               onError: (error: any) => {
                 enqueueSnackbar('something went wrong', { variant: 'error' })

@@ -1,9 +1,12 @@
 import { Box, ImageList as MuiImageList, ImageListItem } from '@mui/material'
 import ImageMagnifier from 'components/imageMagnifier'
+import { locales } from 'providers/locales'
 import { useState } from 'react'
-type Images = { images: Array<any> }
 
-const ImageList = ({ images }: Images) => {
+const REACT_APP_API_URL = process.env.REACT_APP_API_URL
+type Images = { images: Array<any>; page: string }
+
+const ImageList = ({ images, page }: Images) => {
   const [selectedImage, setSelectedImage] = useState('')
 
   return (
@@ -13,7 +16,7 @@ const ImageList = ({ images }: Images) => {
           cols={0}
           sx={{
             width: '150px',
-            maxHeight: '600px',
+            maxHeight: '400px',
             justifyItems: 'center',
             marginRight: '15px',
           }}
@@ -25,19 +28,37 @@ const ImageList = ({ images }: Images) => {
               <ImageListItem key={index} sx={{ justifyContent: 'center' }}>
                 <Box
                   component="img"
-                  src={image.image}
+                  src={`${REACT_APP_API_URL}${locales}/${page}/images/${image}`}
                   sx={{
                     width: '100px',
                     justifyContent: 'center',
                   }}
-                  onClick={() => setSelectedImage(image.image)}
+                  onClick={() =>
+                    setSelectedImage(
+                      `${REACT_APP_API_URL}${locales}/${page}/images/${image}`,
+                    )
+                  }
                   alt={`Item ${index}`}
                 />
               </ImageListItem>
             )
           })}
         </MuiImageList>
-        <ImageMagnifier src={selectedImage || images[0].image} />
+        <Box
+          height={400}
+          width={300}
+          border="1px solid black"
+          display="flex"
+          justifyContent="center"
+          alignItems="center"
+        >
+          <ImageMagnifier
+            src={
+              selectedImage ||
+              `${REACT_APP_API_URL}${locales}/${page}/images/${images[0]}`
+            }
+          />
+        </Box>
       </Box>
     </>
   )

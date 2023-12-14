@@ -54,21 +54,12 @@ const NewItem = () => {
   const { enqueueSnackbar } = useSnackbar()
   const $newItem = useMutation(newItem)
   const { t } = useTranslation()
-
   //functions
   const handleChange = (e: any) => {
     const files = e.target.files
 
-    // Process each file individually
     for (const file of files) {
-      const reader = new FileReader()
-
-      reader.addEventListener('load', () => {
-        const base64Image = reader.result as string
-        append({ image: base64Image })
-      })
-
-      reader.readAsDataURL(file)
+      append(file) // Save the file object in the array
     }
   }
   const matches = useMediaQuery('(min-width:600px)')
@@ -85,10 +76,11 @@ const NewItem = () => {
           component="form"
           onSubmit={handleSubmit(form => {
             $newItem.mutate(form, {
-              onSuccess: () => {
-                enqueueSnackbar('item add successfully', {
+              onSuccess: el => {
+                enqueueSnackbar('', {
                   variant: 'success',
                 })
+
                 navigate('/items')
               },
               onError: (error: any) => {
@@ -122,7 +114,7 @@ const NewItem = () => {
                     {fields.map((image, index) => {
                       return (
                         <ImageListItem key={index}>
-                          <img src={image?.image} alt={`Item ${index}`} />
+                          <img src={image} alt={`Item ${index}`} />
                           <Button
                             onClick={() => remove(index)}
                             variant="outlined"
