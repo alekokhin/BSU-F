@@ -20,16 +20,24 @@ const Home = () => {
           position: 'absolute',
         }}
       />
-      <Stack spacing={15}>
+      <Stack spacing={7}>
         <Box textAlign="center">
           <Typography variant="h6" fontWeight="900" color="#660303">
             {t('homeTitle')}
           </Typography>
         </Box>
-        <Box>
+        <Box
+          sx={{
+            maxHeight: '500px',
+            overflow: 'auto',
+            '&::-webkit-scrollbar': { display: 'none' },
+          }}
+        >
           <Typography
-            width="55%"
-            sx={{ margin: '0px 0px 20px 25px' }}
+            sx={{
+              margin: '0px 0px 0px 25px',
+              width: { xs: '95%', sm: '80%' },
+            }}
             variant="h6"
             fontWeight="900"
             color="#660303"
