@@ -80,7 +80,14 @@ export const MyTable = ({
 
   return (
     <TableContainer
-      sx={{ width: { xs: '100%', sm: '90%' }, maxHeight: '500px' }}
+      sx={{
+        width: {
+          xs: '100%',
+          sm: '90%',
+          '&::-webkit-scrollbar': { display: 'none' },
+        },
+        maxHeight: '500px',
+      }}
     >
       <Table size="small">
         {pagination?.topPagination && (
@@ -118,7 +125,11 @@ export const MyTable = ({
                 </TableCell>
               )}
               {headers?.map(header => (
-                <TableCell size="small" key={header.key}>
+                <TableCell
+                  sx={{ bgcolor: 'transparent' }}
+                  size="small"
+                  key={header.key}
+                >
                   {header.title}
                 </TableCell>
               ))}

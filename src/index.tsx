@@ -1,4 +1,5 @@
 import 'i18n'
+import 'styles/fonts.css'
 
 import { QueryClient, QueryClientProvider } from '@tanstack/react-query'
 import App from 'App'

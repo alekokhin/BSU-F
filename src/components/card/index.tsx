@@ -20,6 +20,10 @@ const ItemCard = ({ id, description, title, image, ...otherProps }: Props) => {
         height: { lg: '300px', xs: '250px' },
         marginBottom: '10px',
         cursor: 'pointer',
+        bgcolor: 'transparent',
+        backdropFilter: 'blur(2px)',
+        boxShadow: '0px 0px 20px #000',
+        borderRadius: '15px',
       }}
     >
       <CardActionArea>
@@ -35,6 +39,7 @@ const ItemCard = ({ id, description, title, image, ...otherProps }: Props) => {
             variant="h5"
             fontSize={{ xs: '20px', lg: '25px' }}
             component="div"
+            fontFamily="bpg"
           >
             {title}
           </Typography>

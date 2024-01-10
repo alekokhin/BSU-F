@@ -2,6 +2,7 @@ import { Add, EditTwoTone } from '@mui/icons-material'
 import { Box, Container, Grid, Stack } from '@mui/material'
 import { useQuery } from '@tanstack/react-query'
 import { getStrings } from 'api/strings'
+import stringsBg from 'assets/images/strings.jpg'
 import ItemCard from 'components/card'
 import Header from 'components/header'
 import Loader from 'components/loader'
@@ -26,53 +27,70 @@ const Strings = () => {
           onClick={() => navigate('/new-string')}
         />
       )}
-      {$strings ? (
-        <Container sx={{ height: '90vh', width: '100%' }}>
-          <Stack spacing={{ xs: 2, sm: 6 }} marginTop={5}>
-            <Grid
-              container
-              justifyContent="center"
-              columns={{ xs: 1, sm: 8, md: 12 }}
-            >
-              {$strings.map(string => (
-                <Grid
-                  key={string.id}
-                  item
-                  xs={1}
-                  sm={4}
-                  md={4}
-                  sx={{ display: 'grid', placeItems: 'center' }}
-                >
-                  <Box>
-                    <ItemCard
-                      onClick={() => {
-                        navigate(`/string/${string.id}`)
-                      }}
-                      description={string.description}
-                      title={string.title}
-                      image={
-                        `${REACT_APP_API_URL}${locales}/string/images/${string.images?.[0]}` ||
-                        ''
-                      } // Use optional chaining and provide a default value (an empty string)
-                      id={string.id}
-                    />
-                    {isAuthenticated && (
-                      <EditTwoTone
-                        sx={{ cursor: 'pointer' }}
+      <Box
+        sx={{
+          minHeight: '90vh',
+          width: '100%',
+          backgroundImage: `url(${stringsBg})`,
+          backgroundSize: 'cover',
+          // filter: 'blur(2px)',
+        }}
+      >
+        {$strings ? (
+          <Container
+            sx={{
+              minHeight: '90vh',
+              width: '100%',
+              overflow: 'auto',
+              '&::-webkit-scrollbar': { display: 'none' },
+            }}
+          >
+            <Stack spacing={{ xs: 2, sm: 6 }} marginTop={5}>
+              <Grid
+                container
+                justifyContent="center"
+                columns={{ xs: 1, sm: 8, md: 12 }}
+              >
+                {$strings.map(string => (
+                  <Grid
+                    key={string.id}
+                    item
+                    xs={1}
+                    sm={4}
+                    md={4}
+                    sx={{ display: 'grid', placeItems: 'center' }}
+                  >
+                    <Box>
+                      <ItemCard
                         onClick={() => {
-                          navigate(`/edit-string/${string.id}`)
+                          navigate(`/string/${string.id}`)
                         }}
+                        description={string.description}
+                        title={string.title}
+                        image={
+                          `${REACT_APP_API_URL}${locales}/string/images/${string.images?.[0]}` ||
+                          ''
+                        } // Use optional chaining and provide a default value (an empty string)
+                        id={string.id}
                       />
-                    )}
-                  </Box>
-                </Grid>
-              ))}
-            </Grid>
-          </Stack>
-        </Container>
-      ) : (
-        <Loader />
-      )}
+                      {isAuthenticated && (
+                        <EditTwoTone
+                          sx={{ cursor: 'pointer' }}
+                          onClick={() => {
+                            navigate(`/edit-string/${string.id}`)
+                          }}
+                        />
+                      )}
+                    </Box>
+                  </Grid>
+                ))}
+              </Grid>
+            </Stack>
+          </Container>
+        ) : (
+          <Loader />
+        )}
+      </Box>
     </>
   )
 }

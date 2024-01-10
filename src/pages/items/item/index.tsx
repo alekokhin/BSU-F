@@ -1,6 +1,14 @@
-import { Box, Stack, TextField, Typography } from '@mui/material'
+import { Search } from '@mui/icons-material'
+import {
+  Box,
+  InputAdornment,
+  Stack,
+  TextField,
+  Typography,
+} from '@mui/material'
 import { useQuery } from '@tanstack/react-query'
 import { getItem, ItemType } from 'api/items'
+import itemBg from 'assets/images/item.jpg'
 import Header from 'components/header'
 import ImageList from 'components/imageList'
 import Loader from 'components/loader'
@@ -47,7 +55,6 @@ const Item = () => {
 
     // eslint-disable-next-line security/detect-non-literal-regexp
     const regex = new RegExp(`(${searchTerm})`, 'gi')
-    // return text.replace(regex, (match, p1) => `<mark>${p1}</mark>`)
     return text
       .split(regex)
       .map((part, index) =>
@@ -58,74 +65,94 @@ const Item = () => {
   return (
     <>
       <Header />
-      {item ? (
-        <>
-          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Stack sx={{ width: '90%' }} spacing={5}>
-              <Box
-                sx={{
-                  display: 'flex',
-                  justifyContent: 'space-between',
-                  position: 'sticky',
-                }}
-              >
-                <Typography variant="h4">{item.title}</Typography>
-                <TextField
-                  sx={{ borderRadius: '30px', height: '30px' }}
-                  value={searchTerm}
-                  onChange={e => setSearchTerm(e.target.value)}
-                />
-              </Box>
-
-              <Box
-                sx={{
-                  display: 'flex',
-                  alignItems: 'flex-start',
-                  justifyContent: 'space-evenly',
-                }}
-              >
-                <ImageList images={item?.images || []} page="item" />
-                <Box>
-                  <Box
-                    sx={{
-                      width: '100%',
-                      maxWidth: 400,
-                      bgcolor: 'background.paper',
-                      maxHeight: '600px',
-                      overflow: 'auto',
+      <Box
+        sx={{
+          padding: '10px',
+          minHeight: '90vh',
+          backgroundImage: `url(${itemBg})`,
+          backgroundSize: 'cover',
+          // filter: 'blur(2px)',
+        }}
+      >
+        {item ? (
+          <>
+            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+              <Stack sx={{ width: '90%' }} spacing={5}>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    justifyContent: 'space-between',
+                    position: 'sticky',
+                  }}
+                >
+                  <Typography variant="h4">{item.title}</Typography>
+                  <TextField
+                    sx={{ height: '30px' }}
+                    value={searchTerm}
+                    InputProps={{
+                      startAdornment: (
+                        <InputAdornment position="start">
+                          <Search />
+                        </InputAdornment>
+                      ),
+                      style: {
+                        borderWidth: '2px',
+                        borderRadius: '30px',
+                        backdropFilter: 'blur(2px)',
+                      },
                     }}
-                  >
-                    {list.map((detail, index) => (
-                      <Box key={index}>
-                        <Box fontWeight="bold">
-                          {t(
-                            `item${
-                              detail.key.charAt(0).toUpperCase() +
-                              detail.key.slice(1)
-                            }`,
-                          ) + ':'}
+                    onChange={e => setSearchTerm(e.target.value)}
+                  />
+                </Box>
+
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    justifyContent: 'space-evenly',
+                  }}
+                >
+                  <ImageList images={item?.images || []} page="item" />
+                  <Box>
+                    <Box
+                      sx={{
+                        width: '100%',
+                        maxWidth: 400,
+                        // bgcolor: 'transparent',
+                        backdropFilter: 'blur(5px)',
+                        maxHeight: '400px',
+                        overflow: 'auto',
+                        '&::-webkit-scrollbar': { display: 'none' },
+                      }}
+                    >
+                      {list.map((detail, index) => (
+                        <Box key={index}>
+                          <Box fontWeight="bold">
+                            {t(
+                              `item${
+                                detail.key.charAt(0).toUpperCase() +
+                                detail.key.slice(1)
+                              }`,
+                            ) + ':'}
+                          </Box>
+                          <Box fontSize="25px"> {detail.value}</Box>
                         </Box>
-                        <Box
-                          dangerouslySetInnerHTML={{
-                            __html: highlightSearchTerm(String(detail.value)),
-                          }}
-                        />
-                      </Box>
-                    ))}
+                      ))}
+                    </Box>
                   </Box>
                 </Box>
-              </Box>
-              <Box>
-                <Typography variant="body2">
-                  {highlightSearchTerm(item.description)}
-                </Typography>
-              </Box>
-            </Stack>
-          </Box>
-        </>
-      ) : (
-        <Loader />
-      )}
+                <Box>
+                  <Typography variant="body2" fontSize="35px">
+                    {highlightSearchTerm(item.description)}
+                  </Typography>
+                </Box>
+              </Stack>
+            </Box>
+          </>
+        ) : (
+          <Loader />
+        )}
+      </Box>
     </>
   )
 }

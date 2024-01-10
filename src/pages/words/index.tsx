@@ -1,7 +1,8 @@
 import { Add } from '@mui/icons-material'
-import { Container } from '@mui/material'
+import { Box, Container } from '@mui/material'
 import { useQuery } from '@tanstack/react-query'
 import { getWords } from 'api/words'
+import wordsBg from 'assets/images/words.jpg'
 import Header from 'components/header'
 import { MyTable } from 'components/table/table'
 import { useAuthContext } from 'providers/auth'
@@ -40,6 +41,20 @@ const Words = () => {
       {isAuthenticated && (
         <Add sx={{ cursor: 'pointer' }} onClick={() => navigate('/new-word')} />
       )}
+      <Box
+        sx={{
+          width: '100%',
+          height: '90vh',
+          backgroundImage: `url(${wordsBg})`,
+          backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          // background: 'inherit',
+          filter: 'blur(2px)',
+          zIndex: -1,
+          position: 'absolute',
+        }}
+      />
       <Container
         sx={{
           display: 'flex',

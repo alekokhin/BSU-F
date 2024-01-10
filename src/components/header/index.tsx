@@ -49,9 +49,9 @@ const Header = () => {
   return (
     <AppBar
       sx={{
-        bgcolor: '#03a9f3',
+        bgcolor: '#e4ae79',
         position: 'sticky',
-        marginBottom: isHomePage ? '0' : '25px',
+        // marginBottom: isHomePage ? '0' : '25px',
       }}
     >
       <Toolbar sx={{ justifyContent: 'space-between' }}>
@@ -83,13 +83,21 @@ const Header = () => {
           )}
         </Box>
         {!page && (
-          <Box sx={{ width: '50%' }}>
+          <Box sx={{ width: '70%' }}>
             <BottomNavigation
               sx={{
-                fontSize: '15px',
+                fontSize: '25px',
 
                 backgroundColor: 'transparent',
-                '& .Mui-selected': { color: '#f0f0f0' },
+                '& .Mui-selected': {
+                  color: '#f0f0f0',
+                  fontSize: '20px !important',
+                },
+                '& .MuiBottomNavigationAction-label': {
+                  fontFamily: 'bpg',
+                  fontSize: '18px',
+                  fontWeight: 'bolder',
+                },
               }}
               showLabels
               value={activeIndex}
@@ -106,12 +114,10 @@ const Header = () => {
                 label={t('Symbols')}
                 onClick={() => navigate('/symbols')}
               />
-
               <BottomNavigationAction
                 label={t('Text analysis')}
                 onClick={() => navigate('/analyzed-texts')}
               />
-
               <BottomNavigationAction
                 label={t('Strings')}
                 onClick={() => navigate('/strings')}
