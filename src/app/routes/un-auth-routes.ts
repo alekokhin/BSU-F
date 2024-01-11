@@ -49,4 +49,8 @@ export const unAuthRoutes = [
     path: 'analyzed-text/:id',
     factory: () => import('pages/analyzed-texts/analyzed-text'),
   }),
+  buildRoute({
+    path: 'corpus-list',
+    factory: () => import('pages/corpus-list'),
+  }),
 ]

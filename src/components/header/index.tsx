@@ -27,6 +27,7 @@ const useActiveIndex = () => {
     '/analyzed-texts',
     '/strings',
     '/words',
+    '/corpus-list',
   ]
 
   const activeIndex = paths.indexOf(location.pathname)
@@ -125,6 +126,10 @@ const Header = () => {
               <BottomNavigationAction
                 label={t('words')}
                 onClick={() => navigate('/words')}
+              />
+              <BottomNavigationAction
+                label={t('corpusList')}
+                onClick={() => navigate('/corpus-list')}
               />
             </BottomNavigation>
           </Box>

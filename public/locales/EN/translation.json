@@ -30,5 +30,18 @@
   "intonation": "Intonation",
   "thematicGroup": "Thematic Group",
   "partOfSpeech": "Part Of Speech",
-  "dictionary": "Dictionary"
+  "dictionary": "Dictionary",
+  "corpusList": "Corpus list",
+  "digipal": "  A digital resource and database for paleography, manuscript studies and diplomacy",
+  "digitalBodleian": "Digital Bodle, Bodleian Library Database",
+  "armazi": "Electronic portal of Caucasian languages",
+  "titus": "Ancient and Middle Georgian original and translated monuments",
+  "corpora": "Corpus of Georgian dialects",
+  "gnc": "The Georgian National Corpus",
+  "repositoryMountathos": "Mount Athos Repository",
+  "vaticanLibrary": "Vatican Library",
+  "nationalLibraryOfParis": "National Library of Paris",
+  "britishLibrary": "British Library",
+  "schoenCollection": "Schoen Collection",
+  "abroad":"Digital copies of Georgian manuscripts preserved abroad"
 }

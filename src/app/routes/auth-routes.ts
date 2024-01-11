@@ -86,4 +86,8 @@ export const authRoutes = [
     path: 'new-analyzed-text',
     factory: () => import('pages/analyzed-texts/new-analyzed-text'),
   }),
+  buildRoute({
+    path: 'corpus-list',
+    factory: () => import('pages/corpus-list'),
+  }),
 ]
