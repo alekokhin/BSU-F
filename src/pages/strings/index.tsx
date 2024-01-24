@@ -21,12 +21,7 @@ const Strings = () => {
   return (
     <>
       <Header />
-      {isAuthenticated && (
-        <Add
-          sx={{ cursor: 'pointer' }}
-          onClick={() => navigate('/new-string')}
-        />
-      )}
+
       <Box
         sx={{
           width: '100%',
@@ -40,6 +35,12 @@ const Strings = () => {
           position: 'absolute',
         }}
       />
+      {isAuthenticated && (
+        <Add
+          sx={{ cursor: 'pointer', padding: '20px', fontWeight: 'bolder' }}
+          onClick={() => navigate('/new-string')}
+        />
+      )}
       {$strings ? (
         <Container
           sx={{

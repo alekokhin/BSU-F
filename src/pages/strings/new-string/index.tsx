@@ -23,6 +23,7 @@ const newStringDefaultValues: StringType = {
   description: '',
   images: [],
   title: '',
+  newImages: [],
 }
 const NewString = () => {
   // hooks
@@ -35,7 +36,7 @@ const NewString = () => {
   })
   const { fields, append, remove } = useFieldArray({
     control,
-    name: 'images',
+    name: 'newImages',
   })
   const { enqueueSnackbar } = useSnackbar()
   const $newString = useMutation(newString)

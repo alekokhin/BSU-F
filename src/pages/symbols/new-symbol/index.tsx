@@ -23,6 +23,7 @@ const symbolDefaultValue: SymbolType = {
   description: '',
   images: [],
   connection: '',
+  newImages: [],
 }
 const NewSymbol = () => {
   const { t } = useTranslation()
@@ -33,7 +34,7 @@ const NewSymbol = () => {
   })
   const { fields, append, remove } = useFieldArray({
     control,
-    name: 'images',
+    name: 'newImages',
   })
   const { enqueueSnackbar } = useSnackbar()
   const $newSymbol = useMutation(newSymbol)

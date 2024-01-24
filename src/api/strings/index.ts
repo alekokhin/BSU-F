@@ -5,6 +5,7 @@ export type StringType = {
   id: string
   title: string
   images: Array<any>
+  newImages: Array<any>
   description: string
   connection: string
 }

@@ -9,7 +9,7 @@ import {
   useMediaQuery,
 } from '@mui/material'
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { deleteSymbol, getSymbol, SymbolType } from 'api/symbols'
+import { deleteSymbol, editSymbol, getSymbol, SymbolType } from 'api/symbols'
 import { ControlledTextField } from 'components/form/controlled/controlled-text-field'
 import Header from 'components/header'
 import { useSnackbar } from 'notistack'
@@ -27,12 +27,20 @@ const EditSymbol = () => {
     queryKey: ['item', id],
     queryFn: () => getSymbol(id!),
   })
-  const { control, reset } = useForm<SymbolType>({
+  const { control, reset, handleSubmit } = useForm<SymbolType>({
     defaultValues: data,
   })
-  const { fields, append, remove } = useFieldArray({
+  const { fields, remove } = useFieldArray({
     control,
     name: 'images',
+  })
+  const {
+    fields: newImages,
+    append: AppendNewImages,
+    remove: RemoveNewImages,
+  } = useFieldArray({
+    control,
+    name: 'newImages',
   })
   useEffect(() => {
     if (data) {
@@ -41,7 +49,7 @@ const EditSymbol = () => {
   }, [data, reset])
 
   const { enqueueSnackbar } = useSnackbar()
-  // const $editSymbol = useMutation(editSymbol)
+  const $editSymbol = useMutation(editSymbol)
   const $delete = useMutation(deleteSymbol)
   const { t } = useTranslation()
 
@@ -51,7 +59,7 @@ const EditSymbol = () => {
 
     // Process each file individually
     for (const file of files) {
-      append(file)
+      AppendNewImages(file)
     }
   }
   const deleteElement = () => {
@@ -75,19 +83,19 @@ const EditSymbol = () => {
       <Container>
         <Stack
           component="form"
-          // onSubmit={handleSubmit(form => {
-          //   $editSymbol.mutate(form, {
-          //     onSuccess: () => {
-          //       enqueueSnackbar('item add successfully', {
-          //         variant: 'success',
-          //       })
-          //       navigate('/symbols')
-          //     },
-          //     onError: (error: any) => {
-          //       enqueueSnackbar('something went wrong', { variant: 'error' })
-          //     },
-          //   })
-          // })}
+          onSubmit={handleSubmit(form => {
+            $editSymbol.mutate(form, {
+              onSuccess: () => {
+                enqueueSnackbar('item add successfully', {
+                  variant: 'success',
+                })
+                navigate('/symbols')
+              },
+              onError: (error: any) => {
+                enqueueSnackbar('something went wrong', { variant: 'error' })
+              },
+            })
+          })}
         >
           <Stack>
             <Box
@@ -97,49 +105,12 @@ const EditSymbol = () => {
                 alignItems: 'flex-start',
               }}
             >
-              <Box sx={{ width: '49%' }}>
-                <TextField
-                  name="images"
-                  type="file"
-                  fullWidth
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  variant="outlined"
-                  inputProps={{ multiple: true }}
-                  onChange={handleChange}
-                />
-                {fields && (
-                  <ImageList
-                    cols={matches ? 3 : 2}
-                    variant="woven"
-                    // gap={8}
-                    rowHeight={164}
-                    sx={{ width: '550px', height: '450px' }}
-                  >
-                    {fields.map((image, index) => {
-                      return (
-                        <ImageListItem key={index}>
-                          <img src={image?.image} alt={`Item ${index}`} />
-                          <Button
-                            onClick={() => remove(index)}
-                            variant="outlined"
-                            fullWidth
-                          >
-                            Remove
-                          </Button>
-                        </ImageListItem>
-                      )
-                    })}
-                  </ImageList>
-                )}
-              </Box>
               <Stack
                 spacing={1}
                 sx={{
                   display: 'flex',
                   justifyContent: 'space-evenly',
-                  width: '49%',
+                  // width: '49%',
                 }}
               >
                 <ControlledTextField
@@ -164,6 +135,79 @@ const EditSymbol = () => {
                   placeholder={t('itemDescription')}
                   control={control}
                 />
+                <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+                  <Box sx={{ width: '49%' }}>
+                    {fields && (
+                      <ImageList
+                        cols={matches ? 3 : 2}
+                        variant="woven"
+                        // gap={8}
+                        rowHeight={164}
+                        sx={{
+                          position: 'relative',
+                          width: { sm: '400px', md: '500px', lg: '550px' },
+                          height: '500px',
+                        }}
+                      >
+                        {fields.map((image, index) => {
+                          return (
+                            <ImageListItem key={index}>
+                              <img src={image.image} alt={`Item ${index}`} />
+                              <Button
+                                onClick={() => remove(index)}
+                                variant="outlined"
+                                fullWidth
+                              >
+                                Remove
+                              </Button>
+                            </ImageListItem>
+                          )
+                        })}
+                      </ImageList>
+                    )}
+                  </Box>
+                  <Box sx={{ width: '48%' }}>
+                    <TextField
+                      name="images"
+                      type="file"
+                      fullWidth
+                      InputLabelProps={{
+                        shrink: true,
+                      }}
+                      variant="outlined"
+                      inputProps={{ multiple: true }}
+                      onChange={handleChange}
+                    />
+                    {newImages && (
+                      <ImageList
+                        cols={matches ? 3 : 2}
+                        variant="woven"
+                        // gap={8}
+                        rowHeight={164}
+                        sx={{
+                          position: 'relative',
+                          width: { sm: '400px', md: '500px', lg: '550px' },
+                          height: '500px',
+                        }}
+                      >
+                        {newImages.map((image, index) => {
+                          return (
+                            <ImageListItem key={index}>
+                              <img src={image.image} alt={`Item ${index}`} />
+                              <Button
+                                onClick={() => RemoveNewImages(index)}
+                                variant="outlined"
+                                fullWidth
+                              >
+                                RemoveNewImages
+                              </Button>
+                            </ImageListItem>
+                          )
+                        })}
+                      </ImageList>
+                    )}
+                  </Box>
+                </Box>
               </Stack>
             </Box>
           </Stack>

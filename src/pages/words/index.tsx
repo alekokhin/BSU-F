@@ -38,9 +38,7 @@ const Words = () => {
   return (
     <>
       <Header />
-      {isAuthenticated && (
-        <Add sx={{ cursor: 'pointer' }} onClick={() => navigate('/new-word')} />
-      )}
+
       <Box
         sx={{
           width: '100%',
@@ -55,6 +53,12 @@ const Words = () => {
           position: 'absolute',
         }}
       />
+      {isAuthenticated && (
+        <Add
+          sx={{ cursor: 'pointer', padding: '20px', fontWeight: 'bolder' }}
+          onClick={() => navigate('/new-word')}
+        />
+      )}
       <Container
         sx={{
           display: 'flex',

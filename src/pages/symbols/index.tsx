@@ -21,12 +21,7 @@ const Symbols = () => {
   return (
     <>
       <Header />
-      {isAuthenticated && (
-        <Add
-          sx={{ cursor: 'pointer' }}
-          onClick={() => navigate('/new-symbol')}
-        />
-      )}
+
       <Box
         sx={{
           width: '100%',
@@ -41,6 +36,12 @@ const Symbols = () => {
           position: 'absolute',
         }}
       />
+      {isAuthenticated && (
+        <Add
+          sx={{ cursor: 'pointer', padding: '20px', fontWeight: 'bolder' }}
+          onClick={() => navigate('/new-symbol')}
+        />
+      )}
       {$symbols ? (
         <Container
           sx={{
