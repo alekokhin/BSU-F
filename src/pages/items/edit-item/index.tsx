@@ -10,7 +10,7 @@ import {
   useMediaQuery,
 } from '@mui/material'
 import { useMutation, useQuery } from '@tanstack/react-query'
-import { deleteItem, getItem, ItemType } from 'api/items'
+import { deleteItem, editItem, getItem, ItemType } from 'api/items'
 import { ControlledTextField } from 'components/form/controlled/controlled-text-field'
 import Header from 'components/header'
 import { enqueueSnackbar } from 'notistack'
@@ -32,19 +32,27 @@ const EditItem = () => {
     queryFn: () => getItem(id!),
   })
 
-  const { control, reset } = useForm<ItemType>({
+  const { control, reset, handleSubmit } = useForm<ItemType>({
     defaultValues: data,
   })
-  const { fields, append, remove } = useFieldArray({
+  const { fields, remove } = useFieldArray({
     control,
     name: 'images',
+  })
+  const {
+    fields: newImages,
+    append: AppendNewImages,
+    remove: RemoveNewImages,
+  } = useFieldArray({
+    control,
+    name: 'newImages',
   })
   useEffect(() => {
     if (data) {
       reset(data)
     }
   }, [data, reset])
-  // const $editItem = useMutation(editItem)
+  const $editItem = useMutation(editItem)
   const $delete = useMutation(deleteItem)
 
   const handleChange = (e: any) => {
@@ -52,14 +60,7 @@ const EditItem = () => {
 
     // Process each file individually
     for (const file of files) {
-      // const reader = new FileReader()
-
-      // reader.addEventListener('load', () => {
-      //   const base64Image = reader.result as string
-      append(file)
-      // })
-
-      // reader.readAsDataURL(file)
+      AppendNewImages(file)
     }
   }
   const matches = useMediaQuery('(min-width:600px)')
@@ -82,67 +83,39 @@ const EditItem = () => {
       <Header />
       <Container
         sx={{
+          padding: '10px',
           height: '90vh',
         }}
       >
         <Stack
           component="form"
-          // onSubmit={handleSubmit(form => {
-          //   $editItem.mutate(form, {
-          //     onSuccess: () => {
-          //       enqueueSnackbar('item add successfully', {
-          //         variant: 'success',
-          //       })
-          //       navigate('/items')
-          //     },
-          //     onError: (error: any) => {
-          //       enqueueSnackbar('something went wrong', { variant: 'error' })
-          //     },
-          //   })
-          // })}
+          onSubmit={handleSubmit(form => {
+            $editItem.mutate(form, {
+              onSuccess: () => {
+                enqueueSnackbar('item add successfully', {
+                  variant: 'success',
+                })
+                navigate('/items')
+              },
+              onError: (error: any) => {
+                enqueueSnackbar('something went wrong', { variant: 'error' })
+              },
+            })
+          })}
         >
-          <Stack>
+          <Stack spacing={3}>
             <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
               <Box sx={{ width: '49%' }}>
-                <TextField
-                  name="images"
-                  type="file"
+                <ControlledTextField
+                  type="text"
+                  name="description"
+                  multiline
                   fullWidth
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  variant="outlined"
-                  inputProps={{ multiple: true }}
-                  onChange={handleChange}
+                  sx={{ maxHeight: '200px', overflow: 'auto' }}
+                  minRows={5}
+                  placeholder={t('itemDescription')}
+                  control={control}
                 />
-                {fields && (
-                  <ImageList
-                    cols={matches ? 3 : 2}
-                    variant="woven"
-                    // gap={8}
-                    rowHeight={164}
-                    sx={{
-                      position: 'relative',
-                      width: { sm: '400px', md: '500px', lg: '550px' },
-                      height: '500px',
-                    }}
-                  >
-                    {fields.map((image, index) => {
-                      return (
-                        <ImageListItem key={index}>
-                          <img src={image.image} alt={`Item ${index}`} />
-                          <Button
-                            onClick={() => remove(index)}
-                            variant="outlined"
-                            fullWidth
-                          >
-                            Remove
-                          </Button>
-                        </ImageListItem>
-                      )
-                    })}
-                  </ImageList>
-                )}
               </Box>
               <Grid
                 container
@@ -252,22 +225,83 @@ const EditItem = () => {
                 />
               </Grid>
             </Box>
-            <Box>
-              <ControlledTextField
-                type="text"
-                name="description"
-                multiline
-                fullWidth
-                sx={{ maxHeight: '200px', overflow: 'auto' }}
-                minRows={5}
-                placeholder={t('itemDescription')}
-                control={control}
-              />
+            <Box sx={{ display: 'flex', justifyContent: 'space-between' }}>
+              <Box sx={{ width: '49%' }}>
+                {fields && (
+                  <ImageList
+                    cols={matches ? 3 : 2}
+                    variant="woven"
+                    // gap={8}
+                    rowHeight={164}
+                    sx={{
+                      position: 'relative',
+                      width: { sm: '400px', md: '500px', lg: '550px' },
+                      height: '500px',
+                    }}
+                  >
+                    {fields.map((image, index) => {
+                      return (
+                        <ImageListItem key={index}>
+                          <img src={image.image} alt={`Item ${index}`} />
+                          <Button
+                            onClick={() => remove(index)}
+                            variant="outlined"
+                            fullWidth
+                          >
+                            Remove
+                          </Button>
+                        </ImageListItem>
+                      )
+                    })}
+                  </ImageList>
+                )}
+              </Box>
+              <Box sx={{ width: '48%' }}>
+                <TextField
+                  name="images"
+                  type="file"
+                  fullWidth
+                  InputLabelProps={{
+                    shrink: true,
+                  }}
+                  variant="outlined"
+                  inputProps={{ multiple: true }}
+                  onChange={handleChange}
+                />
+                {newImages && (
+                  <ImageList
+                    cols={matches ? 3 : 2}
+                    variant="woven"
+                    // gap={8}
+                    rowHeight={164}
+                    sx={{
+                      position: 'relative',
+                      width: { sm: '400px', md: '500px', lg: '550px' },
+                      height: '500px',
+                    }}
+                  >
+                    {newImages.map((image, index) => {
+                      return (
+                        <ImageListItem key={index}>
+                          <img src={image.image} alt={`Item ${index}`} />
+                          <Button
+                            onClick={() => RemoveNewImages(index)}
+                            variant="outlined"
+                            fullWidth
+                          >
+                            RemoveNewImages
+                          </Button>
+                        </ImageListItem>
+                      )
+                    })}
+                  </ImageList>
+                )}
+              </Box>
             </Box>
           </Stack>
 
           <Box display="flex" justifyContent="space-between">
-            <Button variant="outlined" sx={{ width: '49%' }}>
+            <Button variant="outlined" type="submit" sx={{ width: '49%' }}>
               განახლება
             </Button>
             <Button

@@ -23,60 +23,61 @@ const AnalyzedTexts = () => {
       )}
       <Box
         sx={{
-          minHeight: '90vh',
           width: '100%',
+          height: '100vh',
           backgroundImage: `url(${textBg})`,
           backgroundSize: 'cover',
-          // filter: 'blur(2px)',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          opacity: 0.7,
+          zIndex: -1,
+          position: 'absolute',
         }}
-      >
-        {data ? (
-          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-            <Box width="90%">
-              {data.map((detail, index) => (
-                <Box
-                  key={index}
-                  fontSize="50px"
-                  sx={{
-                    display: 'flex',
-                    justifyContent: isAuthenticated
-                      ? 'space-between'
-                      : 'center',
-                    height: '70px',
-                  }}
-                >
-                  <Box>
-                    <Typography
-                      variant="h5"
-                      fontWeight="bold"
-                      sx={{ cursor: 'pointer' }}
-                      onClick={() => {
-                        navigate(`/analyzed-text/${detail.id}`)
-                      }}
-                    >
-                      {detail.title}
-                    </Typography>
-                  </Box>
-                  <Box>
-                    <Box sx={{ width: '10%' }}>
-                      {isAuthenticated && (
-                        <EditTwoTone
-                          sx={{ cursor: 'pointer' }}
-                          onClick={() => {
-                            navigate(`/edit-analyzed-text/${detail.id}`)
-                          }}
-                        />
-                      )}
-                    </Box>
+      />
+      {data ? (
+        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Box width="90%">
+            {data.map((detail, index) => (
+              <Box
+                key={index}
+                fontSize="50px"
+                sx={{
+                  display: 'flex',
+                  justifyContent: isAuthenticated ? 'space-between' : 'center',
+                  height: '70px',
+                }}
+              >
+                <Box>
+                  <Typography
+                    variant="h5"
+                    fontWeight="bold"
+                    sx={{ cursor: 'pointer' }}
+                    onClick={() => {
+                      navigate(`/analyzed-text/${detail.id}`)
+                    }}
+                  >
+                    {detail.title}
+                  </Typography>
+                </Box>
+                <Box>
+                  <Box sx={{ width: '10%' }}>
+                    {isAuthenticated && (
+                      <EditTwoTone
+                        sx={{ cursor: 'pointer' }}
+                        onClick={() => {
+                          navigate(`/edit-analyzed-text/${detail.id}`)
+                        }}
+                      />
+                    )}
                   </Box>
                 </Box>
-              ))}
-            </Box>
+              </Box>
+            ))}
           </Box>
-        ) : (
-          <Loader />
-        )}
-      </Box>
+        </Box>
+      ) : (
+        <Loader />
+      )}
     </>
   )
 }

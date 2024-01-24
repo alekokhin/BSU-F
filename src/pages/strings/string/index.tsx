@@ -27,49 +27,53 @@ const String = () => {
   return (
     <>
       <Header />
+
       <Box
         sx={{
-          minHeight: '90vh',
           width: '100%',
+          height: '100vh',
           backgroundImage: `url(${stringBg})`,
           backgroundSize: 'cover',
-          // filter: 'blur(2px)',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          opacity: 0.7,
+          zIndex: -1,
+          position: 'absolute',
         }}
-      >
-        {string ? (
-          <>
-            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Stack sx={{ width: '90%' }} spacing={5}>
-                <Stack spacing={5} alignItems="center">
-                  <Typography variant="h4">
-                    {string.title}
-                    {string.connection && (
-                      <LinkSharp
-                        sx={{ cursor: 'pointer' }}
-                        onClick={() => window.open(string.connection, '_blank')}
-                      />
-                    )}
-                  </Typography>
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      justifyContent: 'space-evenly',
-                    }}
-                  >
-                    <ImageList images={string?.images || []} page="string" />
-                  </Box>
-                </Stack>
-                <Box>
-                  <Typography variant="body2">{string.description}</Typography>
+      />
+      {string ? (
+        <>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Stack sx={{ width: '90%' }} spacing={5}>
+              <Stack spacing={5} alignItems="center">
+                <Typography variant="h4">
+                  {string.title}
+                  {string.connection && (
+                    <LinkSharp
+                      sx={{ cursor: 'pointer' }}
+                      onClick={() => window.open(string.connection, '_blank')}
+                    />
+                  )}
+                </Typography>
+                <Box
+                  sx={{
+                    display: 'flex',
+                    alignItems: 'flex-start',
+                    justifyContent: 'space-evenly',
+                  }}
+                >
+                  <ImageList images={string?.images || []} page="string" />
                 </Box>
               </Stack>
-            </Box>
-          </>
-        ) : (
-          <Loader />
-        )}
-      </Box>
+              <Box>
+                <Typography variant="body2">{string.description}</Typography>
+              </Box>
+            </Stack>
+          </Box>
+        </>
+      ) : (
+        <Loader />
+      )}
     </>
   )
 }

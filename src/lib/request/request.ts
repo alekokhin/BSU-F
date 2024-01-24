@@ -40,9 +40,6 @@ export const request =
     if (!multipart) {
       headers['Content-type'] = 'application/json'
     }
-    console.log(headers)
-    console.log(formData)
-    console.log(body)
     let fet = multipart
       ? {
           method,

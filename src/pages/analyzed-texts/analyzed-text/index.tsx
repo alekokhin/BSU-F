@@ -48,67 +48,72 @@ const AnalyzedText = () => {
       <Header />
       <Box
         sx={{
-          padding: '10px',
-          minHeight: '90vh',
+          width: '100%',
+          height: '100vh',
           backgroundImage: `url(${textBg})`,
           backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          // background: 'inherit',
           // filter: 'blur(2px)',
+          opacity: 0.7,
+          zIndex: -1,
+          position: 'absolute',
         }}
-      >
-        {analyzedText ? (
-          <>
-            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Stack sx={{ width: '90%' }} spacing={5}>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    position: 'sticky',
+      />
+      {analyzedText ? (
+        <>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Stack sx={{ width: '90%' }} spacing={5}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  position: 'sticky',
+                }}
+              >
+                <Typography variant="h4">
+                  {analyzedText.title}
+                  {analyzedText.connection && (
+                    <LinkSharp
+                      sx={{ cursor: 'pointer' }}
+                      onClick={() =>
+                        window.open(analyzedText.connection, '_blank')
+                      }
+                    />
+                  )}
+                </Typography>
+                <TextField
+                  sx={{ height: '30px' }}
+                  value={searchTerm}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <Search />
+                      </InputAdornment>
+                    ),
+                    style: {
+                      borderWidth: '2px',
+                      borderRadius: '30px',
+                      backgroundColor: '#fff',
+                    },
                   }}
-                >
-                  <Typography variant="h4">
-                    {analyzedText.title}
-                    {analyzedText.connection && (
-                      <LinkSharp
-                        sx={{ cursor: 'pointer' }}
-                        onClick={() =>
-                          window.open(analyzedText.connection, '_blank')
-                        }
-                      />
-                    )}
+                  onChange={e => setSearchTerm(e.target.value)}
+                />
+              </Box>
+              <Stack spacing={5} alignItems="center">
+                <Box>
+                  <Typography variant="body2">
+                    {highlightSearchTerm(analyzedText.description)}
                   </Typography>
-                  <TextField
-                    sx={{ height: '30px' }}
-                    value={searchTerm}
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          <Search />
-                        </InputAdornment>
-                      ),
-                      style: {
-                        borderWidth: '2px',
-                        borderRadius: '30px',
-                        backdropFilter: 'blur(2px)',
-                      },
-                    }}
-                    onChange={e => setSearchTerm(e.target.value)}
-                  />
                 </Box>
-                <Stack spacing={5} alignItems="center">
-                  <Box>
-                    <Typography variant="body2">
-                      {highlightSearchTerm(analyzedText.description)}
-                    </Typography>
-                  </Box>
-                </Stack>
               </Stack>
-            </Box>
-          </>
-        ) : (
-          <Loader />
-        )}
-      </Box>
+            </Stack>
+          </Box>
+        </>
+      ) : (
+        <Loader />
+      )}
     </>
   )
 }

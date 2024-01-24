@@ -67,92 +67,99 @@ const Item = () => {
       <Header />
       <Box
         sx={{
-          padding: '10px',
-          minHeight: '90vh',
+          width: '100%',
+          height: '100vh',
           backgroundImage: `url(${itemBg})`,
           backgroundSize: 'cover',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          // background: 'inherit',
           // filter: 'blur(2px)',
+          opacity: 0.7,
+          zIndex: -1,
+          position: 'absolute',
         }}
-      >
-        {item ? (
-          <>
-            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Stack sx={{ width: '90%' }} spacing={5}>
-                <Box
-                  sx={{
-                    display: 'flex',
-                    justifyContent: 'space-between',
-                    position: 'sticky',
+      />
+      {item ? (
+        <>
+          <Box
+            sx={{ display: 'flex', justifyContent: 'center', padding: '20px' }}
+          >
+            <Stack sx={{ width: '90%' }} spacing={5}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  position: 'sticky',
+                }}
+              >
+                <Typography variant="h4">{item.title}</Typography>
+                <TextField
+                  sx={{ height: '30px' }}
+                  value={searchTerm}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <Search />
+                      </InputAdornment>
+                    ),
+                    style: {
+                      borderWidth: '2px',
+                      borderRadius: '30px',
+                      backgroundColor: '#fff',
+                    },
                   }}
-                >
-                  <Typography variant="h4">{item.title}</Typography>
-                  <TextField
-                    sx={{ height: '30px' }}
-                    value={searchTerm}
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          <Search />
-                        </InputAdornment>
-                      ),
-                      style: {
-                        borderWidth: '2px',
-                        borderRadius: '30px',
-                        backdropFilter: 'blur(2px)',
-                      },
-                    }}
-                    onChange={e => setSearchTerm(e.target.value)}
-                  />
-                </Box>
+                  onChange={e => setSearchTerm(e.target.value)}
+                />
+              </Box>
 
-                <Box
-                  sx={{
-                    display: 'flex',
-                    alignItems: 'flex-start',
-                    justifyContent: 'space-evenly',
-                  }}
-                >
-                  <ImageList images={item?.images || []} page="item" />
-                  <Box>
-                    <Box
-                      sx={{
-                        width: '100%',
-                        maxWidth: 400,
-                        // bgcolor: 'transparent',
-                        backdropFilter: 'blur(5px)',
-                        maxHeight: '400px',
-                        overflow: 'auto',
-                        '&::-webkit-scrollbar': { display: 'none' },
-                      }}
-                    >
-                      {list.map((detail, index) => (
-                        <Box key={index}>
-                          <Box fontWeight="bold">
-                            {t(
-                              `item${
-                                detail.key.charAt(0).toUpperCase() +
-                                detail.key.slice(1)
-                              }`,
-                            ) + ':'}
-                          </Box>
-                          <Box fontSize="25px"> {detail.value}</Box>
+              <Box
+                sx={{
+                  display: 'flex',
+                  alignItems: 'flex-start',
+                  justifyContent: 'space-evenly',
+                }}
+              >
+                <ImageList images={item?.images || []} page="item" />
+                <Box>
+                  <Box
+                    sx={{
+                      width: '100%',
+                      maxWidth: 400,
+                      // bgcolor: 'transparent',
+                      backdropFilter: 'blur(5px)',
+                      maxHeight: '400px',
+                      overflow: 'auto',
+                      '&::-webkit-scrollbar': { display: 'none' },
+                    }}
+                  >
+                    {list.map((detail, index) => (
+                      <Box key={index}>
+                        <Box fontWeight="bold">
+                          {t(
+                            `item${
+                              detail.key.charAt(0).toUpperCase() +
+                              detail.key.slice(1)
+                            }`,
+                          ) + ':'}
                         </Box>
-                      ))}
-                    </Box>
+                        <Box fontSize="25px"> {detail.value}</Box>
+                      </Box>
+                    ))}
                   </Box>
                 </Box>
-                <Box>
-                  <Typography variant="body2" fontSize="35px">
-                    {highlightSearchTerm(item.description)}
-                  </Typography>
-                </Box>
-              </Stack>
-            </Box>
-          </>
-        ) : (
-          <Loader />
-        )}
-      </Box>
+              </Box>
+              <Box>
+                <Typography variant="body2" fontSize="35px">
+                  {highlightSearchTerm(item.description)}
+                </Typography>
+              </Box>
+            </Stack>
+          </Box>
+        </>
+      ) : (
+        <Loader />
+      )}
     </>
   )
 }

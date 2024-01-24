@@ -1,5 +1,4 @@
-import { Box, Container, Stack, Typography } from '@mui/material'
-import home from 'assets/images/home.jpg'
+import { Box, Stack, Typography } from '@mui/material'
 import homeTextImage from 'assets/images/homeTextImage.jpg'
 import Header from 'components/header'
 import { useTranslation } from 'react-i18next'
@@ -39,7 +38,7 @@ const Home = () => {
           sx={{
             maxHeight: '500px',
             overflow: 'auto',
-            width: { xs: '60%', sm: '50%' },
+            width: { xs: '80%', sm: '70%' },
             '&::-webkit-scrollbar': { display: 'none' },
           }}
         >
@@ -52,7 +51,6 @@ const Home = () => {
           <Typography
             sx={{
               margin: '0px 0px 0px 25px',
-              // backdropFilter: 'blur(5px)',
               fontSize: '18px',
               textAlign: 'justify',
             }}

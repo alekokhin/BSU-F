@@ -29,68 +29,72 @@ const Symbols = () => {
       )}
       <Box
         sx={{
-          minHeight: '90vh',
           width: '100%',
+          height: '100vh',
           backgroundImage: `url(${symbolsBg})`,
           backgroundSize: 'cover',
-          // filter: 'blur(2px)',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+
+          opacity: 0.7,
+          zIndex: -1,
+          position: 'absolute',
         }}
-      >
-        {$symbols ? (
-          <Container
-            sx={{
-              minHeight: '90vh',
-              width: '100%',
-              overflow: 'auto',
-              '&::-webkit-scrollbar': { display: 'none' },
-            }}
-          >
-            <Stack spacing={{ xs: 2, sm: 6 }} marginTop={5}>
-              <Grid
-                container
-                justifyContent="center"
-                columns={{ xs: 1, sm: 8, md: 12 }}
-              >
-                {$symbols.map(symbol => (
-                  <Grid
-                    key={symbol.id}
-                    item
-                    xs={1}
-                    sm={4}
-                    md={4}
-                    sx={{ display: 'grid', placeItems: 'center' }}
-                  >
-                    <Box>
-                      <ItemCard
+      />
+      {$symbols ? (
+        <Container
+          sx={{
+            minHeight: '90vh',
+            width: '100%',
+            overflow: 'auto',
+            '&::-webkit-scrollbar': { display: 'none' },
+          }}
+        >
+          <Stack spacing={{ xs: 2, sm: 6 }} marginTop={5}>
+            <Grid
+              container
+              justifyContent="center"
+              columns={{ xs: 1, sm: 8, md: 12 }}
+            >
+              {$symbols.map(symbol => (
+                <Grid
+                  key={symbol.id}
+                  item
+                  xs={1}
+                  sm={4}
+                  md={4}
+                  sx={{ display: 'grid', placeItems: 'center' }}
+                >
+                  <Box>
+                    <ItemCard
+                      onClick={() => {
+                        navigate(`/symbol/${symbol.id}`)
+                      }}
+                      description={symbol.description}
+                      title={symbol.title}
+                      image={
+                        `${REACT_APP_API_URL}${locales}/symbol/images/${symbol.images?.[0]}` ||
+                        ''
+                      } // Use optional chaining and provide a default value (an empty string)
+                      id={symbol.id}
+                    />
+                    {isAuthenticated && (
+                      <EditTwoTone
+                        sx={{ cursor: 'pointer' }}
                         onClick={() => {
-                          navigate(`/symbol/${symbol.id}`)
+                          navigate(`/edit-symbol/${symbol.id}`)
                         }}
-                        description={symbol.description}
-                        title={symbol.title}
-                        image={
-                          `${REACT_APP_API_URL}${locales}/symbol/images/${symbol.images?.[0]}` ||
-                          ''
-                        } // Use optional chaining and provide a default value (an empty string)
-                        id={symbol.id}
                       />
-                      {isAuthenticated && (
-                        <EditTwoTone
-                          sx={{ cursor: 'pointer' }}
-                          onClick={() => {
-                            navigate(`/edit-symbol/${symbol.id}`)
-                          }}
-                        />
-                      )}
-                    </Box>
-                  </Grid>
-                ))}
-              </Grid>
-            </Stack>
-          </Container>
-        ) : (
-          <Loader />
-        )}
-      </Box>
+                    )}
+                  </Box>
+                </Grid>
+              ))}
+            </Grid>
+          </Stack>
+        </Container>
+      ) : (
+        <Loader />
+      )}
     </>
   )
 }

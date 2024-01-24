@@ -51,74 +51,77 @@ const Symbol = () => {
       <Header />
       <Box
         sx={{
-          padding: '10px',
-          minHeight: '90vh',
+          width: '100%',
+          height: '100vh',
           backgroundImage: `url(${symbolBg})`,
           backgroundSize: 'cover',
-          // filter: 'blur(2px)',
+          backgroundRepeat: 'no-repeat',
+          backgroundPosition: 'center',
+          opacity: 0.7,
+          zIndex: -1,
+          position: 'absolute',
         }}
-      >
-        {symbol ? (
-          <>
-            <Box sx={{ display: 'flex', justifyContent: 'center' }}>
-              <Stack sx={{ width: '90%' }} spacing={5}>
+      />
+      {symbol ? (
+        <>
+          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+            <Stack sx={{ width: '90%' }} spacing={5}>
+              <Box
+                sx={{
+                  display: 'flex',
+                  justifyContent: 'space-between',
+                  position: 'sticky',
+                }}
+              >
+                <Typography variant="h4">
+                  {symbol.title}
+                  {symbol.connection && (
+                    <LinkSharp
+                      sx={{ cursor: 'pointer' }}
+                      onClick={() => window.open(symbol.connection, '_blank')}
+                    />
+                  )}
+                </Typography>
+                <TextField
+                  sx={{ height: '30px' }}
+                  value={searchTerm}
+                  InputProps={{
+                    startAdornment: (
+                      <InputAdornment position="start">
+                        <Search />
+                      </InputAdornment>
+                    ),
+                    style: {
+                      borderWidth: '2px',
+                      borderRadius: '30px',
+                      backgroundColor: '#fff',
+                    },
+                  }}
+                  onChange={e => setSearchTerm(e.target.value)}
+                />
+              </Box>
+              <Stack spacing={5} alignItems="center">
                 <Box
                   sx={{
                     display: 'flex',
-                    justifyContent: 'space-between',
-                    position: 'sticky',
+                    alignItems: 'flex-start',
+                    justifyContent: 'space-evenly',
                   }}
                 >
-                  <Typography variant="h4">
-                    {symbol.title}
-                    {symbol.connection && (
-                      <LinkSharp
-                        sx={{ cursor: 'pointer' }}
-                        onClick={() => window.open(symbol.connection, '_blank')}
-                      />
-                    )}
-                  </Typography>
-                  <TextField
-                    sx={{ height: '30px' }}
-                    value={searchTerm}
-                    InputProps={{
-                      startAdornment: (
-                        <InputAdornment position="start">
-                          <Search />
-                        </InputAdornment>
-                      ),
-                      style: {
-                        borderWidth: '2px',
-                        borderRadius: '30px',
-                        backdropFilter: 'blur(2px)',
-                      },
-                    }}
-                    onChange={e => setSearchTerm(e.target.value)}
-                  />
-                </Box>
-                <Stack spacing={5} alignItems="center">
-                  <Box
-                    sx={{
-                      display: 'flex',
-                      alignItems: 'flex-start',
-                      justifyContent: 'space-evenly',
-                    }}
-                  >
-                    <ImageList images={symbol?.images || []} page="symbol" />
-                  </Box>
-                </Stack>
-                <Box>
-                  <Typography variant="body2">
-                    {highlightSearchTerm(symbol.description)}
-                  </Typography>
+                  <ImageList images={symbol?.images || []} page="symbol" />
                 </Box>
               </Stack>
-            </Box>
-          </>
-        ) : (
-          <Loader />
-        )}
-      </Box>
+              <Box>
+                <Typography variant="body2">
+                  {highlightSearchTerm(symbol.description)}
+                </Typography>
+              </Box>
+            </Stack>
+          </Box>
+        </>
+      ) : (
+        <Loader />
+      )}
     </>
   )
 }

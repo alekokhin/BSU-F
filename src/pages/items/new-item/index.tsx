@@ -39,6 +39,7 @@ const newItemDefaultValues: ItemType = {
   belonging: '',
   firstAndLast: '',
   will: '',
+  newImages: [],
 }
 
 const NewItem = () => {
@@ -49,7 +50,7 @@ const NewItem = () => {
   })
   const { fields, append, remove } = useFieldArray({
     control,
-    name: 'images',
+    name: 'newImages',
   })
   const { enqueueSnackbar } = useSnackbar()
   const $newItem = useMutation(newItem)

@@ -20,7 +20,7 @@ const ItemCard = ({ id, description, title, image, ...otherProps }: Props) => {
         height: { lg: '300px', xs: '250px' },
         marginBottom: '10px',
         cursor: 'pointer',
-        bgcolor: 'transparent',
+        bgcolor: '#d8c09c54',
         backdropFilter: 'blur(2px)',
         boxShadow: '0px 0px 20px #000',
         borderRadius: '15px',
@@ -29,7 +29,7 @@ const ItemCard = ({ id, description, title, image, ...otherProps }: Props) => {
       <CardActionArea>
         <CardMedia
           component="img"
-          height="140"
+          height="200px"
           image={image} // base64 image
           alt="image"
         />
@@ -40,10 +40,11 @@ const ItemCard = ({ id, description, title, image, ...otherProps }: Props) => {
             fontSize={{ xs: '20px', lg: '25px' }}
             component="div"
             fontFamily="bpg"
+            fontWeight="bolder"
           >
             {title}
           </Typography>
-          <Typography variant="body2" color="text.secondary">
+          <Typography variant="h6" color="text.secondary">
             {description}
           </Typography>
         </CardContent>

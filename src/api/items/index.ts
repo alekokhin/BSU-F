@@ -6,6 +6,7 @@ export type ItemType = {
   title: string
   description: string
   images: Array<any>
+  newImages: Array<any>
   security: string
   damaged: string
   color: string
@@ -21,9 +22,6 @@ export type ItemType = {
   belonging: string
   firstAndLast: string
   will: string
-}
-export type Image = {
-  image: string
 }
 
 export type Items = Array<ItemType>
