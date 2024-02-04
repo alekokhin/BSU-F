@@ -68,6 +68,7 @@ const EditAnalyzedText = () => {
                 enqueueSnackbar('item add successfully', {
                   variant: 'success',
                 })
+                location.reload()
               },
               onError: (error: any) => {
                 enqueueSnackbar('something went wrong', { variant: 'error' })

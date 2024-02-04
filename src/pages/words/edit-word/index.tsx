@@ -36,7 +36,7 @@ const EditWords = () => {
         enqueueSnackbar('item delete successfully', {
           variant: 'success',
         })
-        navigate('/words')
+        location.reload()
       },
       onError: (error: any) => {
         enqueueSnackbar('something went wrong', { variant: 'error' })

@@ -63,7 +63,9 @@ const AnalyzedText = () => {
       />
       {analyzedText ? (
         <>
-          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Box
+            sx={{ display: 'flex', justifyContent: 'center', padding: '20px' }}
+          >
             <Stack sx={{ width: '90%' }} spacing={5}>
               <Box
                 sx={{
@@ -103,7 +105,7 @@ const AnalyzedText = () => {
               </Box>
               <Stack spacing={5} alignItems="center">
                 <Box>
-                  <Typography variant="body2">
+                  <Typography variant="h5">
                     {highlightSearchTerm(analyzedText.description)}
                   </Typography>
                 </Box>

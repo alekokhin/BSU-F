@@ -5,7 +5,6 @@ import {
   ImageList,
   ImageListItem,
   Stack,
-  TextField,
   useMediaQuery,
 } from '@mui/material'
 import { useMutation } from '@tanstack/react-query'
@@ -79,15 +78,11 @@ const NewSymbol = () => {
               }}
             >
               <Box sx={{ width: '49%' }}>
-                <TextField
-                  name="images"
+                <input
                   type="file"
-                  fullWidth
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  variant="outlined"
-                  inputProps={{ multiple: true }}
+                  name="images"
+                  accept="image/*"
+                  multiple
                   onChange={handleChange}
                 />
                 {fields && (

@@ -15,12 +15,7 @@ const AnalyzedTexts = () => {
   return (
     <>
       <Header />
-      {isAuthenticated && (
-        <Add
-          sx={{ cursor: 'pointer' }}
-          onClick={() => navigate('/new-analyzed-text')}
-        />
-      )}
+
       <Box
         sx={{
           width: '100%',
@@ -34,6 +29,12 @@ const AnalyzedTexts = () => {
           position: 'absolute',
         }}
       />
+      {isAuthenticated && (
+        <Add
+          sx={{ cursor: 'pointer', padding: '20px', fontWeight: 'bolder' }}
+          onClick={() => navigate('/new-analyzed-text')}
+        />
+      )}
       {data ? (
         <Box sx={{ display: 'flex', justifyContent: 'center' }}>
           <Box width="90%">

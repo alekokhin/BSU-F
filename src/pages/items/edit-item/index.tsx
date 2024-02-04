@@ -6,14 +6,13 @@ import {
   ImageList,
   ImageListItem,
   Stack,
-  TextField,
-  useMediaQuery,
 } from '@mui/material'
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { deleteItem, editItem, getItem, ItemType } from 'api/items'
 import { ControlledTextField } from 'components/form/controlled/controlled-text-field'
 import Header from 'components/header'
 import { enqueueSnackbar } from 'notistack'
+import { locales } from 'providers/locales'
 import { useEffect } from 'react'
 import { useFieldArray, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
@@ -22,6 +21,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 type Params = {
   id: string
 }
+const REACT_APP_API_URL = process.env.REACT_APP_API_URL
 
 const EditItem = () => {
   const { id } = useParams<Params>()
@@ -63,14 +63,16 @@ const EditItem = () => {
       AppendNewImages(file)
     }
   }
-  const matches = useMediaQuery('(min-width:600px)')
   const deleteElement = () => {
     $delete.mutate(id!, {
       onSuccess: () => {
         enqueueSnackbar('item delete successfully', {
           variant: 'success',
         })
-        navigate('/items')
+        location.reload()
+        setTimeout(() => {
+          navigate('/items')
+        }, 1000)
       },
       onError: (error: any) => {
         enqueueSnackbar('something went wrong', { variant: 'error' })
@@ -95,7 +97,7 @@ const EditItem = () => {
                 enqueueSnackbar('item add successfully', {
                   variant: 'success',
                 })
-                navigate('/items')
+                location.reload()
               },
               onError: (error: any) => {
                 enqueueSnackbar('something went wrong', { variant: 'error' })
@@ -229,9 +231,9 @@ const EditItem = () => {
               <Box sx={{ width: '49%' }}>
                 {fields && (
                   <ImageList
-                    cols={matches ? 3 : 2}
+                    cols={2}
                     variant="woven"
-                    // gap={8}
+                    gap={12}
                     rowHeight={164}
                     sx={{
                       position: 'relative',
@@ -240,9 +242,15 @@ const EditItem = () => {
                     }}
                   >
                     {fields.map((image, index) => {
+                      delete image.id
                       return (
                         <ImageListItem key={index}>
-                          <img src={image.image} alt={`Item ${index}`} />
+                          <img
+                            src={`${REACT_APP_API_URL}${locales}/item/images/${Object.values(
+                              image,
+                            ).join('')}`}
+                            alt={`Item ${index}`}
+                          />
                           <Button
                             onClick={() => remove(index)}
                             variant="outlined"
@@ -257,22 +265,18 @@ const EditItem = () => {
                 )}
               </Box>
               <Box sx={{ width: '48%' }}>
-                <TextField
-                  name="images"
+                <input
                   type="file"
-                  fullWidth
-                  InputLabelProps={{
-                    shrink: true,
-                  }}
-                  variant="outlined"
-                  inputProps={{ multiple: true }}
+                  name="images"
+                  accept="image/*"
+                  multiple
                   onChange={handleChange}
                 />
                 {newImages && (
                   <ImageList
-                    cols={matches ? 3 : 2}
+                    cols={2}
                     variant="woven"
-                    // gap={8}
+                    gap={8}
                     rowHeight={164}
                     sx={{
                       position: 'relative',
@@ -281,15 +285,24 @@ const EditItem = () => {
                     }}
                   >
                     {newImages.map((image, index) => {
+                      // eslint-disable-next-line no-console
+                      console.log(image)
+                      delete image.id
+                      const file = Object.values(image).join('')
+                      // eslint-disable-next-line no-console
+                      console.log(file)
                       return (
                         <ImageListItem key={index}>
-                          <img src={image.image} alt={`Item ${index}`} />
+                          <img
+                            src={URL.createObjectURL(new Blob([file]))}
+                            alt={`Item ${index}`}
+                          />
                           <Button
                             onClick={() => RemoveNewImages(index)}
                             variant="outlined"
                             fullWidth
                           >
-                            RemoveNewImages
+                            Remove
                           </Button>
                         </ImageListItem>
                       )

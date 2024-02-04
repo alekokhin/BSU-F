@@ -5,7 +5,6 @@ import {
   ImageList,
   ImageListItem,
   Stack,
-  TextField,
   useMediaQuery,
 } from '@mui/material'
 import { useMutation, useQuery } from '@tanstack/react-query'
@@ -13,6 +12,7 @@ import { deleteSymbol, editSymbol, getSymbol, SymbolType } from 'api/symbols'
 import { ControlledTextField } from 'components/form/controlled/controlled-text-field'
 import Header from 'components/header'
 import { useSnackbar } from 'notistack'
+import { locales } from 'providers/locales'
 import { useEffect } from 'react'
 import { useFieldArray, useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
@@ -20,6 +20,8 @@ import { useNavigate, useParams } from 'react-router-dom'
 type Params = {
   id: string
 }
+const REACT_APP_API_URL = process.env.REACT_APP_API_URL
+
 const EditSymbol = () => {
   const { id } = useParams<Params>()
   const navigate = useNavigate()
@@ -89,7 +91,7 @@ const EditSymbol = () => {
                 enqueueSnackbar('item add successfully', {
                   variant: 'success',
                 })
-                navigate('/symbols')
+                location.reload()
               },
               onError: (error: any) => {
                 enqueueSnackbar('something went wrong', { variant: 'error' })
@@ -150,9 +152,15 @@ const EditSymbol = () => {
                         }}
                       >
                         {fields.map((image, index) => {
+                          delete image.id
                           return (
                             <ImageListItem key={index}>
-                              <img src={image.image} alt={`Item ${index}`} />
+                              <img
+                                src={`${REACT_APP_API_URL}${locales}/symbol/images/${Object.values(
+                                  image,
+                                ).join('')}`}
+                                alt={`Item ${index}`}
+                              />
                               <Button
                                 onClick={() => remove(index)}
                                 variant="outlined"
@@ -167,15 +175,11 @@ const EditSymbol = () => {
                     )}
                   </Box>
                   <Box sx={{ width: '48%' }}>
-                    <TextField
-                      name="images"
+                    <input
                       type="file"
-                      fullWidth
-                      InputLabelProps={{
-                        shrink: true,
-                      }}
-                      variant="outlined"
-                      inputProps={{ multiple: true }}
+                      name="images"
+                      accept="image/*"
+                      multiple
                       onChange={handleChange}
                     />
                     {newImages && (

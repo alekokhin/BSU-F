@@ -30,7 +30,6 @@ const Items = () => {
           backgroundSize: 'cover',
           backgroundRepeat: 'no-repeat',
           backgroundPosition: 'center',
-
           opacity: 0.7,
           zIndex: -1,
           position: 'absolute',

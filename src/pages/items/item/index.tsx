@@ -39,6 +39,7 @@ const Item = () => {
         .filter(
           ([key, value]) =>
             value !== '' &&
+            key !== 'newImages' &&
             key !== 'images' &&
             key !== 'description' &&
             key !== 'title' &&
