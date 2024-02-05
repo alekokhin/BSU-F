@@ -1,5 +1,12 @@
 const passwordRegex = /^(?=.*[A-Z])(?=.*[a-z])(?=.*\d).{8,100}$/
-
+// ========================
+const hostname = window.location.hostname || window.location.host
+//* check host /
+export const isLocal =
+  /^(localhost|127\.0\.0\.1|192\.168\.\d+\.\d+|10\.\d+\.\d+\.\d+)$/.test(
+    hostname,
+  )
+// ========================
 const emailRegex =
   // eslint-disable-next-line security/detect-unsafe-regex
   /^(([^\s"(),.:;<>@[\\\]]+(\.[^\s"(),.:;<>@[\\\]]+)*)|(".+"))@((\[(?:\d{1,3}\.){3}\d{1,3}])|(([\dA-Za-z-]+\.)+[A-Za-z]{2,}))$/

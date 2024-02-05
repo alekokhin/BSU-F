@@ -1,3 +1,4 @@
+import { isLocal } from 'components/form/validations'
 import { del, get, post, put } from 'lib/request'
 import { locales } from 'providers/locales'
 
@@ -9,8 +10,10 @@ export type AnalyzedTextType = {
 }
 
 export type AnalyzedTexts = Array<AnalyzedTextType>
-const REACT_APP_API_URL = process.env.REACT_APP_API_URL
 
+const REACT_APP_API_URL = isLocal
+  ? process.env.REACT_APP_LOCAL_API_URL
+  : process.env.REACT_APP_API_URL
 // GET AnalyzedText LIST
 export const getAnalyzedTexts = async () =>
   get<AnalyzedTexts>(`${REACT_APP_API_URL}${locales}/analyzedText/all`)

@@ -1,6 +1,9 @@
+import { isLocal } from 'components/form/validations'
 import { del, get, post, put } from 'lib/request'
 import { locales } from 'providers/locales'
-const REACT_APP_API_URL = process.env.REACT_APP_API_URL
+const REACT_APP_API_URL = isLocal
+  ? process.env.REACT_APP_LOCAL_API_URL
+  : process.env.REACT_APP_API_URLexport
 export type SymbolType = {
   id: string
   title: string

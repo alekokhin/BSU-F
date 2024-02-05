@@ -4,13 +4,16 @@ import { useQuery } from '@tanstack/react-query'
 import { getStrings } from 'api/strings'
 import stringsBg from 'assets/images/strings.jpg'
 import ItemCard from 'components/card'
+import { isLocal } from 'components/form/validations'
 import Header from 'components/header'
 import Loader from 'components/loader'
 import { useAuthContext } from 'providers/auth'
 import { locales } from 'providers/locales'
 import { useNavigate } from 'react-router-dom'
 
-const REACT_APP_API_URL = process.env.REACT_APP_API_URL
+const REACT_APP_API_URL = isLocal
+  ? process.env.REACT_APP_LOCAL_API_URL
+  : process.env.REACT_APP_API_URL
 const Strings = () => {
   const { isAuthenticated } = useAuthContext()
   const navigate = useNavigate()

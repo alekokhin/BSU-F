@@ -1,3 +1,4 @@
+import { isLocal } from 'components/form/validations'
 import { del, get, post, put } from 'lib/request'
 import { locales } from 'providers/locales'
 
@@ -11,8 +12,9 @@ export type StringType = {
 }
 
 export type Strings = Array<StringType>
-const REACT_APP_API_URL = process.env.REACT_APP_API_URL
-
+const REACT_APP_API_URL = isLocal
+  ? process.env.REACT_APP_LOCAL_API_URL
+  : process.env.REACT_APP_API_URL
 // export type StringResponse = { Strings: Strings }
 
 // GET String LIST

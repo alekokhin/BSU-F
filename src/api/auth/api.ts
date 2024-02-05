@@ -1,9 +1,11 @@
+import { isLocal } from 'components/form/validations'
 import { post } from 'lib/request/request'
 import { AuthUserResponse } from 'providers/auth'
 import Cookies from 'universal-cookie'
 
-const REACT_APP_API_URL = process.env.REACT_APP_API_URL
-
+const REACT_APP_API_URL = isLocal
+  ? process.env.REACT_APP_LOCAL_API_URL
+  : process.env.REACT_APP_API_URL
 export type AuthInput = {
   username: string
   password: string

@@ -1,3 +1,4 @@
+import { isLocal } from 'components/form/validations'
 import { del, get, post, put } from 'lib/request/request'
 import { locales } from 'providers/locales'
 
@@ -12,8 +13,9 @@ export type Word = {
 }
 
 export type words = Array<Word>
-const REACT_APP_API_URL = process.env.REACT_APP_API_URL
-
+const REACT_APP_API_URL = isLocal
+  ? process.env.REACT_APP_LOCAL_API_URL
+  : process.env.REACT_APP_API_URL
 // export type wordResponse = { words: words }
 
 // GET word LIST
