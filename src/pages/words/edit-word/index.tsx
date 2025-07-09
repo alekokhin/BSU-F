@@ -7,12 +7,11 @@ import { enqueueSnackbar } from 'notistack'
 import { useEffect } from 'react'
 import { useForm } from 'react-hook-form'
 import { useTranslation } from 'react-i18next'
-import { Params, useNavigate, useParams } from 'react-router-dom'
+import { Params, useParams } from 'react-router-dom'
 
 const EditWords = () => {
   const { id } = useParams<Params>()
   const $delete = useMutation(deleteWord)
-  const navigate = useNavigate()
 
   const { t } = useTranslation()
 

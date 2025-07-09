@@ -128,7 +128,7 @@ const Item = () => {
                       width: '100%',
                       maxWidth: 400,
                       // bgcolor: 'transparent',
-                      backdropFilter: 'blur(5px)',
+                      // backdropFilter: 'blur(5px)',
                       maxHeight: '400px',
                       overflow: 'auto',
                       '&::-webkit-scrollbar': { display: 'none' },

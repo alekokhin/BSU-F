@@ -25,25 +25,27 @@ const String = () => {
   })
 
   return (
-    <>
+    <Box
+      sx={{
+        height: '100vh',
+        backgroundImage: `url(${stringBg})`,
+        overflow: 'hidden',
+      }}
+    >
       <Header />
 
-      <Box
-        sx={{
-          width: '100%',
-          height: '100vh',
-          backgroundImage: `url(${stringBg})`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          opacity: 0.7,
-          zIndex: -1,
-          position: 'absolute',
-        }}
-      />
       {string ? (
         <>
-          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Box
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              padding: '20px',
+              overflow: 'auto',
+              height: '90dvh',
+              '&::-webkit-scrollbar': { display: 'none' },
+            }}
+          >
             <Stack sx={{ width: '90%' }} spacing={5}>
               <Stack spacing={5} alignItems="center">
                 <Typography variant="h4">
@@ -74,7 +76,7 @@ const String = () => {
       ) : (
         <Loader />
       )}
-    </>
+    </Box>
   )
 }
 export default String

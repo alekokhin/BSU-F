@@ -47,24 +47,14 @@ const Symbol = () => {
       )
   }
   return (
-    <>
+    <Box sx={{ height: '100vh', backgroundImage: `url(${symbolBg})` }}>
       <Header />
-      <Box
-        sx={{
-          width: '100%',
-          height: '100vh',
-          backgroundImage: `url(${symbolBg})`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          opacity: 0.7,
-          zIndex: -1,
-          position: 'absolute',
-        }}
-      />
+
       {symbol ? (
         <>
-          <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+          <Box
+            sx={{ display: 'flex', justifyContent: 'center', padding: '20px' }}
+          >
             <Stack sx={{ width: '90%' }} spacing={5}>
               <Box
                 sx={{
@@ -77,7 +67,7 @@ const Symbol = () => {
                   {symbol.title}
                   {symbol.connection && (
                     <LinkSharp
-                      sx={{ cursor: 'pointer' }}
+                      sx={{ cursor: 'pointer', paddingLeft: '5px' }}
                       onClick={() => window.open(symbol.connection, '_blank')}
                     />
                   )}
@@ -122,7 +112,7 @@ const Symbol = () => {
       ) : (
         <Loader />
       )}
-    </>
+    </Box>
   )
 }
 export default Symbol

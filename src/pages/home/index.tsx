@@ -5,23 +5,11 @@ import { useTranslation } from 'react-i18next'
 const Home = () => {
   const { t } = useTranslation()
   return (
-    <>
+    <Box
+      sx={{ backgroundColor: '#dacbb3', height: '100dvh', overflow: 'hidden' }}
+    >
       <Header />
-      <Box
-        sx={{
-          width: '100%',
-          minHeight: '90vh',
-          // backgroundImage: `url(${home})`,
-          backgroundColor: '#dacbb3',
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          // background: 'inherit',
-          // filter: 'blur(2px)',
-          zIndex: -1,
-          position: 'absolute',
-        }}
-      />
+
       <Stack spacing={7}>
         <Box textAlign="center">
           <Typography
@@ -62,7 +50,7 @@ const Home = () => {
           </Typography>
         </Box>
       </Stack>
-    </>
+    </Box>
   )
 }
 

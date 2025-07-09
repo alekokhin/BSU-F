@@ -17,7 +17,7 @@ i18n
   .init({
     debug: true,
     fallbackLng: 'GE',
-    // lng:"ge",
+    lng: 'GE',
     interpolation: {
       escapeValue: false, // not needed for react as it escapes by default
     },

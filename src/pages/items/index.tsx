@@ -4,16 +4,13 @@ import { useQuery } from '@tanstack/react-query'
 import { getItems } from 'api/items'
 import itemsBg from 'assets/images/items.jpg'
 import ItemCard from 'components/card'
-import { isLocal } from 'components/form/validations'
 import Header from 'components/header'
 import Loader from 'components/loader'
 import { useAuthContext } from 'providers/auth'
 import { locales } from 'providers/locales'
 import { useNavigate } from 'react-router-dom'
 
-const REACT_APP_API_URL = isLocal
-  ? process.env.REACT_APP_LOCAL_API_URL
-  : process.env.REACT_APP_API_URL
+const REACT_APP_API_URL = process.env.REACT_APP_API_URL
 const Items = () => {
   const { isAuthenticated } = useAuthContext()
   const navigate = useNavigate()
@@ -21,22 +18,15 @@ const Items = () => {
 
   const $items = data
   return (
-    <>
+    <Box
+      sx={{
+        overflow: 'hidden',
+        backgroundImage: `url(${itemsBg})`,
+        height: '100dvh',
+      }}
+    >
       <Header />
 
-      <Box
-        sx={{
-          width: '100%',
-          height: '100vh',
-          backgroundImage: `url(${itemsBg})`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          opacity: 0.7,
-          zIndex: -1,
-          position: 'absolute',
-        }}
-      />
       {isAuthenticated && (
         <Add
           sx={{ cursor: 'pointer', padding: '20px', fontWeight: 'bolder' }}
@@ -98,7 +88,7 @@ const Items = () => {
       ) : (
         <Loader />
       )}
-    </>
+    </Box>
   )
 }
 export default Items

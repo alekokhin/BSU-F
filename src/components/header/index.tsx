@@ -45,14 +45,12 @@ const Header = () => {
   // Check if the current page is the home page
   const activeIndex = useActiveIndex()
   const page = activeIndex === false
-  const isHomePage = location.pathname === '/home'
 
   return (
     <AppBar
       sx={{
         bgcolor: '#e4ae79',
         position: 'sticky',
-        // marginBottom: isHomePage ? '0' : '25px',
       }}
     >
       <Toolbar sx={{ justifyContent: 'space-between' }}>

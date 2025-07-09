@@ -10,7 +10,6 @@ import {
 import { useMutation, useQuery } from '@tanstack/react-query'
 import { deleteSymbol, editSymbol, getSymbol, SymbolType } from 'api/symbols'
 import { ControlledTextField } from 'components/form/controlled/controlled-text-field'
-import { isLocal } from 'components/form/validations'
 import Header from 'components/header'
 import { useSnackbar } from 'notistack'
 import { locales } from 'providers/locales'
@@ -21,9 +20,7 @@ import { useNavigate, useParams } from 'react-router-dom'
 type Params = {
   id: string
 }
-const REACT_APP_API_URL = isLocal
-  ? process.env.REACT_APP_LOCAL_API_URL
-  : process.env.REACT_APP_API_URL
+const REACT_APP_API_URL = process.env.REACT_APP_API_URL
 const EditSymbol = () => {
   const { id } = useParams<Params>()
   const navigate = useNavigate()

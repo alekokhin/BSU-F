@@ -13,22 +13,15 @@ const AnalyzedTexts = () => {
   const { data } = useQuery(['analyzedTexts'], getAnalyzedTexts)
 
   return (
-    <>
+    <Box
+      sx={{
+        height: '100vh',
+        backgroundImage: `url(${textBg})`,
+        overflow: 'hidden',
+      }}
+    >
       <Header />
 
-      <Box
-        sx={{
-          width: '100%',
-          height: '100vh',
-          backgroundImage: `url(${textBg})`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          opacity: 0.7,
-          zIndex: -1,
-          position: 'absolute',
-        }}
-      />
       {isAuthenticated && (
         <Add
           sx={{ cursor: 'pointer', padding: '20px', fontWeight: 'bolder' }}
@@ -36,7 +29,17 @@ const AnalyzedTexts = () => {
         />
       )}
       {data ? (
-        <Box sx={{ display: 'flex', justifyContent: 'center' }}>
+        <Box
+          sx={{
+            display: 'flex',
+            justifyContent: 'center',
+            padding: '20px',
+            overflow: 'auto',
+
+            height: '90dvh',
+            '&::-webkit-scrollbar': { display: 'none' },
+          }}
+        >
           <Box width="90%">
             {data.map((detail, index) => (
               <Box
@@ -79,7 +82,7 @@ const AnalyzedTexts = () => {
       ) : (
         <Loader />
       )}
-    </>
+    </Box>
   )
 }
 export default AnalyzedTexts

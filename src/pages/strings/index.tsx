@@ -4,16 +4,13 @@ import { useQuery } from '@tanstack/react-query'
 import { getStrings } from 'api/strings'
 import stringsBg from 'assets/images/strings.jpg'
 import ItemCard from 'components/card'
-import { isLocal } from 'components/form/validations'
 import Header from 'components/header'
 import Loader from 'components/loader'
 import { useAuthContext } from 'providers/auth'
 import { locales } from 'providers/locales'
 import { useNavigate } from 'react-router-dom'
 
-const REACT_APP_API_URL = isLocal
-  ? process.env.REACT_APP_LOCAL_API_URL
-  : process.env.REACT_APP_API_URL
+const REACT_APP_API_URL = process.env.REACT_APP_API_URL
 const Strings = () => {
   const { isAuthenticated } = useAuthContext()
   const navigate = useNavigate()
@@ -22,22 +19,15 @@ const Strings = () => {
   const $strings = data
 
   return (
-    <>
+    <Box
+      sx={{
+        height: '100vh',
+        backgroundImage: `url(${stringsBg})`,
+        overflow: 'hidden',
+      }}
+    >
       <Header />
 
-      <Box
-        sx={{
-          width: '100%',
-          height: '100vh',
-          backgroundImage: `url(${stringsBg})`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          opacity: 0.7,
-          zIndex: -1,
-          position: 'absolute',
-        }}
-      />
       {isAuthenticated && (
         <Add
           sx={{ cursor: 'pointer', padding: '20px', fontWeight: 'bolder' }}
@@ -47,7 +37,7 @@ const Strings = () => {
       {$strings ? (
         <Container
           sx={{
-            minHeight: '90vh',
+            height: '90dvh',
             width: '100%',
             overflow: 'auto',
             '&::-webkit-scrollbar': { display: 'none' },
@@ -98,7 +88,7 @@ const Strings = () => {
       ) : (
         <Loader />
       )}
-    </>
+    </Box>
   )
 }
 export default Strings

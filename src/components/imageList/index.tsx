@@ -1,12 +1,9 @@
 import { Box, ImageList as MuiImageList, ImageListItem } from '@mui/material'
-import { isLocal } from 'components/form/validations'
 import ImageMagnifier from 'components/imageMagnifier'
 import { locales } from 'providers/locales'
 import { useState } from 'react'
 
-const REACT_APP_API_URL = isLocal
-  ? process.env.REACT_APP_LOCAL_API_URL
-  : process.env.REACT_APP_API_URL
+const REACT_APP_API_URL = process.env.REACT_APP_API_URL
 type Images = { images: Array<any>; page: string }
 
 const ImageList = ({ images, page }: Images) => {

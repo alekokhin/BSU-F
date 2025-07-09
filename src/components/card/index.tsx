@@ -20,8 +20,8 @@ const ItemCard = ({ id, description, title, image, ...otherProps }: Props) => {
         height: { lg: '300px', xs: '250px' },
         marginBottom: '10px',
         cursor: 'pointer',
-        bgcolor: '#d8c09c54',
-        backdropFilter: 'blur(2px)',
+        bgcolor: '#f2b45854',
+        backdropFilter: 'blur(10px)',
         boxShadow: '0px 0px 20px #000',
         borderRadius: '15px',
       }}

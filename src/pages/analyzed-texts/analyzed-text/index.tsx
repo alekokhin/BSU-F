@@ -44,27 +44,26 @@ const AnalyzedText = () => {
   }
 
   return (
-    <>
+    <Box
+      sx={{
+        height: '100vh',
+        backgroundImage: `url(${textBg})`,
+        overflow: 'hidden',
+      }}
+    >
       <Header />
-      <Box
-        sx={{
-          width: '100%',
-          height: '100vh',
-          backgroundImage: `url(${textBg})`,
-          backgroundSize: 'cover',
-          backgroundRepeat: 'no-repeat',
-          backgroundPosition: 'center',
-          // background: 'inherit',
-          // filter: 'blur(2px)',
-          opacity: 0.7,
-          zIndex: -1,
-          position: 'absolute',
-        }}
-      />
+
       {analyzedText ? (
         <>
           <Box
-            sx={{ display: 'flex', justifyContent: 'center', padding: '20px' }}
+            sx={{
+              display: 'flex',
+              justifyContent: 'center',
+              padding: '20px',
+              overflow: 'auto',
+              height: '90dvh',
+              '&::-webkit-scrollbar': { display: 'none' },
+            }}
           >
             <Stack sx={{ width: '90%' }} spacing={5}>
               <Box
@@ -103,8 +102,14 @@ const AnalyzedText = () => {
                   onChange={e => setSearchTerm(e.target.value)}
                 />
               </Box>
-              <Stack spacing={5} alignItems="center">
-                <Box>
+              <Stack alignItems="center">
+                <Box
+                  sx={{
+                    paddingBottom: '50px',
+                    // bgcolor: '#f2b45854',
+                    // backdropFilter: 'blur(2px)',
+                  }}
+                >
                   <Typography variant="h5">
                     {highlightSearchTerm(analyzedText.description)}
                   </Typography>
@@ -116,7 +121,7 @@ const AnalyzedText = () => {
       ) : (
         <Loader />
       )}
-    </>
+    </Box>
   )
 }
 export default AnalyzedText
