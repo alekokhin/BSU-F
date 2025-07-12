@@ -6,8 +6,8 @@ type LocalesContextProps = {
   toggleLocales: () => void
 }
 export let locales: string
-const setLoc = (l: string) => {
-  locales = l.toLocaleLowerCase()
+const setLoc = (l: string | undefined) => {
+  locales = l ? l.toLocaleLowerCase() : ''
 }
 
 // Fixed by providing the correct type for createContext
@@ -28,10 +28,15 @@ interface LocalesProviderProps {
   children: ReactNode
 }
 
+import { useEffect } from 'react'
+
 export const LocalesProvider = ({ children }: LocalesProviderProps) => {
   const { i18n } = useTranslation()
   const selectedLanguage = i18n.language
-  setLoc(selectedLanguage)
+
+  useEffect(() => {
+    setLoc(selectedLanguage)
+  }, [selectedLanguage])
 
   const toggleLocales = () => {
     i18n.changeLanguage(selectedLanguage === 'GE' ? 'EN' : 'GE')

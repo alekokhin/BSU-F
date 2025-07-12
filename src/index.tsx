@@ -12,15 +12,7 @@ import { BrowserRouter } from 'react-router-dom'
 
 const root = ReactDOM.createRoot(document.querySelector('#root') as HTMLElement)
 
-const queryClient = new QueryClient({
-  defaultOptions: {
-    queries: {
-      retry: false,
-      refetchOnWindowFocus: false,
-      refetchOnMount: false,
-    },
-  },
-})
+const queryClient = new QueryClient({})
 
 root.render(
   <React.StrictMode>

@@ -53,7 +53,9 @@ const String = () => {
                   {string.connection && (
                     <LinkSharp
                       sx={{ cursor: 'pointer' }}
-                      onClick={() => window.open(string.connection, '_blank')}
+                      onClick={() =>
+                        window.open(`/item/${string.connection}`, '_blank')
+                      }
                     />
                   )}
                 </Typography>

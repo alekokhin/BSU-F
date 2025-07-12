@@ -12,7 +12,7 @@ import textBg from 'assets/images/text.jpg'
 import Header from 'components/header'
 import Loader from 'components/loader'
 import { useState } from 'react'
-import { useParams } from 'react-router-dom'
+import { useNavigate, useParams } from 'react-router-dom'
 type Params = {
   id: string
 }
@@ -20,6 +20,7 @@ const AnalyzedText = () => {
   const { id } = useParams<Params>()
   const [searchTerm, setSearchTerm] = useState('')
   const [analyzedText, setAnalyzedText] = useState<AnalyzedTextType>()
+  const navigate = useNavigate()
 
   useQuery({
     queryKey: ['symbol', id],
@@ -79,7 +80,10 @@ const AnalyzedText = () => {
                     <LinkSharp
                       sx={{ cursor: 'pointer' }}
                       onClick={() =>
-                        window.open(analyzedText.connection, '_blank')
+                        window.open(
+                          `/item/${analyzedText.connection}`,
+                          '_blank',
+                        )
                       }
                     />
                   )}

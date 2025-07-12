@@ -68,7 +68,9 @@ const Symbol = () => {
                   {symbol.connection && (
                     <LinkSharp
                       sx={{ cursor: 'pointer', paddingLeft: '5px' }}
-                      onClick={() => window.open(symbol.connection, '_blank')}
+                      onClick={() =>
+                        window.open(`/item/${symbol.connection}`, '_blank')
+                      }
                     />
                   )}
                 </Typography>
